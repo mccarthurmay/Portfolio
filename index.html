@@ -23,6 +23,17 @@
             border-radius: 5px;
             font-size: 14px;
         }
+        #coordinates {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
@@ -35,6 +46,10 @@
         SPACE - Jump<br>
         <br>
         Walk around the planet!
+    </div>
+
+    <div id="coordinates">
+        Position: (0, 0, 0)
     </div>
     
     <div id="intro-screen">
@@ -112,10 +127,10 @@
         document.body.appendChild(renderer.domElement);
 
         // Lighting
-        const ambientLight = new THREE.AmbientLight(0x808080, 2.5); // Brighter ambient light to prevent overly dark shadows
+        const ambientLight = new THREE.AmbientLight(0x808080, 2.5);
         scene.add(ambientLight);
 
-        const sunLight = new THREE.DirectionalLight(0xffffff, 2.0); // Reduced intensity to balance with ambient
+        const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
         sunLight.position.set(10, 10, 10);
         sunLight.castShadow = true;
         sunLight.shadow.camera.left = -20;
@@ -124,18 +139,16 @@
         sunLight.shadow.camera.bottom = -20;
         sunLight.shadow.camera.near = 0.5;
         sunLight.shadow.camera.far = 100;
-        sunLight.shadow.mapSize.width = 2048; // Good balance of quality and performance
+        sunLight.shadow.mapSize.width = 2048;
         sunLight.shadow.mapSize.height = 2048;
-        sunLight.shadow.bias = -0.001; // Stronger bias to ensure shadows appear
-        sunLight.shadow.normalBias = 0.02; // Moderate value to balance artifacts and visibility
-        // Don't add to scene yet - will add to planet group later
+        sunLight.shadow.bias = -0.001;
+        sunLight.shadow.normalBias = 0.02;
 
-        // Planet - Load Blender GLB model
-        const planetRadius = 16; // Keep for reference in other calculations
+        // Planet
+        const planetRadius = 16;
         
-        // Create a group for planet, stars, and lighting so they rotate together
         const planetGroup = new THREE.Group();
-        planetGroup.add(sunLight); // Add sun light to planet group
+        planetGroup.add(sunLight);
         scene.add(planetGroup);
 
         // Load the Blender world model
@@ -143,159 +156,108 @@
         planetLoader.load('world-only.glb', function(gltf) {
             const planet = gltf.scene;
             
-            // Enable shadows for all meshes
             planet.traverse((child) => {
                 if (child.isMesh) {
-                    // Objects cast and receive shadows
-                    // Note: In Blender, name ground meshes with "ground_" prefix to disable their shadow casting
                     const isGround = child.name.toLowerCase().includes('ground');
-                    child.castShadow = !isGround; // Ground doesn't cast shadows, prevents vertical lines
+                    child.castShadow = !isGround;
                     child.receiveShadow = true;
                     console.log(`Mesh: ${child.name}, castShadow: ${!isGround}, receiveShadow: true`);
                 }
             });
             
-            // Add the loaded model to the planet group
             planetGroup.add(planet);
             console.log('Blender world model loaded successfully');
         }, undefined, function(error) {
             console.error('Error loading world model:', error);
         });
 
-        // Character - animated placeholder (will be replaced with Blender model)
+        // Character setup
         const characterGroup = new THREE.Group();
-
-        // Body (torso) - scaled down to half size
-        const bodyGeometry = new THREE.CapsuleGeometry(0.05, 0.125, 8, 16);
-        const bodyMaterial = new THREE.MeshStandardMaterial({ color: 0x3366ff });
-        const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
-        body.position.y = 0.0625;
-        body.castShadow = true;
-        characterGroup.add(body);
-
-        // Head - scaled down to half size
-        const headGeometry = new THREE.SphereGeometry(0.04, 16, 16);
-        const headMaterial = new THREE.MeshStandardMaterial({ color: 0xffccaa });
-        const head = new THREE.Mesh(headGeometry, headMaterial);
-        head.position.y = 0.165;
-        head.castShadow = true;
-        characterGroup.add(head);
-
-        // Face direction indicator (nose/cone) - scaled down to half size
-        const coneGeometry = new THREE.ConeGeometry(0.02, 0.04, 8);
-        const coneMaterial = new THREE.MeshStandardMaterial({ color: 0xff8888 });
-        const nose = new THREE.Mesh(coneGeometry, coneMaterial);
-        nose.position.set(0, 0.165, 0.03);
-        nose.rotation.x = Math.PI / 2;
-        nose.castShadow = true;
-        characterGroup.add(nose);
-
-        // Left arm - scaled down to half size
-        const armGeometry = new THREE.CapsuleGeometry(0.015, 0.08, 6, 8);
-        const armMaterial = new THREE.MeshStandardMaterial({ color: 0x3366ff });
-        const leftArm = new THREE.Mesh(armGeometry, armMaterial);
-        leftArm.position.set(-0.06, 0.07, 0);
-        leftArm.castShadow = true;
-        characterGroup.add(leftArm);
-
-        // Right arm - scaled down to half size
-        const rightArm = new THREE.Mesh(armGeometry, armMaterial);
-        rightArm.position.set(0.06, 0.07, 0);
-        rightArm.castShadow = true;
-        characterGroup.add(rightArm);
-
-        // Left leg - scaled down to half size
-        const legGeometry = new THREE.CapsuleGeometry(0.02, 0.1, 6, 8);
-        const legMaterial = new THREE.MeshStandardMaterial({ color: 0x2244aa });
-        const leftLeg = new THREE.Mesh(legGeometry, legMaterial);
-        leftLeg.position.set(-0.025, -0.05, 0);
-        leftLeg.castShadow = true;
-        characterGroup.add(leftLeg);
-
-        // Right leg - scaled down to half size
-        const rightLeg = new THREE.Mesh(legGeometry, legMaterial);
-        rightLeg.position.set(0.025, -0.05, 0);
-        rightLeg.castShadow = true;
-        characterGroup.add(rightLeg);
-
-        // Store references for animation
-        const characterParts = {
-            body: body,
-            head: head,
-            nose: nose,
-            leftArm: leftArm,
-            rightArm: rightArm,
-            leftLeg: leftLeg,
-            rightLeg: rightLeg
-        };
-
         scene.add(characterGroup);
+
+        // Animation mixer and actions
+        let mixer = null;
+        let walkAction = null;
+        let idleAction = null;
+        let characterModel = null;
+        let characterLoaded = false;
 
         // Animation state
         const animationState = {
-            isWalking: false,
-            walkCycle: 0,
-            walkSpeed: 5.0, // Animation speed
-            headBobAmount: 0.01, // Half size for smaller character
-            armSwingAmount: 0.2, // Half size for smaller character
-            legSwingAmount: 0.15 // Half size for smaller character
+            isWalking: false
         };
 
-        // Helper function to replace placeholder with animated Blender character
-        // Usage example:
-        // const loader = new GLTFLoader();
-        // loader.load('assets/models/character.glb', (gltf) => {
-        //     const model = gltf.scene;
-        //
-        //     // Remove placeholder character parts
-        //     characterGroup.remove(body, head, nose, leftArm, rightArm, leftLeg, rightLeg);
-        //
-        //     // Add Blender model to character group
-        //     characterGroup.add(model);
-        //
-        //     // Setup animation mixer for skeletal animations
-        //     const mixer = new THREE.AnimationMixer(model);
-        //     const walkAction = mixer.clipAction(gltf.animations.find(a => a.name === 'Walk'));
-        //     const idleAction = mixer.clipAction(gltf.animations.find(a => a.name === 'Idle'));
-        //
-        //     // In animate loop, replace procedural animation with:
-        //     // if (animationState.isWalking) {
-        //     //     idleAction.stop();
-        //     //     walkAction.play();
-        //     // } else {
-        //     //     walkAction.stop();
-        //     //     idleAction.play();
-        //     // }
-        //     // mixer.update(deltaTime);
-        // });
-
-        // Helper function to replace placeholder planet with Blender model
-        // Usage example:
-        // loader.load('assets/models/planet.glb', (gltf) => {
-        //     replacePlanetWithModel(gltf.scene);
-        // });
-        function replacePlanetWithModel(model) {
-            // Remove placeholder planet
-            planetGroup.remove(planet);
-
-            // Scale and position the model
-            model.scale.set(1, 1, 1); // Adjust scale as needed
-            model.castShadow = true;
-            model.receiveShadow = true;
-            model.traverse((child) => {
-                if (child.isMesh) {
-                    child.castShadow = true;
-                    child.receiveShadow = true;
+        // Load penguin character model
+        const characterLoader = new GLTFLoader();
+        characterLoader.load('manchot_the_penguin.glb', 
+            function(gltf) {
+                console.log('Penguin character loaded successfully!');
+                characterModel = gltf.scene;
+                
+                // Scale the penguin to appropriate size
+                characterModel.scale.set(0.075, 0.075, 0.075);
+                
+                // Enable shadows
+                characterModel.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                    }
+                });
+                
+                characterGroup.add(characterModel);
+                
+                // Setup animation mixer
+                if (gltf.animations && gltf.animations.length > 0) {
+                    console.log('Found animations:', gltf.animations.map(a => a.name));
+                    
+                    mixer = new THREE.AnimationMixer(characterModel);
+                    
+                    // Try to find walk animation
+                    const walkAnim = gltf.animations.find(a => 
+                        a.name.toLowerCase().includes('walk') || 
+                        a.name.toLowerCase().includes('run') ||
+                        a.name.toLowerCase().includes('waddle')
+                    ) || gltf.animations[0]; // Fallback to first animation
+                    
+                    // Try to find idle animation
+                    const idleAnim = gltf.animations.find(a => 
+                        a.name.toLowerCase().includes('idle') || 
+                        a.name.toLowerCase().includes('standing')
+                    );
+                    
+                    if (walkAnim) {
+                        walkAction = mixer.clipAction(walkAnim);
+                        walkAction.setEffectiveTimeScale(1.2); // Speed up animation
+                        console.log('Walk animation set:', walkAnim.name);
+                    }
+                    
+                    if (idleAnim) {
+                        idleAction = mixer.clipAction(idleAnim);
+                        idleAction.play();
+                        console.log('Idle animation set:', idleAnim.name);
+                    } else if (walkAction) {
+                        // If no idle, just stop walk animation when not moving
+                        console.log('No idle animation found, using walk animation only');
+                    }
+                } else {
+                    console.warn('No animations found in penguin model');
                 }
-            });
+                
+                characterLoaded = true;
+                console.log('Penguin character setup complete');
+            }, 
+            function(progress) {
+                console.log('Loading penguin:', (progress.loaded / progress.total * 100).toFixed(2) + '%');
+            },
+            function(error) {
+                console.error('Error loading penguin model:', error);
+            }
+        );
 
-            planetGroup.add(model);
-        }
-
-
-        // Position character at spawn height (will fall with gravity)
-        const characterHeight = 0.2; // Approximate height of character (half size)
-        const spawnHeight = 10; // Spawn character high up, let gravity pull them down
+        // Position character at spawn height
+        const characterHeight = 0.075;
+        const spawnHeight = 13; // Spawn higher to ensure proper ground detection
         characterGroup.position.set(0, spawnHeight, 0);
 
         // Stars background
@@ -310,16 +272,16 @@
         }
         starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
         const stars = new THREE.Points(starsGeometry, starsMaterial);
-        planetGroup.add(stars); // Add stars to planet group so they rotate together
+        planetGroup.add(stars);
 
-        // Atmosphere - sky sphere that surrounds the planet
-        const atmosphereGeometry = new THREE.SphereGeometry(25, 32, 32); // Larger than planet
+        // Atmosphere
+        const atmosphereGeometry = new THREE.SphereGeometry(25, 32, 32);
         const atmosphereMaterial = new THREE.ShaderMaterial({
             uniforms: {
                 sunDirection: { value: new THREE.Vector3(1, 1, 1).normalize() },
-                dayColor: { value: new THREE.Color(0x87CEEB) }, // Sky blue
-                nightColor: { value: new THREE.Color(0x000000) }, // Black/transparent
-                horizonColor: { value: new THREE.Color(0xFFB347) } // Orange horizon
+                dayColor: { value: new THREE.Color(0x87CEEB) },
+                nightColor: { value: new THREE.Color(0x000000) },
+                horizonColor: { value: new THREE.Color(0xFFB347) }
             },
             vertexShader: `
                 varying vec3 vNormal;
@@ -339,49 +301,36 @@
                 varying vec3 vPosition;
 
                 void main() {
-                    // Calculate how much this point faces the sun
                     vec3 normal = normalize(vPosition);
                     float sunAlignment = dot(normal, sunDirection);
-
-                    // Smooth transition from day to night
                     float dayStrength = smoothstep(-0.3, 0.3, sunAlignment);
-
-                    // Horizon glow effect
                     float horizonGlow = 1.0 - abs(sunAlignment);
                     horizonGlow = pow(horizonGlow, 3.0) * dayStrength;
-
-                    // Mix colors based on sun position
                     vec3 skyColor = mix(nightColor, dayColor, dayStrength);
                     skyColor = mix(skyColor, horizonColor, horizonGlow * 0.5);
-
-                    // Make night side more transparent to show stars
                     float alpha = dayStrength * 0.9 + 0.1;
-
                     gl_FragColor = vec4(skyColor, alpha);
                 }
             `,
-            side: THREE.BackSide, // Render inside of sphere
+            side: THREE.BackSide,
             transparent: true,
             depthWrite: false
         });
         const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
-        scene.add(atmosphere); // Add to scene, not planet group (doesn't rotate)
+        scene.add(atmosphere);
 
-        // Sun - positioned where the directional light comes from
-        // The sunLight is at (10, 10, 10), so position the sun there
-        const sunDistance = 50; // Distance from planet center
-        const sunRadius = 5; // Smaller, more realistic size
+        // Sun
+        const sunDistance = 50;
+        const sunRadius = 5;
         const sunGeometry = new THREE.SphereGeometry(sunRadius, 32, 32);
         const sunMaterial = new THREE.MeshBasicMaterial({
             color: 0xffffdd,
-            fog: false // Don't let fog hide the sun
+            fog: false
         });
         const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-        // Position at same direction as sunLight (10, 10, 10)
         sun.position.set(10, 10, 10).normalize().multiplyScalar(sunDistance);
-        planetGroup.add(sun); // Add to planet group so it rotates with planet
+        planetGroup.add(sun);
 
-        // Sun glow - multiple layers for better effect
         const sunGlowGeometry = new THREE.SphereGeometry(sunRadius * 1.6, 32, 32);
         const sunGlowMaterial = new THREE.MeshBasicMaterial({
             color: 0xffdd99,
@@ -393,7 +342,6 @@
         sunGlow.position.copy(sun.position);
         planetGroup.add(sunGlow);
 
-        // Outer sun glow
         const sunGlow2Geometry = new THREE.SphereGeometry(sunRadius * 2.2, 32, 32);
         const sunGlow2Material = new THREE.MeshBasicMaterial({
             color: 0xffbb66,
@@ -405,23 +353,19 @@
         sunGlow2.position.copy(sun.position);
         planetGroup.add(sunGlow2);
 
-        // Moon (will be replaced with Blender asset)
-        // Position on opposite side from sun (in shadow)
-        const moonDistance = 40; // Distance from planet center
-        const moonRadius = 3; // Smaller than sun
+        // Moon
+        const moonDistance = 40;
+        const moonRadius = 3;
         const moonGeometry = new THREE.SphereGeometry(moonRadius, 32, 32);
         const moonMaterial = new THREE.MeshBasicMaterial({
             color: 0xeeeeff,
-            fog: false // Don't let fog hide the moon
+            fog: false
         });
         const moon = new THREE.Mesh(moonGeometry, moonMaterial);
-
-        // Position moon opposite to sun (in the dark/shadow area)
         const sunDirection = new THREE.Vector3(10, 10, 10).normalize();
         moon.position.copy(sunDirection).multiplyScalar(-moonDistance);
-        planetGroup.add(moon); // Add to planet group so it rotates with planet
+        planetGroup.add(moon);
 
-        // Moon glow
         const moonGlowGeometry = new THREE.SphereGeometry(moonRadius * 1.5, 32, 32);
         const moonGlowMaterial = new THREE.MeshBasicMaterial({
             color: 0xccddff,
@@ -433,417 +377,25 @@
         moonGlow.position.copy(moon.position);
         planetGroup.add(moonGlow);
 
-        // Moon light - soft glow (much dimmer than sun)
         const moonLight = new THREE.PointLight(0xaabbdd, 0.8, 100);
         moonLight.position.copy(moon.position);
-        planetGroup.add(moonLight); // Add to planet group
+        planetGroup.add(moonLight);
 
-        // Add subtle directional moonlight for atmosphere
         const moonDirectionalLight = new THREE.DirectionalLight(0x8899cc, 0.25);
         moonDirectionalLight.position.copy(moon.position);
         planetGroup.add(moonDirectionalLight);
 
-        // Helper function to replace placeholder sun with Blender model
-        // Usage example:
-        // loader.load('assets/models/sun.glb', (gltf) => {
-        //     replaceSunWithModel(gltf.scene);
-        // });
-        function replaceSunWithModel(model) {
-            // Remove placeholder sun and glows
-            planetGroup.remove(sun, sunGlow, sunGlow2);
-
-            // Position at same location as placeholder sun
-            model.position.copy(sun.position);
-            model.scale.set(1, 1, 1); // Adjust as needed
-
-            // Make it emissive/glowing
-            model.traverse((child) => {
-                if (child.isMesh && child.material) {
-                    child.material.emissive = new THREE.Color(0xffffdd);
-                    child.material.emissiveIntensity = 1;
-                    child.material.fog = false;
-                }
-            });
-
-            planetGroup.add(model);
-        }
-
-        // Helper function to replace placeholder moon with Blender model
-        // Usage example:
-        // loader.load('assets/models/moon.glb', (gltf) => {
-        //     replaceMoonWithModel(gltf.scene);
-        // });
-        function replaceMoonWithModel(model) {
-            // Remove placeholder moon and glow
-            planetGroup.remove(moon, moonGlow);
-
-            // Position at same location as placeholder moon
-            model.position.copy(moon.position);
-            model.scale.set(1, 1, 1); // Adjust as needed
-
-            // Make it slightly emissive
-            model.traverse((child) => {
-                if (child.isMesh && child.material) {
-                    child.material.emissive = new THREE.Color(0xccddff);
-                    child.material.emissiveIntensity = 0.3;
-                    child.material.fog = false;
-                }
-            });
-
-            planetGroup.add(model);
-
-            // Keep the moon lights for atmosphere
-            moonLight.position.copy(model.position);
-            moonDirectionalLight.position.copy(model.position);
-        }
-
-        // Obstacles (will be replaced with Blender assets)
-        const obstacles = [];
-
-        // Helper function to add obstacle from loaded model
-        // Usage example:
-        // loader.load('assets/models/tree.glb', (gltf) => {
-        //     const position = new THREE.Vector3(x, y, z); // Position on planet surface
-        //     addObstacleFromModel(gltf.scene, position);
-        // });
-        function addObstacleFromModel(model, position) {
-            model.position.copy(position);
-
-            // Point obstacle "up" from planet center
-            const upDirection = position.clone().normalize();
-            model.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), upDirection);
-
-            model.castShadow = true;
-            model.receiveShadow = true;
-            model.traverse((child) => {
-                if (child.isMesh) {
-                    child.castShadow = true;
-                    child.receiveShadow = true;
-                }
-            });
-
-            planetGroup.add(model);
-
-            // Calculate bounding box from the entire model (works with any Blender model)
-            const box = new THREE.Box3().setFromObject(model);
-            const size = new THREE.Vector3();
-            box.getSize(size);
-
-            // Store obstacle data for collision detection
-            obstacles.push({
-                mesh: model,
-                position: position.clone(),
-                radius: Math.max(size.x, size.z) / 2, // Horizontal collision radius
-                height: size.y,
-                boundingBox: box
-            });
-        }
-
-        // Interactive Signs System
-        const signs = [];
-
-        // Helper function to create interactive sign with text box
-        function createInteractiveSign(position, text) {
-            const signGroup = new THREE.Group();
-
-            // Create sign post (placeholder - will be replaced with Blender model)
-            const postGeometry = new THREE.CylinderGeometry(0.05, 0.05, 1.5, 8);
-            const postMaterial = new THREE.MeshStandardMaterial({ color: 0x8B4513 });
-            const post = new THREE.Mesh(postGeometry, postMaterial);
-            post.position.y = 0.75;
-            signGroup.add(post);
-
-            // Create sign board
-            const signGeometry = new THREE.BoxGeometry(0.8, 0.5, 0.05);
-            const signMaterial = new THREE.MeshStandardMaterial({ color: 0xF4A460 });
-            const signBoard = new THREE.Mesh(signGeometry, signMaterial);
-            signBoard.position.y = 1.5;
-            signGroup.add(signBoard);
-
-            // Create indicator (small glowing sphere that pulses)
-            const indicatorGeometry = new THREE.SphereGeometry(0.1, 16, 16);
-            const indicatorMaterial = new THREE.MeshBasicMaterial({
-                color: 0x00ff00,
-                transparent: true,
-                opacity: 0.8
-            });
-            const indicator = new THREE.Mesh(indicatorGeometry, indicatorMaterial);
-            indicator.position.y = 1.8;
-            signGroup.add(indicator);
-
-            // Position sign on planet surface
-            signGroup.position.copy(position);
-
-            // Point sign "up" from planet center
-            const upDirection = position.clone().normalize();
-            signGroup.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), upDirection);
-
-            signGroup.castShadow = true;
-            signGroup.receiveShadow = true;
-
-            planetGroup.add(signGroup);
-
-            // Create text box (CSS-based, will be added to DOM)
-            const textBox = document.createElement('div');
-            textBox.className = 'sign-text-box';
-            textBox.style.cssText = `
-                position: absolute;
-                background: rgba(0, 0, 0, 0.7);
-                color: white;
-                padding: 15px 20px;
-                border-radius: 10px;
-                font-family: Arial, sans-serif;
-                font-size: 16px;
-                max-width: 300px;
-                pointer-events: none;
-                display: none;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-                transition: opacity 0.3s ease;
-                z-index: 100;
-            `;
-            textBox.textContent = text;
-            document.body.appendChild(textBox);
-
-            // Store sign data
-            signs.push({
-                group: signGroup,
-                position: position.clone(),
-                indicator: indicator,
-                textBox: textBox,
-                text: text,
-                isActive: false,
-                pulsePhase: Math.random() * Math.PI * 2, // Random starting phase for pulse
-                interactionRadius: 3.0 // Distance at which text appears
-            });
-        }
-
-        // Helper function to replace sign with Blender model
-        // Usage example:
-        // loader.load('assets/models/sign.glb', (gltf) => {
-        //     replaceSignWithModel(signs[0], gltf.scene);
-        // });
-        function replaceSignWithModel(signData, model) {
-            // Remove placeholder sign visuals (keep the group for positioning)
-            signData.group.clear();
-
-            // Add Blender model
-            model.scale.set(1, 1, 1);
-            model.castShadow = true;
-            model.receiveShadow = true;
-            model.traverse((child) => {
-                if (child.isMesh) {
-                    child.castShadow = true;
-                    child.receiveShadow = true;
-                }
-            });
-
-            signData.group.add(model);
-
-            // Re-add the indicator (keep it visible)
-            signData.group.add(signData.indicator);
-        }
-
         // Cloud system
-        const cloudModelPaths = [
-            'assets/models/cloud1.glb',
-            'assets/models/cloud2.glb',
-            'assets/models/cloud3.glb',
-            'assets/models/cloud4.glb'
-        ];
-
-        const loader = new GLTFLoader();
         const cloudGroup = new THREE.Group();
-        planetGroup.add(cloudGroup); // Clouds rotate with planet
+        planetGroup.add(cloudGroup);
 
-        // Configuration
-        const numClouds = 6;
-        const cloudHeightAboveSurface = 5; // Units above planet surface (increased from 2)
-        const cloudHeight = planetRadius + cloudHeightAboveSurface;
-        const minCloudDistance = 12; // Minimum distance between clouds (increased for fewer, larger clouds)
+        const cloudAnimations = [];
+        const rainClouds = [];
 
-        // Helper function to check if position is far enough from existing clouds
-        function isPositionValid(newPos, existingPositions, minDist) {
-            for (let existingPos of existingPositions) {
-                if (newPos.distanceTo(existingPos) < minDist) {
-                    return false;
-                }
-            }
-            return true;
-        }
+        // Camera setup
+        const cameraDistance = 1.5;
+        const cameraHeight = 1.2; // Lifted higher
 
-        const cloudPositions = []; // Track all cloud positions for spacing
-
-        // Rain particle system setup
-        const rainClouds = []; // Track which clouds have rain
-        const cloudAnimations = []; // Track cloud animation data
-
-        function createRainParticles(cloudPosition) {
-            const rainGroup = new THREE.Group();
-
-            const particleCount = 300;
-            const particles = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-
-            // Initialize rain particles starting from cloud position
-            for (let i = 0; i < particleCount; i++) {
-                positions[i * 3] = (Math.random() - 0.5) * 1.5; // X spread
-                positions[i * 3 + 1] = -Math.random() * 5; // Y (falling down, longer range)
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 1.5; // Z spread
-            }
-
-            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-            const rainMaterial = new THREE.PointsMaterial({
-                color: 0x8888ff,
-                size: 0.05,
-                transparent: true,
-                opacity: 0.6
-            });
-
-            const rain = new THREE.Points(particles, rainMaterial);
-            rainGroup.add(rain);
-            rainGroup.position.copy(cloudPosition);
-
-            // Store the direction toward planet center for this rain system
-            const directionToPlanet = cloudPosition.clone().normalize().multiplyScalar(-1);
-
-            return {
-                group: rainGroup,
-                particles: particles,
-                cloudPosition: cloudPosition.clone(),
-                directionToPlanet: directionToPlanet
-            };
-        }
-
-        // Create clouds at random positions
-        for (let i = 0; i < numClouds; i++) {
-            // Random model from list
-            const randomModelPath = cloudModelPaths[Math.floor(Math.random() * cloudModelPaths.length)];
-
-            // Find valid position with enough spacing
-            let cloudPos;
-            let attempts = 0;
-            do {
-                const theta = Math.random() * Math.PI * 2; // Longitude
-                const phi = Math.random() * Math.PI; // Latitude
-
-                const x = cloudHeight * Math.sin(phi) * Math.cos(theta);
-                const y = cloudHeight * Math.cos(phi);
-                const z = cloudHeight * Math.sin(phi) * Math.sin(theta);
-
-                cloudPos = new THREE.Vector3(x, y, z);
-                attempts++;
-            } while (!isPositionValid(cloudPos, cloudPositions, minCloudDistance) && attempts < 100);
-
-            cloudPositions.push(cloudPos.clone());
-
-            // Random orbital direction (perpendicular to radial direction)
-            const radialDir = cloudPos.clone().normalize();
-            const arbitraryVec = Math.abs(radialDir.y) < 0.9 ? new THREE.Vector3(0, 1, 0) : new THREE.Vector3(1, 0, 0);
-            const orbitalAxis = new THREE.Vector3().crossVectors(radialDir, arbitraryVec).normalize();
-            const orbitalSpeed = 0.005 + Math.random() * 0.005; // Very slow orbital speed (10x slower)
-
-            // 30% chance this cloud will have rain
-            const hasRain = Math.random() < 0.3;
-
-            // Load cloud model
-            loader.load(
-                randomModelPath,
-                (gltf) => {
-                    const cloud = gltf.scene;
-                    cloud.position.copy(cloudPos);
-
-                    // Point cloud "up" from planet center
-                    cloud.lookAt(0, 0, 0);
-                    cloud.rotateX(Math.PI); // Flip to face outward
-
-                    // Random scale variation - much larger clouds
-                    const scale = 1.5 + Math.random() * 1.5; // 1.5 to 3.0 (3x to 6x larger)
-                    cloud.scale.set(scale, scale, scale);
-
-                    // Random rotation around up axis
-                    cloud.rotateY(Math.random() * Math.PI * 2);
-
-                    // Darken rain clouds
-                    if (hasRain) {
-                        cloud.traverse((child) => {
-                            if (child.isMesh && child.material) {
-                                child.material = child.material.clone();
-                                child.material.color.multiplyScalar(0.6); // Darken
-                            }
-                        });
-                    }
-
-                    cloudGroup.add(cloud);
-
-                    // Add rain particles if this is a rain cloud
-                    let rainSystem = null;
-                    if (hasRain) {
-                        rainSystem = createRainParticles(cloudPos);
-                        planetGroup.add(rainSystem.group);
-                        rainClouds.push(rainSystem);
-                    }
-
-                    // Store cloud animation data with rain link
-                    cloudAnimations.push({
-                        cloud: cloud,
-                        basePosition: cloudPos.clone(),
-                        phase: Math.random() * Math.PI * 2, // Random starting phase
-                        speed: 0.3 + Math.random() * 0.3, // Random bounce speed variation
-                        orbitalAxis: orbitalAxis,
-                        orbitalSpeed: orbitalSpeed,
-                        orbitalAngle: 0,
-                        rainSystem: rainSystem // Link rain to cloud
-                    });
-                },
-                undefined,
-                (error) => {
-                    console.warn(`Failed to load cloud model ${randomModelPath}:`, error);
-                    // Fallback: create simple placeholder cloud
-                    const cloudGeometry = new THREE.SphereGeometry(0.8, 8, 8);
-                    const cloudMaterial = new THREE.MeshStandardMaterial({
-                        color: hasRain ? 0x888888 : 0xffffff,
-                        transparent: true,
-                        opacity: 0.7,
-                        roughness: 1
-                    });
-                    const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
-                    cloud.position.copy(cloudPos);
-                    // Random scale variation - much larger clouds
-                    const scale = 1.5 + Math.random() * 1.5; // 1.5 to 3.0
-                    cloud.scale.set(scale, scale * 0.6, scale); // Flatten slightly
-                    cloudGroup.add(cloud);
-
-                    // Add rain particles if this is a rain cloud
-                    let rainSystem = null;
-                    if (hasRain) {
-                        rainSystem = createRainParticles(cloudPos);
-                        planetGroup.add(rainSystem.group);
-                        rainClouds.push(rainSystem);
-                    }
-
-                    // Store cloud animation data with rain link
-                    cloudAnimations.push({
-                        cloud: cloud,
-                        basePosition: cloudPos.clone(),
-                        phase: Math.random() * Math.PI * 2,
-                        speed: 0.3 + Math.random() * 0.3,
-                        orbitalAxis: orbitalAxis,
-                        orbitalSpeed: orbitalSpeed,
-                        orbitalAngle: 0,
-                        rainSystem: rainSystem // Link rain to cloud
-                    });
-                }
-            );
-        }
-
-        // Camera setup - locked third-person (much closer)
-        const cameraDistance = 1.2; // Closer to character
-        const cameraHeight = 0.6;
-        const cameraAngle = Math.PI; // Camera behind character
-
-        // Set initial camera position
         camera.position.set(0, spawnHeight + cameraHeight, -cameraDistance);
         camera.lookAt(0, spawnHeight, 0);
 
@@ -856,43 +408,36 @@
             space: false
         };
 
-        // Physics/Gravity system
+        // Physics
         const physics = {
             velocity: new THREE.Vector3(0, 0, 0),
-            gravity: 20.0, // Gravity strength (pulls toward planet center)
+            gravity: 20.0,
             isGrounded: false,
             jumpForce: 5.0,
-            characterRadius: 0.075 // Collision detection radius (half size)
+            characterRadius: 0.1
         };
 
-        // Raycaster for collision detection
         const raycaster = new THREE.Raycaster();
         const downVector = new THREE.Vector3(0, -1, 0);
 
         let introActive = true;
 
-        // Handle Enter key to start game
         window.addEventListener('keydown', (e) => {
             const key = e.key.toLowerCase();
 
-            // Start game on Enter
             if (e.key === 'Enter' && introActive) {
                 introActive = false;
                 document.getElementById('intro-screen').classList.add('fade-out');
-
-                // Remove intro screen after fade
                 setTimeout(() => {
                     document.getElementById('intro-screen').style.display = 'none';
                 }, 1000);
                 return;
             }
 
-            // Normal key handling for gameplay
             if (key in keys && !introActive) {
                 keys[key] = true;
             }
 
-            // Jump with spacebar
             if (e.code === 'Space' && !introActive && physics.isGrounded) {
                 physics.velocity.y = physics.jumpForce;
                 physics.isGrounded = false;
@@ -905,20 +450,17 @@
             if (e.code === 'Space') keys.space = false;
         });
 
-        // Handle window resize
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Animation loop - simulate walking on sphere surface
-        const moveSpeed = 0.0015; // Half speed
-        const turnSpeed = 0.0075; // Half speed turning
-        let characterRotation = 0; // Which direction character faces (yaw)
-
-        // Day/night cycle
-        const dayNightSpeed = 0.005; // Rotation speed for sun/moon (very slow to prevent disorienting shadows)
+        // Animation loop
+        const moveSpeed = 0.0008; // Slowed down character movement
+        const turnSpeed = 0.006; // Turn speed slightly increased
+        let characterRotation = 0;
+        const dayNightSpeed = 0.05; // Increased for testing
         let dayNightAngle = 0;
         
         const clock = new THREE.Clock();
@@ -929,102 +471,42 @@
             const deltaTime = clock.getDelta();
             const time = clock.getElapsedTime();
 
-            // Character animation - walking cycle
-            if (animationState.isWalking) {
-                // Advance walk cycle
-                animationState.walkCycle += deltaTime * animationState.walkSpeed;
+            // Update animation mixer
+            if (mixer && characterLoaded) {
+                mixer.update(deltaTime);
 
-                // Walking animations using sine waves for smooth motion
-                const cycle = animationState.walkCycle;
-
-                // Head bob (up and down)
-                characterParts.head.position.y = 0.33 + Math.sin(cycle * 2) * animationState.headBobAmount;
-
-                // Arm swing (opposite to legs)
-                characterParts.leftArm.rotation.x = Math.sin(cycle) * animationState.armSwingAmount;
-                characterParts.rightArm.rotation.x = Math.sin(cycle + Math.PI) * animationState.armSwingAmount;
-
-                // Leg swing (walking motion)
-                characterParts.leftLeg.rotation.x = Math.sin(cycle) * animationState.legSwingAmount;
-                characterParts.rightLeg.rotation.x = Math.sin(cycle + Math.PI) * animationState.legSwingAmount;
-
-                // Slight body lean forward while walking
-                characterParts.body.rotation.x = Math.sin(cycle * 2) * 0.05;
-            } else {
-                // Idle pose - reset to neutral with smooth transition
-                characterParts.head.position.y += (0.33 - characterParts.head.position.y) * 0.1;
-                characterParts.leftArm.rotation.x *= 0.9;
-                characterParts.rightArm.rotation.x *= 0.9;
-                characterParts.leftLeg.rotation.x *= 0.9;
-                characterParts.rightLeg.rotation.x *= 0.9;
-                characterParts.body.rotation.x *= 0.9;
-            }
-
-            // Animate clouds - orbital movement and subtle bounce
-            cloudAnimations.forEach((cloudAnim) => {
-                const { cloud, basePosition, phase, speed, orbitalAxis, orbitalSpeed, rainSystem } = cloudAnim;
-
-                // Update orbital angle
-                cloudAnim.orbitalAngle += orbitalSpeed * deltaTime;
-
-                // Calculate new orbital position by rotating base position around orbital axis
-                const rotationQuat = new THREE.Quaternion();
-                rotationQuat.setFromAxisAngle(orbitalAxis, cloudAnim.orbitalAngle);
-
-                const orbitedPosition = basePosition.clone().applyQuaternion(rotationQuat);
-
-                // Calculate bounce offset (radial movement toward/away from planet center)
-                const bounceAmount = Math.sin(time * speed + phase) * 0.15;
-                const radialDirection = orbitedPosition.clone().normalize();
-
-                // Apply bounce by moving along the radial direction
-                const newPosition = orbitedPosition.clone().add(
-                    radialDirection.multiplyScalar(bounceAmount)
-                );
-
-                cloud.position.copy(newPosition);
-
-                // Update rain system position to follow the cloud
-                if (rainSystem) {
-                    rainSystem.group.position.copy(newPosition);
-                    rainSystem.cloudPosition.copy(newPosition);
-                    // Update direction to planet for rain
-                    rainSystem.directionToPlanet = newPosition.clone().normalize().multiplyScalar(-1);
-                }
-            });
-
-            // Animate rain particles - fall toward planet center
-            rainClouds.forEach((rainSystem) => {
-                const positions = rainSystem.particles.attributes.position.array;
-                const { directionToPlanet } = rainSystem;
-
-                for (let i = 0; i < positions.length; i += 3) {
-                    // Move particles toward planet center
-                    positions[i] += directionToPlanet.x * deltaTime * 3;
-                    positions[i + 1] += directionToPlanet.y * deltaTime * 3;
-                    positions[i + 2] += directionToPlanet.z * deltaTime * 3;
-
-                    // Check distance from cloud origin
-                    const dx = positions[i];
-                    const dy = positions[i + 1];
-                    const dz = positions[i + 2];
-                    const distanceFromCloud = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                    // Reset particle when it falls too far (8 units from cloud)
-                    if (distanceFromCloud > 8) {
-                        positions[i] = (Math.random() - 0.5) * 1.5;
-                        positions[i + 1] = (Math.random() - 0.5) * 0.5;
-                        positions[i + 2] = (Math.random() - 0.5) * 1.5;
+                // Handle walk/idle transitions
+                if (walkAction && idleAction) {
+                    if (animationState.isWalking) {
+                        // Switch to walk
+                        if (idleAction.isRunning() && !walkAction.isRunning()) {
+                            idleAction.fadeOut(0.2);
+                            walkAction.reset().fadeIn(0.2).play();
+                        }
+                    } else {
+                        // Switch to idle
+                        if (walkAction.isRunning() && !idleAction.isRunning()) {
+                            walkAction.fadeOut(0.2);
+                            idleAction.reset().fadeIn(0.2).play();
+                        }
+                    }
+                } else if (walkAction) {
+                    // Only walk animation available
+                    if (animationState.isWalking) {
+                        if (!walkAction.isRunning()) {
+                            walkAction.play();
+                        }
+                    } else {
+                        if (walkAction.isRunning()) {
+                            walkAction.stop();
+                        }
                     }
                 }
+            }
 
-                rainSystem.particles.attributes.position.needsUpdate = true;
-            });
-
-            // Day/night cycle - rotate sun and moon around planet
+            // Day/night cycle
             dayNightAngle += dayNightSpeed * deltaTime;
 
-            // Calculate new sun position (rotates around X-axis)
             const sunRotationAxis = new THREE.Vector3(1, 0, 0);
             const sunBasePosition = new THREE.Vector3(10, 10, 10).normalize().multiplyScalar(sunDistance);
             sun.position.copy(sunBasePosition);
@@ -1033,101 +515,36 @@
             sunGlow2.position.copy(sun.position);
             sunLight.position.copy(sun.position);
 
-            // Make sun light always point at planet center for proper shadows
             sunLight.target.position.set(0, 0, 0);
             sunLight.target.updateMatrixWorld();
 
-            // Moon is opposite to sun
             moon.position.copy(sun.position).multiplyScalar(-1);
             moonGlow.position.copy(moon.position);
             moonLight.position.copy(moon.position);
             moonDirectionalLight.position.copy(moon.position);
 
-            // Make moon light point at planet center too
             moonDirectionalLight.target.position.set(0, 0, 0);
             moonDirectionalLight.target.updateMatrixWorld();
 
-            // Update atmosphere shader with current sun direction
-            // Get sun's world position (accounting for planetGroup rotation)
             const sunWorldPos = new THREE.Vector3();
             sun.getWorldPosition(sunWorldPos);
             const sunDir = sunWorldPos.normalize();
             atmosphereMaterial.uniforms.sunDirection.value.copy(sunDir);
 
-            // Animate interactive signs
-            signs.forEach((signData) => {
-                // Pulse indicator animation
-                signData.pulsePhase += deltaTime * 2;
-                const pulse = Math.sin(signData.pulsePhase) * 0.5 + 0.5;
-                signData.indicator.scale.setScalar(1 + pulse * 0.3);
-                signData.indicator.material.opacity = 0.6 + pulse * 0.4;
-
-                // Only check for interactions after intro is complete
-                if (!introActive) {
-                    // Get sign world position (accounting for planet rotation)
-                    signData.group.updateMatrixWorld();
-                    const signWorldPos = new THREE.Vector3();
-                    signData.group.getWorldPosition(signWorldPos);
-
-                    // Character is at (0, characterDistance, 0) in world space
-                    const characterPos = new THREE.Vector3(0, characterDistance, 0);
-
-                    // Calculate distance between character and sign
-                    const distance = characterPos.distanceTo(signWorldPos);
-
-                    // Check if in range
-                    const inRange = distance < signData.interactionRadius;
-
-                    // Show/hide text box based on range
-                    if (inRange && !signData.isActive) {
-                        signData.textBox.style.display = 'block';
-                        signData.isActive = true;
-                    } else if (!inRange && signData.isActive) {
-                        signData.textBox.style.display = 'none';
-                        signData.isActive = false;
-                    }
-
-                    // Position text box in screen space above sign
-                    if (signData.isActive) {
-                        // Position above the sign
-                        const textBoxPos = signWorldPos.clone();
-                        textBoxPos.y += 2.5; // Above the sign
-
-                        // Project to screen space
-                        textBoxPos.project(camera);
-
-                        // Convert to pixel coordinates
-                        const x = (textBoxPos.x * 0.5 + 0.5) * window.innerWidth;
-                        const y = (-textBoxPos.y * 0.5 + 0.5) * window.innerHeight;
-
-                        // Position text box (centered above sign)
-                        signData.textBox.style.left = x + 'px';
-                        signData.textBox.style.top = y + 'px';
-                        signData.textBox.style.transform = 'translate(-50%, -100%)';
-                    }
-                }
-            });
-
-
-            // Normal gameplay after intro
+            // Gameplay
             if (!introActive) {
-                // Apply gravity
                 physics.velocity.y -= physics.gravity * deltaTime;
-
-                // Calculate new position
                 const newY = characterGroup.position.y + physics.velocity.y * deltaTime;
 
-                // Raycast downward from character's feet position to detect ground
                 const rayOrigin = new THREE.Vector3(
                     characterGroup.position.x,
-                    characterGroup.position.y - characterHeight + 0.05, // Start ray from feet
+                    characterGroup.position.y, // Start from character center
                     characterGroup.position.z
                 );
 
                 raycaster.set(rayOrigin, downVector);
-                raycaster.far = 50; // Long raycast to detect ground far below
+                raycaster.far = 50;
 
-                // Get all meshes in the planet group for collision
                 const collisionMeshes = [];
                 planetGroup.traverse((child) => {
                     if (child.isMesh) {
@@ -1138,37 +555,33 @@
                 const intersects = raycaster.intersectObjects(collisionMeshes, false);
 
                 if (intersects.length > 0) {
-                    // Found ground below feet
                     const groundY = intersects[0].point.y;
-                    // Character position should be groundY + characterHeight (since position is at center)
-                    const targetY = groundY + characterHeight;
-                    const feetY = characterGroup.position.y - characterHeight;
-                    const distanceToGround = feetY - groundY;
-
-                    // Small tolerance for being "on ground" (prevents floating)
-                    const groundTolerance = 0.02;
+                    // Offset character slightly above ground to prevent clipping
+                    const groundOffset = 0.028;
+                    const targetY = groundY + groundOffset;
+                    const distanceToGround = characterGroup.position.y - groundY;
+                    const groundTolerance = 0.1;
 
                     if (distanceToGround <= groundTolerance && physics.velocity.y <= 0) {
-                        // We're on or very close to the ground, snap to it
                         characterGroup.position.y = targetY;
                         physics.velocity.y = 0;
                         physics.isGrounded = true;
                     } else {
-                        // Still in air, apply velocity
                         characterGroup.position.y = newY;
                         physics.isGrounded = false;
                     }
                 } else {
-                    // No ground detected, keep falling
                     characterGroup.position.y = newY;
                     physics.isGrounded = false;
                 }
 
-                // Keep character centered at origin (only Y position changes, planet rotates beneath)
+                // Update coordinates display
+                document.getElementById('coordinates').textContent =
+                    `Position: (${characterGroup.position.x.toFixed(2)}, ${characterGroup.position.y.toFixed(2)}, ${characterGroup.position.z.toFixed(2)})`;
+
                 characterGroup.position.x = 0;
                 characterGroup.position.z = 0;
 
-                // Handle rotation with A/D keys (turn character left/right)
                 if (keys.a) {
                     characterRotation += turnSpeed;
                 }
@@ -1176,40 +589,29 @@
                     characterRotation -= turnSpeed;
                 }
 
-                // Update character's visual rotation
                 characterGroup.rotation.y = characterRotation;
 
-                // Handle forward/backward movement with W/S
-                // This simulates walking on the sphere surface
                 if (keys.w || keys.s) {
-                    // Set walking animation state
                     animationState.isWalking = true;
 
-                    const direction = keys.w ? -1 : 1; // W = backward, S = forward
+                    const direction = keys.w ? -1 : 1;
 
-                    // Calculate the forward direction in world space based on character rotation
                     const forwardWorld = new THREE.Vector3(
                         Math.sin(characterRotation),
                         0,
                         Math.cos(characterRotation)
                     );
 
-                    // To simulate walking forward on a sphere:
-                    // We rotate the planet around an axis perpendicular to the movement direction
-                    // The axis is the cross product of "up" (Y) and the forward direction
                     const rotationAxis = new THREE.Vector3().crossVectors(
-                        new THREE.Vector3(0, 1, 0), // up
+                        new THREE.Vector3(0, 1, 0),
                         forwardWorld
                     ).normalize();
 
-                    // Create rotation around this axis
                     const rotation = new THREE.Quaternion();
                     rotation.setFromAxisAngle(rotationAxis, direction * moveSpeed);
 
-                    // Check for obstacles ahead (prevent walking up steps)
                     let collision = false;
 
-                    // Raycast forward to check for steps/walls
                     const forwardRayOrigin = new THREE.Vector3(0, characterGroup.position.y, 0);
                     const forwardDirection = new THREE.Vector3(
                         -Math.sin(characterRotation) * direction,
@@ -1217,37 +619,34 @@
                         -Math.cos(characterRotation) * direction
                     );
 
-                    const forwardRaycaster = new THREE.Raycaster(forwardRayOrigin, forwardDirection, 0, 0.3);
+                    const forwardRaycaster = new THREE.Raycaster(forwardRayOrigin, forwardDirection, 0, 0.2);
                     const forwardIntersects = forwardRaycaster.intersectObjects(collisionMeshes, false);
 
                     if (forwardIntersects.length > 0) {
-                        // Check if there's a step/obstacle ahead
                         const obstacleHeight = forwardIntersects[0].point.y;
+                        const obstacleDistance = forwardIntersects[0].distance;
                         const stepHeight = obstacleHeight - (characterGroup.position.y - characterHeight);
 
-                        // If step is higher than 0.1 units, require jump (no auto step-up)
-                        if (stepHeight > 0.1) {
+                        // Block if obstacle is tall (like a wall) or close enough to prevent arm clipping
+                        if (stepHeight > 0.05 || obstacleDistance < 0.15) {
                             collision = true;
                         }
                     }
 
-                    // Only apply rotation if no collision
                     if (!collision) {
                         planetGroup.quaternion.multiplyQuaternions(rotation, planetGroup.quaternion);
                     }
                 } else {
-                    // Not moving - stop walking animation
                     animationState.isWalking = false;
                 }
 
-                // Update camera position to follow character's POV (behind and rotated with character)
+                // Update camera
                 const cameraOffsetLocal = new THREE.Vector3(0, cameraHeight, -cameraDistance);
                 const cameraOffsetWorld = cameraOffsetLocal.clone();
                 cameraOffsetWorld.applyAxisAngle(new THREE.Vector3(0, 1, 0), characterRotation);
 
                 camera.position.copy(characterGroup.position).add(cameraOffsetWorld);
 
-                // Look at point slightly above and in front of character (following their direction)
                 const lookAtOffset = new THREE.Vector3(0, characterHeight, 1);
                 lookAtOffset.applyAxisAngle(new THREE.Vector3(0, 1, 0), characterRotation);
                 const lookAtPoint = characterGroup.position.clone().add(lookAtOffset);
