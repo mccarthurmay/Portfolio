@@ -153,7 +153,7 @@
         const ambientLight = new THREE.AmbientLight(0x808080, 3.0); // Increased for brighter nighttime
         scene.add(ambientLight);
 
-        const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
+        const sunLight = new THREE.DirectionalLight(0xffffff, 3.0); // Increased from 2.0 to 3.0 for brighter sunlight
         sunLight.position.set(10, 10, 10);
         sunLight.castShadow = true;
         sunLight.shadow.camera.left = -30;
@@ -440,7 +440,12 @@
 
         // Stars background
         const starsGeometry = new THREE.BufferGeometry();
-        const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
+        const starsMaterial = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.1,
+            transparent: true,
+            opacity: 1.0
+        });
         const starsVertices = [];
         for (let i = 0; i < 1000; i++) {
             const x = (Math.random() - 0.5) * 100;
@@ -459,7 +464,7 @@
                 sunDirection: { value: new THREE.Vector3(1, 1, 1).normalize() },
                 dayColor: { value: new THREE.Color(0x87CEEB) },
                 nightColor: { value: new THREE.Color(0x000000) },
-                horizonColor: { value: new THREE.Color(0xFFB347) }
+                horizonColor: { value: new THREE.Color(0xFF8C00) }
             },
             vertexShader: `
                 varying vec3 vNormal;
@@ -482,11 +487,40 @@
                     vec3 normal = normalize(vPosition);
                     float sunAlignment = dot(normal, sunDirection);
                     float dayStrength = smoothstep(-0.3, 0.3, sunAlignment);
+
+                    // More realistic horizon gradient - based on viewing angle
+                    float horizonFade = abs(normal.y); // 0 at horizon, 1 at zenith/nadir
+                    horizonFade = pow(horizonFade, 0.6); // Gentle curve for atmospheric depth
+
+                    // Only show orange horizon during sunrise/sunset (transition periods)
+                    // When dayStrength is 0.5, we're at the horizon line (sun rising/setting)
+                    float transitionStrength = 1.0 - abs(dayStrength - 0.5) * 2.0; // 1.0 at sunset/sunrise, 0.0 at full day/night
+                    transitionStrength = smoothstep(0.0, 0.5, transitionStrength); // Smooth the transition
+
+                    // Horizon glow around sun (only during transitions)
                     float horizonGlow = 1.0 - abs(sunAlignment);
-                    horizonGlow = pow(horizonGlow, 3.0) * dayStrength;
-                    vec3 skyColor = mix(nightColor, dayColor, dayStrength);
-                    skyColor = mix(skyColor, horizonColor, horizonGlow * 0.5);
+                    horizonGlow = pow(horizonGlow, 2.0) * transitionStrength * (1.0 - horizonFade * 0.7);
+
+                    // Sky gradient from horizon to zenith
+                    vec3 zenithColor = dayColor;
+                    vec3 horizonSkyColor = mix(horizonColor, dayColor, 0.3 + (1.0 - transitionStrength) * 0.7); // Less orange during full day
+                    vec3 skyColor = mix(horizonSkyColor, zenithColor, horizonFade);
+
+                    // Blend with night
+                    skyColor = mix(nightColor, skyColor, dayStrength);
+
+                    // Add warm glow near horizon where sun is (only during transitions)
+                    skyColor = mix(skyColor, horizonColor, horizonGlow * 0.6);
+
+                    // Add sun disc directly to the atmosphere
+                    float sunProximity = max(0.0, sunAlignment);
+                    float sunDisc = pow(sunProximity, 150.0); // Sharp disc
+                    vec3 sunColor = vec3(1.0, 0.95, 0.8); // Warm yellow-white sun
+                    skyColor = mix(skyColor, sunColor, sunDisc * dayStrength);
+
+                    // Fully opaque atmosphere
                     float alpha = dayStrength * 0.9 + 0.1;
+
                     gl_FragColor = vec4(skyColor, alpha);
                 }
             `,
@@ -849,6 +883,12 @@
             // Normalize to get direction from planet center (0,0,0) to sun
             const sunDir = sunWorldPos.clone().sub(new THREE.Vector3(0, 0, 0)).normalize();
             atmosphereMaterial.uniforms.sunDirection.value.copy(sunDir);
+
+            // Fade stars based on sun position (day/night)
+            // When sun is above horizon (y > 0), fade out stars
+            const sunY = sun.position.y;
+            const dayNightTransition = Math.max(0, Math.min(1, (sunY + 10) / 20)); // Smooth transition
+            starsMaterial.opacity = 1.0 - dayNightTransition; // 0 during day, 1 during night
 
             // Gameplay
             if (!introActive) {
