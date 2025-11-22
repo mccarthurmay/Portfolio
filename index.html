@@ -14,25 +14,57 @@
             display: block;
         }
         #info {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            color: white;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 14px;
+            display: none;
         }
         #coordinates {
+            display: none;
+        }
+        #spotify-player {
             position: absolute;
             bottom: 10px;
-            left: 10px;
-            color: white;
-            background: rgba(0, 0, 0, 0.7);
+            right: 10px;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.3);
             padding: 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: monospace;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        #spotify-player.minimized {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            background: transparent;
+            backdrop-filter: none;
+            overflow: hidden;
+        }
+        #spotify-toggle {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 6px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+        #spotify-toggle:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        #spotify-iframe {
+            transition: opacity 0.3s ease;
+        }
+        #spotify-player.minimized #spotify-iframe {
+            opacity: 0;
+            pointer-events: none;
         }
         .sign-label {
             color: white;
@@ -65,7 +97,19 @@
     <div id="coordinates">
         Position: (0, 0, 0)
     </div>
-    
+
+    <div id="spotify-player">
+        <button id="spotify-toggle" onclick="toggleSpotify(event)">−</button>
+        <iframe id="spotify-iframe" style="border-radius:12px"
+                width="100%"
+                height="180"
+                scrolling="no"
+                frameBorder="0"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinceguaraldiquintet/sets/a-charlie-brown-thanksgiving&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+        </iframe>
+    </div>
+
     <div id="intro-screen">
         <div id="intro-content">
             <h1>Max's World</h1>
@@ -197,14 +241,14 @@
         const signData = {
             'sign1': 'Press enter to teleport back to your crash landing.',
             'sign2': 'These were the base for me to grow my creative interests...',
-            'sign3': 'Walk left to read my life story, right for my professional journey.', // second
+            'sign3': 'Walk left to know my story, right for (the start of) my professional journey.', // second
             'sign4': 'Other interests/hobbies.',
             'sign5': 'This way to see my hobbies/passions.',
             'sign6': 'Then, I started exploring the adirondacks.',
-            "sign7": "Welcome to my world. Please, explore what I've created.", // Start sign
-            'sign8': 'I was born in Guangzhou, China.', // third
-            'sign9': 'We moved to the US. My father had family there.', // left 2
-            'sign10': 'At 18, I got accepted to Colorado College.', // left three
+            "sign7": "WASD to move.", // Start sign
+            'sign8': 'I was born in Guangzhou, China. I only lived there for a short 5 years. We left for the US, my mom making a new life and my dad returning home.', // third
+            'sign9': 'I had a great time growing up. My parents didn\'t like each other too much, but they did their best for me. Timeless memories were made with the friends I met, and now a few will remain life-long.', // left 2
+            'sign10': 'Then, I took a leap of faith going to Colorado College, a small liberal arts school in Colorado Springs. I\'m grateful for who I am today, and it\'s safe to say that these past 3 years have been incredibly transformative. I wouldn\'t be who I am today if not for the people I surrounded myself with and the passions I chose to pursue.', // left three
             'sign11': 'I am now a junior.',
             'sign12': "I'm currently doing research for a professor at the Colorado School of Mines regarding the stigma around mental health.",
             'sign13': "Here's a list of my project: Super mario A* and Theta* Pathfinder in C, Top-Down Adventure Game in Java, Stock Tracker using Alpaca. (a gallery area)",
@@ -217,7 +261,10 @@
             'sign20': 'My love of the outdoors started with kayaking the lakes of NY.',
             'sign21': 'Click the sign to see photography portfolio.',
             'sign22': 'Click the sign to see my videography portfolio.',
-            'sign23': 'Thank You for Visiting!'
+            'sign23': 'Thank You for Visiting!',
+            'sign24': 'Space to Jump',
+            'sign25': 'Middle mouse to enter bird\'s eye view. R to return to player.',
+            'sign26': 'X to reset entirely if you\'re in a pickle.'
         };
 
         // Load the Blender world model
@@ -325,7 +372,12 @@
 
                 // Character height should be at the planet radius + spawn offset
                 const spawnHeight = spawnLocalPos.length();
-                characterGroup.position.set(0, spawnHeight + cubeHeight / 2 + 2.0, 0);
+                const spawnY = spawnHeight + cubeHeight / 2 + 2.0;
+                characterGroup.position.set(0, spawnY, 0);
+
+                // Store spawn state globally for reset
+                window.initialSpawnRotation = spawnRotation.clone();
+                window.initialSpawnY = spawnY;
 
                 console.log(`Character spawned at height: ${characterGroup.position.y.toFixed(2)}`);
             }
@@ -530,6 +582,87 @@
         });
         const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
         scene.add(atmosphere);
+
+        // Low Poly Clouds
+        // Create a single low poly cloud geometry
+        function createLowPolyCloud() {
+            const cloud = new THREE.Group();
+
+            // Create 3-7 spheres with low poly count for puffy cloud look
+            const numPuffs = 3 + Math.floor(Math.random() * 5);
+
+            // Random cloud width factor
+            const widthFactor = 0.5 + Math.random() * 1.5; // 0.5 to 2.0x width
+
+            for (let i = 0; i < numPuffs; i++) {
+                const puffGeometry = new THREE.SphereGeometry(
+                    0.3 + Math.random() * 0.5, // Random size between 0.3 and 0.8
+                    6, // Low poly - 6 segments
+                    5  // Low poly - 5 segments
+                );
+
+                const puffMaterial = new THREE.MeshLambertMaterial({
+                    color: 0xffffff,
+                    flatShading: true // Emphasize low poly look
+                });
+
+                const puff = new THREE.Mesh(puffGeometry, puffMaterial);
+
+                // Position puffs to create cloud shape with variable width
+                puff.position.x = (Math.random() - 0.5) * 1.5 * widthFactor; // Wider spread
+                puff.position.y = (Math.random() - 0.5) * 0.5; // Keep height variation smaller
+                puff.position.z = (Math.random() - 0.5) * 1.5 * widthFactor; // Wider spread
+
+                cloud.add(puff);
+            }
+
+            return cloud;
+        }
+
+        // Generate multiple clouds around the planet
+        const clouds = [];
+        const numClouds = 150;
+
+        for (let i = 0; i < numClouds; i++) {
+            const cloud = createLowPolyCloud();
+
+            // Variable distance from planet - creates layered cloud effect
+            const baseDistance = 16.2;
+            const distanceVariation = Math.random() * 3; // 0 to 3 units variation
+            const cloudDistance = baseDistance + distanceVariation;
+
+            // Random position on sphere around planet
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos(2 * Math.random() - 1);
+
+            cloud.position.x = cloudDistance * Math.sin(phi) * Math.cos(theta);
+            cloud.position.y = cloudDistance * Math.sin(phi) * Math.sin(theta);
+            cloud.position.z = cloudDistance * Math.cos(phi);
+
+            // Look at planet center
+            cloud.lookAt(0, 0, 0);
+
+            // Random scale for variety (smaller clouds farther away)
+            const distanceFactor = (cloudDistance - baseDistance) / 3; // 0 to 1
+            const baseScale = 0.5 + Math.random() * 0.8;
+            const scale = baseScale * (1 - distanceFactor * 0.3); // Farther clouds slightly smaller
+            cloud.scale.set(scale, scale, scale);
+
+            // Store animation data
+            cloud.userData.cloudDistance = cloudDistance; // Store individual distance
+            cloud.userData.rotationSpeed = (Math.random() - 0.5) * 0.001; // Slow rotation
+            cloud.userData.floatOffset = Math.random() * Math.PI * 2; // Random start phase
+            cloud.userData.floatSpeed = 0.0005 + Math.random() * 0.0005;
+            cloud.userData.orbitSpeed = 0.00005 + Math.random() * 0.00005; // Clouds drift around planet
+            cloud.userData.orbitAxis = new THREE.Vector3(
+                Math.random() - 0.5,
+                Math.random() - 0.5,
+                Math.random() - 0.5
+            ).normalize();
+
+            planetGroup.add(cloud);
+            clouds.push(cloud);
+        }
 
         // Sun
         const sunDistance = 50;
@@ -757,6 +890,26 @@
                 console.log('Returned to player-locked camera - state restored');
             }
 
+            // Reset to spawn with 'X' key
+            if (key === 'x' && !introActive) {
+                // Use stored spawn position if available, otherwise use default
+                const resetY = window.initialSpawnY || spawnHeight;
+                characterGroup.position.set(0, resetY, 0);
+                characterRotation = Math.PI;
+                characterGroup.rotation.y = characterRotation;
+                physics.velocity.set(0, 0, 0);
+                physics.isGrounded = false;
+
+                // Reset planet rotation to initial spawn state
+                if (window.initialSpawnRotation) {
+                    planetGroup.quaternion.copy(window.initialSpawnRotation);
+                } else {
+                    planetGroup.quaternion.set(0, 0, 0, 1);
+                }
+
+                console.log('Character reset to spawn position');
+            }
+
             if (key in keys && !introActive) {
                 keys[key] = true;
             }
@@ -794,13 +947,30 @@
             labelRenderer.setSize(window.innerWidth, window.innerHeight);
         });
 
+        // Spotify player toggle
+        window.toggleSpotify = function(event) {
+            event.stopPropagation();
+            event.preventDefault();
+
+            const player = document.getElementById('spotify-player');
+            const toggle = document.getElementById('spotify-toggle');
+
+            if (player.classList.contains('minimized')) {
+                player.classList.remove('minimized');
+                toggle.textContent = '−';
+            } else {
+                player.classList.add('minimized');
+                toggle.textContent = '+';
+            }
+        };
+
         // Animation loop
         const moveSpeed = 0.2; // Movement speed per second (radians)
         const turnSpeed = 2; // Turn speed per second (radians)
         let characterRotation = Math.PI; // Start rotated 180 degrees
         const dayNightSpeed = 0.025; // Day/night cycle speed
         let dayNightAngle = 0;
-        
+
         const clock = new THREE.Clock();
 
         function animate() {
@@ -888,6 +1058,54 @@
             // When sun is above horizon (y > 0), fade out stars
             const sunY = sun.position.y;
             const dayNightTransition = Math.max(0, Math.min(1, (sunY + 10) / 20)); // Smooth transition
+
+            // Animate low poly clouds
+            clouds.forEach(cloud => {
+                // Store the original direction if not already stored
+                if (!cloud.userData.baseDirection) {
+                    cloud.userData.baseDirection = cloud.position.clone().normalize();
+                }
+
+                // Gentle floating motion - only adjust the distance, keep the direction
+                const floatAmount = Math.sin(time * cloud.userData.floatSpeed + cloud.userData.floatOffset) * 0.3;
+                const newDistance = cloud.userData.cloudDistance + floatAmount;
+
+                // Update position while maintaining the base direction
+                cloud.position.copy(cloud.userData.baseDirection).multiplyScalar(newDistance);
+
+                // Orbital drift - slowly rotate the base direction
+                cloud.userData.baseDirection.applyAxisAngle(cloud.userData.orbitAxis, cloud.userData.orbitSpeed);
+
+                // Slow rotation of the cloud itself
+                cloud.rotation.y += cloud.userData.rotationSpeed;
+
+                // Hemisphere-based lighting
+                // Get cloud's world position (not local to planetGroup)
+                const cloudWorldPos = new THREE.Vector3();
+                cloud.getWorldPosition(cloudWorldPos);
+                const cloudDir = cloudWorldPos.clone().normalize();
+
+                // Check if cloud is on day side or night side
+                // Dot product: positive = day side, negative = night side
+                const sunAlignment = cloudDir.dot(sunDir);
+
+                let cloudBrightness;
+                if (sunAlignment > 0) {
+                    // Day hemisphere - cloud is on sun-facing side
+                    // Bright white with subtle variation based on angle
+                    const lightingIntensity = Math.pow(sunAlignment, 0.3); // Softer falloff
+                    cloudBrightness = 0.7 + lightingIntensity * 0.3; // Range: 0.7 to 1.0
+                } else {
+                    // Night hemisphere - cloud is on dark side
+                    cloudBrightness = 0.05; // Very dark, barely visible
+                }
+
+                // Update cloud color
+                cloud.children.forEach(puff => {
+                    puff.material.color.setRGB(cloudBrightness, cloudBrightness, cloudBrightness);
+                });
+            });
+
             starsMaterial.opacity = 1.0 - dayNightTransition; // 0 during day, 1 during night
 
             // Gameplay
