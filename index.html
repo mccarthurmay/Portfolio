@@ -124,8 +124,8 @@
                 <p><strong>WASD</strong> - Move</p>
                 <p><strong>Space</strong> - Jump</p>
                 <p><strong>Mouse</strong> - Look around</p>
-                <p><strong>Middle Mouse</strong> - Bird's eye view</p>
-                <p><strong>R</strong> - Return to player</p>
+                <p><strong>Scroll Wheel</strong> - Zoom in/out</p>
+                <p><strong>F</strong> - Toggle bird's eye view</p>
                 <p><strong>X</strong> - Reset to spawn</p>
             </div>
         </div>
@@ -355,7 +355,7 @@
             'sign6': 'Then, I started exploring the adirondacks.',
             "sign7": "WASD to move.", // Start sign
             'sign8': 'I was born in Guangzhou, China. I only lived there for a short 5 years. We left for the US, my mom making a new life and my dad returning home.', // third
-            'sign9': 'I had a great time growing up. My parents didn\'t like each other too much, but they did the best they could. Timeless memories were made with the friends I met, and now a few will remain life-long.', // left 2
+            'sign9': 'I had a great time growing up. Timeless memories were made with the friends I met, and now a few will remain life-long.', // left 2
             'sign10': 'Then, I took a leap of faith going to Colorado College, a small liberal arts school in Colorado Springs. I\'m grateful for who I am today, and it\'s safe to say that these past 3 years have been incredibly transformative. I wouldn\'t be who I am today if not for the people I surrounded myself with and the passions I chose to pursue.', // left three
             'sign11': 'I am now a junior.',
             'sign12': "I'm currently doing research for a professor at the Colorado School of Mines regarding the stigma around mental health.",
@@ -370,8 +370,8 @@
             'sign21': 'Click the sign to see photography portfolio.',
             'sign22': 'Click the sign to see my videography portfolio.',
             'sign23': 'Thank You for Visiting!',
-            'sign24': 'Space to Jump',
-            'sign25': 'Middle mouse to enter bird\'s eye view. R to return to player.',
+            'sign24': 'Space to Jump. Scroll wheel to zoom.',
+            'sign25': 'F to toggle bird\'s eye view. Left click & drag to rotate.',
             'sign26': 'X to reset entirely if you\'re in a pickle.'
         };
 
@@ -423,7 +423,7 @@
                             child.getWorldPosition(signWorldPos);
 
                             // Position label directly on the sign (centered on the mesh)
-                            label.position.set(0, -10, 0);
+                            label.position.set(0, -15, 0);
                             child.add(label);
 
                             // Store reference for proximity checking
@@ -949,35 +949,14 @@
 
         // Mouse controls for bird's eye camera
         document.addEventListener('mousedown', (e) => {
-            if (e.button === 1 && !introActive) { // Middle mouse button
+            if (e.button === 0 && detachedCamera && !introActive) { // Left mouse button for dragging in bird's eye view
                 e.preventDefault();
-
-                if (!detachedCamera) {
-                    // Toggle to bird's eye view - save current state
-                    detachedCamera = true;
-
-                    // Save planet rotation, character rotation, and position
-                    savedPlanetRotation.copy(planetGroup.quaternion);
-                    savedCharacterRotation = characterRotation;
-                    savedCharacterPosition.copy(characterGroup.position);
-
-                    // Start bird's eye rotation from current planet rotation
-                    birdEyeRotation.copy(planetGroup.quaternion);
-
-                    // Hide character
-                    characterGroup.visible = false;
-
-                    document.getElementById('camera-mode-text').textContent = 'Bird\'s Eye View - Drag to Rotate, R: Return to Player';
-                    console.log('Bird\'s eye view activated - state saved');
-                } else {
-                    // Start dragging
-                    isDragging = true;
-                }
+                isDragging = true;
             }
         });
 
         document.addEventListener('mouseup', (e) => {
-            if (e.button === 1 && detachedCamera) {
+            if (e.button === 0 && detachedCamera) {
                 isDragging = false;
             }
         });
@@ -1031,21 +1010,42 @@
                 return;
             }
 
-            // Return to player with 'R' key
-            if (key === 'r' && !introActive && detachedCamera) {
-                detachedCamera = false;
+            // Toggle bird's eye view with 'F' key
+            if (key === 'f' && !introActive) {
+                if (!detachedCamera) {
+                    // Enter bird's eye view - save current state
+                    detachedCamera = true;
 
-                // Restore saved state
-                planetGroup.quaternion.copy(savedPlanetRotation);
-                characterRotation = savedCharacterRotation;
-                characterGroup.position.copy(savedCharacterPosition);
-                characterGroup.rotation.y = characterRotation;
+                    // Save planet rotation, character rotation, and position
+                    savedPlanetRotation.copy(planetGroup.quaternion);
+                    savedCharacterRotation = characterRotation;
+                    savedCharacterPosition.copy(characterGroup.position);
 
-                // Show character again
-                characterGroup.visible = true;
+                    // Start bird's eye rotation from current planet rotation
+                    birdEyeRotation.copy(planetGroup.quaternion);
 
-                document.getElementById('camera-mode-text').textContent = 'Walk around the planet!';
-                console.log('Returned to player-locked camera - state restored');
+                    // Hide character
+                    characterGroup.visible = false;
+
+                    document.getElementById('camera-mode-text').textContent = 'Bird\'s Eye View - Left Click & Drag to Rotate, F: Return to Player';
+                    console.log('Bird\'s eye view activated - state saved');
+                } else {
+                    // Return to player view
+                    detachedCamera = false;
+                    isDragging = false;
+
+                    // Restore saved state
+                    planetGroup.quaternion.copy(savedPlanetRotation);
+                    characterRotation = savedCharacterRotation;
+                    characterGroup.position.copy(savedCharacterPosition);
+                    characterGroup.rotation.y = characterRotation;
+
+                    // Show character again
+                    characterGroup.visible = true;
+
+                    document.getElementById('camera-mode-text').textContent = 'Walk around the planet!';
+                    console.log('Returned to player-locked camera - state restored');
+                }
             }
 
             // Reset to spawn with 'X' key
