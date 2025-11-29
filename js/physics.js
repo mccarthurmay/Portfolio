@@ -29,6 +29,17 @@ const raycasterPool = {
     }
 };
 
+// Object pools to prevent garbage collection
+const matrixPool = new THREE.Matrix4();
+const cachedPlanetTransform = new THREE.Matrix4();
+let planetTransformDirty = true;
+
+const vectorPool = {
+    v1: new THREE.Vector3(),
+    v2: new THREE.Vector3(),
+    v3: new THREE.Vector3()
+};
+
 const downVector = new THREE.Vector3(0, -1, 0);
 
 // Collision meshes cache
@@ -65,6 +76,12 @@ export function buildCollisionMeshes() {
 export function updatePhysics(dt, introActive) {
     if (introActive) return;
 
+    // Cache planet transform once per frame (used in both updatePhysics and checkForwardCollision)
+    if (planetTransformDirty) {
+        cachedPlanetTransform.copy(planetGroup.matrixWorld).invert();
+        planetTransformDirty = false;
+    }
+
     // Apply gravity
     physics.velocity.y -= physics.gravity * dt;
 
@@ -74,19 +91,15 @@ export function updatePhysics(dt, introActive) {
     const newY = currentY + movementDelta;
 
     // Swept collision detection: raycast along movement path
-    const rayOrigin = new THREE.Vector3(
-        characterGroup.position.x,
-        currentY,
-        characterGroup.position.z
-    );
+    vectorPool.v1.set(characterGroup.position.x, currentY, characterGroup.position.z);
+    const rayOrigin = vectorPool.v1;
 
     // Get nearby meshes using spatial grid
     // Transform character position to planet local space for spatial grid query
     // (spatial grid is in planet's coordinate frame, but planet rotates during gameplay)
-    const localRayOrigin = rayOrigin.clone();
+    const localRayOrigin = vectorPool.v2.copy(rayOrigin);
     if (spatialGrid) {
-        const planetWorldToLocal = new THREE.Matrix4().copy(planetGroup.matrixWorld).invert();
-        localRayOrigin.applyMatrix4(planetWorldToLocal);
+        localRayOrigin.applyMatrix4(cachedPlanetTransform);
     }
 
     const searchRadius = 20; // Search within 20 units for reliable collision detection
@@ -141,42 +154,49 @@ export function updatePhysics(dt, introActive) {
         physics.isGrounded = false;
     }
 
-    // Safety check: if somehow below ground, teleport above
-    const safetyRaycaster = raycasterPool.get();
-    safetyRaycaster.set(rayOrigin, downVector);
-    safetyRaycaster.far = 50;
-    safetyRaycaster.layers.set(1); // Only check collision layer (ignores visibility)
-    const safetyCheck = safetyRaycaster.intersectObjects(nearbyMeshes, false);
-    if (safetyCheck.length > 0) {
-        const groundY = safetyCheck[0].point.y;
-        if (characterGroup.position.y < groundY) {
-            console.warn('Character clipped through ground - correcting position');
-            characterGroup.position.y = groundY + 0.5;
-            physics.velocity.y = 0;
-            physics.isGrounded = true;
+    // Safety check: only run if falling fast or not grounded (rare case)
+    if (!physics.isGrounded || physics.velocity.y < -10) {
+        const safetyRaycaster = raycasterPool.get();
+        safetyRaycaster.set(rayOrigin, downVector);
+        safetyRaycaster.far = 50;
+        safetyRaycaster.layers.set(1); // Only check collision layer (ignores visibility)
+        const safetyCheck = safetyRaycaster.intersectObjects(nearbyMeshes, false);
+        if (safetyCheck.length > 0) {
+            const groundY = safetyCheck[0].point.y;
+            if (characterGroup.position.y < groundY) {
+                console.warn('Character clipped through ground - correcting position');
+                characterGroup.position.y = groundY + 0.5;
+                physics.velocity.y = 0;
+                physics.isGrounded = true;
+            }
         }
     }
+
+    // Mark planet transform as dirty for next frame
+    planetTransformDirty = true;
 }
 
 // Check for forward collision (for movement blocking)
 export function checkForwardCollision(characterRotation, direction) {
-    const forwardRayOrigin = new THREE.Vector3(
+    vectorPool.v1.set(
         characterGroup.position.x,
         characterGroup.position.y,
         characterGroup.position.z
     );
-    const forwardDirection = new THREE.Vector3(
+    const forwardRayOrigin = vectorPool.v1;
+
+    vectorPool.v2.set(
         -Math.sin(characterRotation) * direction,
         0,
         -Math.cos(characterRotation) * direction
     );
+    const forwardDirection = vectorPool.v2;
 
     // Get nearby meshes for collision check
     // Transform character position to planet local space for spatial grid query
-    const localForwardOrigin = forwardRayOrigin.clone();
+    const localForwardOrigin = vectorPool.v3.copy(forwardRayOrigin);
     if (spatialGrid) {
-        const planetWorldToLocal = new THREE.Matrix4().copy(planetGroup.matrixWorld).invert();
-        localForwardOrigin.applyMatrix4(planetWorldToLocal);
+        localForwardOrigin.applyMatrix4(cachedPlanetTransform);
     }
 
     const searchRadius = 10; // Increased from 5 for better forward collision detection

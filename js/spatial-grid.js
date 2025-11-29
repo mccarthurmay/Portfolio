@@ -11,6 +11,10 @@ export class SpatialGrid {
         this.grid = new Map(); // Map of cell keys to arrays of meshes
         this.meshToCells = new Map(); // Track which cells each mesh is in
         this.parentGroup = null; // Parent group for coordinate space
+
+        // Object pools to prevent garbage collection
+        this.tempMin = new THREE.Vector3();
+        this.tempMax = new THREE.Vector3();
     }
 
     // Convert world position to grid cell key
@@ -125,30 +129,31 @@ export class SpatialGrid {
 
     // Get nearby meshes for a point with a search radius
     getNearbyMeshes(position, radius = 5) {
-        const nearbyMeshes = new Set();
-
-        // Calculate bounding box for search area
-        const min = new THREE.Vector3(
+        // Reuse temp vectors to avoid allocation
+        this.tempMin.set(
             position.x - radius,
             position.y - radius,
             position.z - radius
         );
-        const max = new THREE.Vector3(
+        this.tempMax.set(
             position.x + radius,
             position.y + radius,
             position.z + radius
         );
 
         // Get all cells in search area
-        const cellKeys = this._getCellKeysForBounds(min, max);
+        const cellKeys = this._getCellKeysForBounds(this.tempMin, this.tempMax);
 
         // Collect all unique meshes from these cells
-        cellKeys.forEach(key => {
-            const meshes = this.grid.get(key);
+        const nearbyMeshes = new Set();
+        for (let i = 0; i < cellKeys.length; i++) {
+            const meshes = this.grid.get(cellKeys[i]);
             if (meshes) {
-                meshes.forEach(mesh => nearbyMeshes.add(mesh));
+                for (let j = 0; j < meshes.length; j++) {
+                    nearbyMeshes.add(meshes[j]);
+                }
             }
-        });
+        }
 
         return Array.from(nearbyMeshes);
     }

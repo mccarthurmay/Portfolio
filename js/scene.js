@@ -15,6 +15,7 @@ export const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window
 
 // WebGL Renderer
 export const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit to 2x for performance
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;

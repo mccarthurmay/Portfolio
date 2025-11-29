@@ -12,6 +12,10 @@ export class RenderingOptimizer {
         this.frustum = new THREE.Frustum();
         this.cameraViewProjectionMatrix = new THREE.Matrix4();
 
+        // Object pools to prevent garbage collection
+        this.tempVector = new THREE.Vector3();
+        this.tempSphere = new THREE.Sphere();
+
         // Tracked meshes for culling
         this.cullableMeshes = [];
 
@@ -99,67 +103,72 @@ export class RenderingOptimizer {
         );
         this.frustum.setFromProjectionMatrix(this.cameraViewProjectionMatrix);
 
-        // Get camera position for distance culling
-        const cameraPos = new THREE.Vector3();
-        this.camera.getWorldPosition(cameraPos);
+        // Get camera position for distance culling (reuse temp vector)
+        this.camera.getWorldPosition(this.tempVector);
+        const cameraPos = this.tempVector;
 
         // Reset stats
         this.stats.visibleMeshes = 0;
         this.stats.culledMeshes = 0;
 
-        // Check each mesh
-        this.cullableMeshes.forEach(mesh => {
+        // Use for loop instead of forEach for better performance
+        const maxDistSq = this.maxRenderDistance * this.maxRenderDistance;
+
+        for (let i = 0; i < this.cullableMeshes.length; i++) {
+            const mesh = this.cullableMeshes[i];
             let isVisible = mesh.userData.originallyVisible;
 
             if (isVisible) {
-                // Update world matrix to ensure accurate positions
-                mesh.updateWorldMatrix(true, false);
-
-                // Distance culling
+                // Distance culling (faster check first, use squared distance)
                 if (this.useDistanceCulling) {
-                    const meshPos = new THREE.Vector3();
-                    mesh.getWorldPosition(meshPos);
-                    const distance = cameraPos.distanceTo(meshPos);
+                    // Cache world position to avoid recalculation
+                    if (!mesh.userData.cachedWorldPos || mesh.matrixWorldNeedsUpdate) {
+                        mesh.updateWorldMatrix(true, false);
+                        if (!mesh.userData.cachedWorldPos) {
+                            mesh.userData.cachedWorldPos = new THREE.Vector3();
+                        }
+                        mesh.getWorldPosition(mesh.userData.cachedWorldPos);
+                    }
 
-                    if (distance > this.maxRenderDistance) {
+                    const distSq = cameraPos.distanceToSquared(mesh.userData.cachedWorldPos);
+
+                    if (distSq > maxDistSq) {
                         isVisible = false;
                     }
                 }
 
-                // Frustum culling
+                // Frustum culling (only if still visible after distance check)
                 if (isVisible && this.useFrustumCulling) {
-                    // Get bounding sphere in world space
-                    const sphere = mesh.geometry.boundingSphere.clone();
-                    sphere.applyMatrix4(mesh.matrixWorld);
+                    // Update matrix only if needed
+                    if (mesh.matrixWorldNeedsUpdate) {
+                        mesh.updateWorldMatrix(true, false);
+                    }
 
-                    // Expand sphere for shadow casters to account for shadow projection
+                    // Reuse temp sphere to avoid allocation
+                    this.tempSphere.copy(mesh.geometry.boundingSphere);
+                    this.tempSphere.applyMatrix4(mesh.matrixWorld);
+
+                    // Expand sphere for shadow casters
                     if (mesh.userData.isShadowCaster) {
-                        sphere.radius += this.shadowCullingMargin;
+                        this.tempSphere.radius += this.shadowCullingMargin;
                     }
 
                     // Check if sphere intersects frustum
-                    if (!this.frustum.intersectsSphere(sphere)) {
+                    if (!this.frustum.intersectsSphere(this.tempSphere)) {
                         isVisible = false;
                     }
                 }
             }
 
-            // Update visibility using layers instead of visible property
-            // This allows physics raycasting to work on culled objects
+            // Update visibility using layers
             if (isVisible) {
-                mesh.layers.enable(0);   // Camera can render it
-            } else {
-                mesh.layers.disable(0);  // Camera won't render it (culled)
-            }
-            // Layer 1 always stays enabled for collision detection
-
-            // Update stats
-            if (isVisible) {
+                mesh.layers.enable(0);
                 this.stats.visibleMeshes++;
             } else {
+                mesh.layers.disable(0);
                 this.stats.culledMeshes++;
             }
-        });
+        }
     }
 
     // Set quality tier (called by performance manager)
