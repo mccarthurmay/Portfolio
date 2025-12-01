@@ -33,7 +33,7 @@ export const planets = [
         orbitRadius: 9.5,        // Even tighter orbit
         orbitSpeed: 0.002,       // Very slow
         status: 'complete',
-        route: '/photography',
+        route: 'photography.html',
         description: '3D photo gallery experience'
     },
     {

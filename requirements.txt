@@ -1,0 +1,39 @@
+# ============================================================================
+# PyTorch Installation - Choose based on your GPU
+# ============================================================================
+
+# Option 1: NVIDIA GPU (CUDA) - DEFAULT
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Option 2: AMD/Intel GPU on Windows (DirectML)
+# Install this AFTER installing torch above for AMD/Intel GPU acceleration:
+# torch-directml
+
+# Option 3: AMD GPU on Linux (ROCm) - Linux only, NOT Windows
+# Uncomment the lines below and comment out the torch/torchvision above:
+# --index-url https://download.pytorch.org/whl/rocm6.0
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# Option 4: CPU only
+# Use the default torch/torchvision above (works for CPU too)
+
+# ============================================================================
+# Other Dependencies
+# ============================================================================
+
+# CLIP model for AI-powered image tagging
+git+https://github.com/openai/CLIP.git
+
+# Image processing
+Pillow>=9.0.0
+
+# HTTP requests
+requests>=2.28.0
+
+# Cloudinary API
+cloudinary>=1.36.0
+
+# Progress bars
+tqdm>=4.65.0
