@@ -12,7 +12,7 @@ export async function loadPhotoDatabase(folderFilter = null) {
         lightingTags: info.lighting,
         colorTags: info.colors,
         allTags: info.all_tags,
-        dominantColor: info.dominant_color || { r: 128, g: 128, b: 128 },  // RGB color
+        colorPalette: info.color_palette || [{ r: 128, g: 128, b: 128, weight: 1.0 }],  // Array of dominant colors
         createdAt: info.created_at || '',  // Upload date from Cloudinary
 
         // Computed fields (filled by clustering)
@@ -59,7 +59,9 @@ export function getPhotoURL(cloudinaryUrl, size = 'thumbnail') {
     const transforms = {
         thumbnail: '/h_400,q_auto,f_auto,c_fit/',  // Fixed height, maintain aspect ratio
         medium: '/h_800,q_auto,f_auto,c_fit/',
-        large: '/h_1600,q_auto,f_auto,c_fit/'
+        large: '/h_1600,q_auto,f_auto,c_fit/',
+        grid: '/q_auto,f_auto/',  // Auto quality and format, no resize
+        original: '/'  // No transformation - full original quality
     };
 
     // Insert transformation into Cloudinary URL

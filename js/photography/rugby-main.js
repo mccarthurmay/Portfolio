@@ -17,8 +17,8 @@ async function init() {
         // Randomize photo order for better column balance
         const shuffledPhotos = [...photos].sort(() => Math.random() - 0.5);
 
-        // Initialize portfolio grid view
-        initPortfolioView(shuffledPhotos);
+        // Initialize portfolio grid view (disable color sorting to keep random order)
+        initPortfolioView(shuffledPhotos, { sortByColor: false });
 
         // Initialize lightbox handlers
         initLightbox();

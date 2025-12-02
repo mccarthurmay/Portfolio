@@ -34,9 +34,16 @@ export function openLightbox(imageUrl, altText = '') {
 
 function closeLightbox() {
     const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
 
     if (lightbox) {
         lightbox.classList.remove('visible');
         lightbox.classList.add('hidden');
+
+        // Clear the image to prevent showing stale image on next open
+        if (lightboxImage) {
+            lightboxImage.classList.remove('loaded');
+            lightboxImage.src = '';
+        }
     }
 }

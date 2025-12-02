@@ -58,9 +58,17 @@ function openLightbox(photoData) {
     const lightbox = document.getElementById('photo-lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
 
-    // Load high-res
-    lightboxImage.src = getPhotoURL(photoData.cloudinaryUrl, 'large');
+    // Remove loaded class to start fade from 0
+    lightboxImage.classList.remove('loaded');
+
+    // Load full original quality
+    lightboxImage.src = getPhotoURL(photoData.cloudinaryUrl, 'original');
     lightboxImage.alt = photoData.allTags.join(', ');
+
+    // Add loaded class when image is fully loaded
+    lightboxImage.onload = () => {
+        lightboxImage.classList.add('loaded');
+    };
 
     lightbox.classList.remove('hidden');
     lightbox.classList.add('visible');
@@ -70,8 +78,16 @@ function openLightbox(photoData) {
 
 export function closeLightbox() {
     const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+
     lightbox.classList.remove('visible');
     lightbox.classList.add('hidden');
+
+    // Clear the image to prevent showing stale image on next open
+    if (lightboxImage) {
+        lightboxImage.classList.remove('loaded');
+        lightboxImage.src = '';
+    }
 
     state.selectedPhoto = null;
 }

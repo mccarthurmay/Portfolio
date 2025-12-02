@@ -3,6 +3,7 @@ import * as THREE from 'three';
 export let scene, camera, renderer;
 export let sphereCore;
 export const photoMeshes = [];
+export let boundaryLine = null;
 
 export const state = {
     mode: 'flat',  // Single mode only
@@ -10,8 +11,8 @@ export const state = {
     // Pan/zoom state
     panX: 0,
     panY: 0,
-    zoom: 3,  // Start zoomed in
-    minZoom: 1.5,  // Minimum zoom (further out view)
+    zoom: 6,  // Start at medium zoom
+    minZoom: 5.7,  // Minimum zoom (limited to show ~4 photos at once)
     maxZoom: 15,  // Maximum zoom (much closer for detail)
 
     // Boundaries (will be set based on photo count)

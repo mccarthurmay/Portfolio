@@ -1,8 +1,505 @@
 {
+  "23_s77swq": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608829/23_s77swq.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T17:07:09Z",
+    "content": [
+      "mountain",
+      "hiking",
+      "valley",
+      "canyon",
+      "hills"
+    ],
+    "style": [
+      "panorama",
+      "landscape photography",
+      "color grading"
+    ],
+    "lighting": [
+      "rim light",
+      "flat lighting"
+    ],
+    "colors": [
+      "earth tones",
+      "duotone"
+    ],
+    "color_palette": [
+      {
+        "r": 71,
+        "g": 77,
+        "b": 83,
+        "weight": 0.30898809523809523
+      },
+      {
+        "r": 30,
+        "g": 42,
+        "b": 52,
+        "weight": 0.20083333333333334
+      },
+      {
+        "r": 80,
+        "g": 118,
+        "b": 147,
+        "weight": 0.16797619047619047
+      },
+      {
+        "r": 166,
+        "g": 197,
+        "b": 216,
+        "weight": 0.16595238095238096
+      },
+      {
+        "r": 121,
+        "g": 120,
+        "b": 109,
+        "weight": 0.15625
+      }
+    ],
+    "all_tags": [
+      "mountain",
+      "hiking",
+      "valley",
+      "canyon",
+      "hills",
+      "panorama",
+      "landscape photography",
+      "color grading",
+      "rim light",
+      "flat lighting",
+      "earth tones",
+      "duotone"
+    ]
+  },
+  "4_zw28ra": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608828/4_zw28ra.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T17:07:08Z",
+    "content": [
+      "mountain",
+      "hiking",
+      "tundra",
+      "lake",
+      "canyon"
+    ],
+    "style": [
+      "panorama",
+      "landscape photography",
+      "HDR"
+    ],
+    "lighting": [
+      "rim light",
+      "flat lighting"
+    ],
+    "colors": [
+      "earth tones",
+      "white dominant"
+    ],
+    "color_palette": [
+      {
+        "r": 154,
+        "g": 143,
+        "b": 134,
+        "weight": 0.3061904761904762
+      },
+      {
+        "r": 108,
+        "g": 104,
+        "b": 78,
+        "weight": 0.2218452380952381
+      },
+      {
+        "r": 0,
+        "g": 47,
+        "b": 122,
+        "weight": 0.1769047619047619
+      },
+      {
+        "r": 48,
+        "g": 54,
+        "b": 33,
+        "weight": 0.17136904761904762
+      },
+      {
+        "r": 2,
+        "g": 80,
+        "b": 171,
+        "weight": 0.12369047619047618
+      }
+    ],
+    "all_tags": [
+      "mountain",
+      "hiking",
+      "tundra",
+      "lake",
+      "canyon",
+      "panorama",
+      "landscape photography",
+      "HDR",
+      "rim light",
+      "flat lighting",
+      "earth tones",
+      "white dominant"
+    ]
+  },
+  "1_igsxae": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608828/1_igsxae.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T17:07:08Z",
+    "content": [
+      "hiking",
+      "adventure",
+      "mountain",
+      "travel",
+      "canyon"
+    ],
+    "style": [
+      "panorama",
+      "landscape photography",
+      "documentary"
+    ],
+    "lighting": [
+      "rim light",
+      "backlit"
+    ],
+    "colors": [
+      "earth tones",
+      "duotone"
+    ],
+    "color_palette": [
+      {
+        "r": 104,
+        "g": 97,
+        "b": 90,
+        "weight": 0.28273809523809523
+      },
+      {
+        "r": 160,
+        "g": 200,
+        "b": 224,
+        "weight": 0.2338095238095238
+      },
+      {
+        "r": 39,
+        "g": 156,
+        "b": 212,
+        "weight": 0.1850595238095238
+      },
+      {
+        "r": 177,
+        "g": 156,
+        "b": 136,
+        "weight": 0.17101190476190475
+      },
+      {
+        "r": 43,
+        "g": 44,
+        "b": 48,
+        "weight": 0.12738095238095237
+      }
+    ],
+    "all_tags": [
+      "hiking",
+      "adventure",
+      "mountain",
+      "travel",
+      "canyon",
+      "panorama",
+      "landscape photography",
+      "documentary",
+      "rim light",
+      "backlit",
+      "earth tones",
+      "duotone"
+    ]
+  },
+  "2_sxrdrs": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608828/2_sxrdrs.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T17:07:08Z",
+    "content": [
+      "hiking",
+      "adventure",
+      "mountain",
+      "travel",
+      "canyon"
+    ],
+    "style": [
+      "panorama",
+      "landscape photography",
+      "time lapse"
+    ],
+    "lighting": [
+      "rim light",
+      "backlit"
+    ],
+    "colors": [
+      "earth tones",
+      "white dominant"
+    ],
+    "color_palette": [
+      {
+        "r": 115,
+        "g": 106,
+        "b": 95,
+        "weight": 0.2763690476190476
+      },
+      {
+        "r": 38,
+        "g": 114,
+        "b": 188,
+        "weight": 0.19392857142857142
+      },
+      {
+        "r": 60,
+        "g": 58,
+        "b": 58,
+        "weight": 0.1882738095238095
+      },
+      {
+        "r": 156,
+        "g": 142,
+        "b": 128,
+        "weight": 0.17976190476190476
+      },
+      {
+        "r": 139,
+        "g": 173,
+        "b": 211,
+        "weight": 0.16166666666666665
+      }
+    ],
+    "all_tags": [
+      "hiking",
+      "adventure",
+      "mountain",
+      "travel",
+      "canyon",
+      "panorama",
+      "landscape photography",
+      "time lapse",
+      "rim light",
+      "backlit",
+      "earth tones",
+      "white dominant"
+    ]
+  },
+  "20250706_171430000_iOS_1_lzq7ax": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608569/20250706_171430000_iOS_1_lzq7ax.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-07-06T11:14:30",
+    "content": [
+      "meditation",
+      "hiking",
+      "travel",
+      "adventure",
+      "mountain"
+    ],
+    "style": [
+      "landscape photography",
+      "minimalist style",
+      "time lapse"
+    ],
+    "lighting": [
+      "rim light",
+      "diffused light"
+    ],
+    "colors": [
+      "earth tones",
+      "high saturation"
+    ],
+    "color_palette": [
+      {
+        "r": 56,
+        "g": 120,
+        "b": 172,
+        "weight": 0.4337463126843658
+      },
+      {
+        "r": 143,
+        "g": 173,
+        "b": 195,
+        "weight": 0.23551622418879056
+      },
+      {
+        "r": 73,
+        "g": 67,
+        "b": 61,
+        "weight": 0.1136283185840708
+      },
+      {
+        "r": 120,
+        "g": 111,
+        "b": 104,
+        "weight": 0.1112094395280236
+      },
+      {
+        "r": 18,
+        "g": 16,
+        "b": 17,
+        "weight": 0.10589970501474927
+      }
+    ],
+    "all_tags": [
+      "meditation",
+      "hiking",
+      "travel",
+      "adventure",
+      "mountain",
+      "landscape photography",
+      "minimalist style",
+      "time lapse",
+      "rim light",
+      "diffused light",
+      "earth tones",
+      "high saturation"
+    ]
+  },
+  "20250706_165113000_iOS_outvdi": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608567/20250706_165113000_iOS_outvdi.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-07-06T10:51:13",
+    "content": [
+      "hiking",
+      "canyon",
+      "valley",
+      "adventure",
+      "mountain"
+    ],
+    "style": [
+      "landscape photography",
+      "time lapse",
+      "panorama"
+    ],
+    "lighting": [
+      "rim light",
+      "overcast light"
+    ],
+    "colors": [
+      "earth tones",
+      "high saturation"
+    ],
+    "color_palette": [
+      {
+        "r": 186,
+        "g": 212,
+        "b": 227,
+        "weight": 0.25785714285714284
+      },
+      {
+        "r": 110,
+        "g": 167,
+        "b": 205,
+        "weight": 0.24101190476190476
+      },
+      {
+        "r": 142,
+        "g": 145,
+        "b": 146,
+        "weight": 0.23107142857142857
+      },
+      {
+        "r": 95,
+        "g": 98,
+        "b": 90,
+        "weight": 0.13964285714285715
+      },
+      {
+        "r": 38,
+        "g": 38,
+        "b": 24,
+        "weight": 0.13041666666666665
+      }
+    ],
+    "all_tags": [
+      "hiking",
+      "canyon",
+      "valley",
+      "adventure",
+      "mountain",
+      "landscape photography",
+      "time lapse",
+      "panorama",
+      "rim light",
+      "overcast light",
+      "earth tones",
+      "high saturation"
+    ]
+  },
+  "marmot_1_of_1_mbhc5d": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764608564/marmot_1_of_1_mbhc5d.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-07-06T10:49:54",
+    "content": [
+      "meditation",
+      "hiking",
+      "savanna",
+      "mountain",
+      "monkey"
+    ],
+    "style": [
+      "panorama",
+      "wildlife photography",
+      "time lapse"
+    ],
+    "lighting": [
+      "rim light",
+      "diffused light"
+    ],
+    "colors": [
+      "earth tones",
+      "high saturation"
+    ],
+    "color_palette": [
+      {
+        "r": 89,
+        "g": 89,
+        "b": 88,
+        "weight": 0.4794047619047619
+      },
+      {
+        "r": 125,
+        "g": 173,
+        "b": 203,
+        "weight": 0.19404761904761905
+      },
+      {
+        "r": 145,
+        "g": 131,
+        "b": 114,
+        "weight": 0.1519047619047619
+      },
+      {
+        "r": 45,
+        "g": 148,
+        "b": 202,
+        "weight": 0.13910714285714285
+      },
+      {
+        "r": 33,
+        "g": 32,
+        "b": 25,
+        "weight": 0.03553571428571429
+      }
+    ],
+    "all_tags": [
+      "meditation",
+      "hiking",
+      "savanna",
+      "mountain",
+      "monkey",
+      "panorama",
+      "wildlife photography",
+      "time lapse",
+      "rim light",
+      "diffused light",
+      "earth tones",
+      "high saturation"
+    ]
+  },
   "meainmiddlebfig_1_of_1_nw4dyg": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764569437/meainmiddlebfig_1_of_1_nw4dyg.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T06:10:37Z",
     "content": [
       "hiking",
       "running",
@@ -23,11 +520,38 @@
       "earth tones",
       "multicolored"
     ],
-    "dominant_color": {
-      "r": 113,
-      "g": 114,
-      "b": 97
-    },
+    "color_palette": [
+      {
+        "r": 68,
+        "g": 69,
+        "b": 24,
+        "weight": 0.26242937853107345
+      },
+      {
+        "r": 90,
+        "g": 89,
+        "b": 58,
+        "weight": 0.24180790960451978
+      },
+      {
+        "r": 162,
+        "g": 173,
+        "b": 199,
+        "weight": 0.2115819209039548
+      },
+      {
+        "r": 141,
+        "g": 142,
+        "b": 146,
+        "weight": 0.1836723163841808
+      },
+      {
+        "r": 127,
+        "g": 117,
+        "b": 80,
+        "weight": 0.10050847457627118
+      }
+    ],
     "all_tags": [
       "hiking",
       "running",
@@ -46,7 +570,7 @@
   "meainmiddle_1_of_1_drb6vs": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764569341/meainmiddle_1_of_1_drb6vs.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T06:09:01Z",
     "content": [
       "hiking",
       "meadow",
@@ -67,11 +591,38 @@
       "multicolored",
       "analogous colors"
     ],
-    "dominant_color": {
-      "r": 87,
-      "g": 95,
-      "b": 75
-    },
+    "color_palette": [
+      {
+        "r": 89,
+        "g": 90,
+        "b": 51,
+        "weight": 0.5107638888888889
+      },
+      {
+        "r": 126,
+        "g": 117,
+        "b": 85,
+        "weight": 0.17215277777777777
+      },
+      {
+        "r": 40,
+        "g": 95,
+        "b": 180,
+        "weight": 0.13916666666666666
+      },
+      {
+        "r": 50,
+        "g": 57,
+        "b": 26,
+        "weight": 0.13875
+      },
+      {
+        "r": 188,
+        "g": 179,
+        "b": 163,
+        "weight": 0.03916666666666667
+      }
+    ],
     "all_tags": [
       "hiking",
       "meadow",
@@ -90,7 +641,7 @@
   "meawalkindownlookinfeet_1_of_1_mpw4a8": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764569337/meawalkindownlookinfeet_1_of_1_mpw4a8.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T06:08:57Z",
     "content": [
       "hiking",
       "valley",
@@ -111,11 +662,38 @@
       "earth tones",
       "analogous colors"
     ],
-    "dominant_color": {
-      "r": 126,
-      "g": 127,
-      "b": 101
-    },
+    "color_palette": [
+      {
+        "r": 210,
+        "g": 221,
+        "b": 232,
+        "weight": 0.2840117994100295
+      },
+      {
+        "r": 64,
+        "g": 66,
+        "b": 20,
+        "weight": 0.28283185840707964
+      },
+      {
+        "r": 99,
+        "g": 92,
+        "b": 45,
+        "weight": 0.2749852507374631
+      },
+      {
+        "r": 133,
+        "g": 121,
+        "b": 90,
+        "weight": 0.12058997050147492
+      },
+      {
+        "r": 130,
+        "g": 155,
+        "b": 174,
+        "weight": 0.0375811209439528
+      }
+    ],
     "all_tags": [
       "hiking",
       "valley",
@@ -134,7 +712,7 @@
   "blockbreak2_20_of_31_xkah4o": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764569333/blockbreak2_20_of_31_xkah4o.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T06:08:53Z",
     "content": [
       "ice",
       "owl",
@@ -155,11 +733,38 @@
       "white dominant",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 107,
-      "g": 102,
-      "b": 96
-    },
+    "color_palette": [
+      {
+        "r": 144,
+        "g": 139,
+        "b": 134,
+        "weight": 0.22690265486725664
+      },
+      {
+        "r": 113,
+        "g": 105,
+        "b": 95,
+        "weight": 0.2255457227138643
+      },
+      {
+        "r": 22,
+        "g": 17,
+        "b": 13,
+        "weight": 0.20371681415929205
+      },
+      {
+        "r": 180,
+        "g": 179,
+        "b": 177,
+        "weight": 0.1856047197640118
+      },
+      {
+        "r": 73,
+        "g": 64,
+        "b": 55,
+        "weight": 0.1582300884955752
+      }
+    ],
     "all_tags": [
       "ice",
       "owl",
@@ -178,7 +783,7 @@
   "hummy_11_of_57_ian19d": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764569329/hummy_11_of_57_ian19d.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T06:08:49Z",
     "content": [
       "mountain",
       "cliff",
@@ -199,11 +804,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 91,
-      "g": 87,
-      "b": 86
-    },
+    "color_palette": [
+      {
+        "r": 162,
+        "g": 162,
+        "b": 167,
+        "weight": 0.2686904761904762
+      },
+      {
+        "r": 52,
+        "g": 47,
+        "b": 42,
+        "weight": 0.2531547619047619
+      },
+      {
+        "r": 29,
+        "g": 25,
+        "b": 22,
+        "weight": 0.20273809523809525
+      },
+      {
+        "r": 78,
+        "g": 70,
+        "b": 62,
+        "weight": 0.16416666666666666
+      },
+      {
+        "r": 138,
+        "g": 139,
+        "b": 144,
+        "weight": 0.11125
+      }
+    ],
     "all_tags": [
       "mountain",
       "cliff",
@@ -243,11 +875,38 @@
       "earth tones",
       "white dominant"
     ],
-    "dominant_color": {
-      "r": 56,
-      "g": 92,
-      "b": 136
-    },
+    "color_palette": [
+      {
+        "r": 55,
+        "g": 98,
+        "b": 149,
+        "weight": 0.3466076696165192
+      },
+      {
+        "r": 38,
+        "g": 79,
+        "b": 127,
+        "weight": 0.33876106194690264
+      },
+      {
+        "r": 76,
+        "g": 121,
+        "b": 173,
+        "weight": 0.16967551622418878
+      },
+      {
+        "r": 52,
+        "g": 50,
+        "b": 55,
+        "weight": 0.10873156342182891
+      },
+      {
+        "r": 160,
+        "g": 162,
+        "b": 166,
+        "weight": 0.03622418879056047
+      }
+    ],
     "all_tags": [
       "mountain",
       "skiing",
@@ -287,11 +946,38 @@
       "monochromatic",
       "grayscale"
     ],
-    "dominant_color": {
-      "r": 75,
-      "g": 75,
-      "b": 75
-    },
+    "color_palette": [
+      {
+        "r": 61,
+        "g": 61,
+        "b": 61,
+        "weight": 0.4049557522123894
+      },
+      {
+        "r": 83,
+        "g": 83,
+        "b": 83,
+        "weight": 0.3207669616519174
+      },
+      {
+        "r": 111,
+        "g": 111,
+        "b": 111,
+        "weight": 0.13126843657817108
+      },
+      {
+        "r": 37,
+        "g": 37,
+        "b": 37,
+        "weight": 0.11882005899705014
+      },
+      {
+        "r": 180,
+        "g": 180,
+        "b": 180,
+        "weight": 0.024188790560471976
+      }
+    ],
     "all_tags": [
       "mountain",
       "skiing",
@@ -310,7 +996,7 @@
   "blockbreak2_31_of_31_tfsjdc": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764568752/blockbreak2_31_of_31_tfsjdc.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T05:59:12Z",
     "content": [
       "mountain",
       "hiking",
@@ -331,11 +1017,38 @@
       "white dominant",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 60,
-      "g": 66,
-      "b": 73
-    },
+    "color_palette": [
+      {
+        "r": 21,
+        "g": 20,
+        "b": 20,
+        "weight": 0.40148809523809526
+      },
+      {
+        "r": 57,
+        "g": 51,
+        "b": 44,
+        "weight": 0.21851190476190477
+      },
+      {
+        "r": 93,
+        "g": 134,
+        "b": 185,
+        "weight": 0.20267857142857143
+      },
+      {
+        "r": 94,
+        "g": 84,
+        "b": 69,
+        "weight": 0.1394642857142857
+      },
+      {
+        "r": 202,
+        "g": 203,
+        "b": 207,
+        "weight": 0.03785714285714286
+      }
+    ],
     "all_tags": [
       "mountain",
       "hiking",
@@ -354,7 +1067,7 @@
   "bwflip2_lzddny": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764568640/bwflip2_lzddny.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T05:57:20Z",
     "content": [
       "mountain",
       "rock formation",
@@ -375,11 +1088,38 @@
       "earth tones",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 61,
-      "g": 86,
-      "b": 109
-    },
+    "color_palette": [
+      {
+        "r": 57,
+        "g": 56,
+        "b": 55,
+        "weight": 0.31333333333333335
+      },
+      {
+        "r": 0,
+        "g": 71,
+        "b": 136,
+        "weight": 0.2972619047619048
+      },
+      {
+        "r": 119,
+        "g": 106,
+        "b": 93,
+        "weight": 0.22303571428571428
+      },
+      {
+        "r": 42,
+        "g": 120,
+        "b": 192,
+        "weight": 0.09714285714285714
+      },
+      {
+        "r": 177,
+        "g": 177,
+        "b": 177,
+        "weight": 0.06922619047619048
+      }
+    ],
     "all_tags": [
       "mountain",
       "rock formation",
@@ -398,7 +1138,7 @@
   "bwflip3_yxf9hm": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764568634/bwflip3_yxf9hm.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T05:57:14Z",
     "content": [
       "rock formation",
       "mountain",
@@ -419,11 +1159,38 @@
       "sepia tone",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 92,
-      "g": 86,
-      "b": 83
-    },
+    "color_palette": [
+      {
+        "r": 82,
+        "g": 70,
+        "b": 63,
+        "weight": 0.35125
+      },
+      {
+        "r": 104,
+        "g": 97,
+        "b": 93,
+        "weight": 0.2605952380952381
+      },
+      {
+        "r": 51,
+        "g": 49,
+        "b": 49,
+        "weight": 0.2175
+      },
+      {
+        "r": 129,
+        "g": 128,
+        "b": 130,
+        "weight": 0.11095238095238096
+      },
+      {
+        "r": 181,
+        "g": 182,
+        "b": 186,
+        "weight": 0.05970238095238095
+      }
+    ],
     "all_tags": [
       "rock formation",
       "mountain",
@@ -463,11 +1230,38 @@
       "earth tones",
       "sepia tone"
     ],
-    "dominant_color": {
-      "r": 128,
-      "g": 146,
-      "b": 167
-    },
+    "color_palette": [
+      {
+        "r": 199,
+        "g": 205,
+        "b": 213,
+        "weight": 0.4063095238095238
+      },
+      {
+        "r": 50,
+        "g": 112,
+        "b": 173,
+        "weight": 0.29625
+      },
+      {
+        "r": 61,
+        "g": 44,
+        "b": 34,
+        "weight": 0.14642857142857144
+      },
+      {
+        "r": 169,
+        "g": 172,
+        "b": 179,
+        "weight": 0.10702380952380952
+      },
+      {
+        "r": 114,
+        "g": 115,
+        "b": 122,
+        "weight": 0.043988095238095236
+      }
+    ],
     "all_tags": [
       "hiking",
       "snow scene",
@@ -507,11 +1301,38 @@
       "muted colors",
       "pastel colors"
     ],
-    "dominant_color": {
-      "r": 114,
-      "g": 124,
-      "b": 138
-    },
+    "color_palette": [
+      {
+        "r": 136,
+        "g": 150,
+        "b": 168,
+        "weight": 0.3592330383480826
+      },
+      {
+        "r": 116,
+        "g": 127,
+        "b": 144,
+        "weight": 0.31404129793510327
+      },
+      {
+        "r": 83,
+        "g": 88,
+        "b": 99,
+        "weight": 0.1488495575221239
+      },
+      {
+        "r": 47,
+        "g": 46,
+        "b": 50,
+        "weight": 0.12684365781710916
+      },
+      {
+        "r": 208,
+        "g": 215,
+        "b": 217,
+        "weight": 0.05103244837758112
+      }
+    ],
     "all_tags": [
       "depth of field",
       "ice",
@@ -551,11 +1372,38 @@
       "monochromatic",
       "black and white"
     ],
-    "dominant_color": {
-      "r": 35,
-      "g": 35,
-      "b": 35
-    },
+    "color_palette": [
+      {
+        "r": 9,
+        "g": 9,
+        "b": 9,
+        "weight": 0.5263095238095238
+      },
+      {
+        "r": 31,
+        "g": 31,
+        "b": 31,
+        "weight": 0.21386904761904763
+      },
+      {
+        "r": 63,
+        "g": 63,
+        "b": 63,
+        "weight": 0.13095238095238096
+      },
+      {
+        "r": 102,
+        "g": 102,
+        "b": 102,
+        "weight": 0.09285714285714286
+      },
+      {
+        "r": 151,
+        "g": 151,
+        "b": 151,
+        "weight": 0.03601190476190476
+      }
+    ],
     "all_tags": [
       "rain",
       "monochrome",
@@ -595,11 +1443,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 92,
-      "g": 92,
-      "b": 92
-    },
+    "color_palette": [
+      {
+        "r": 130,
+        "g": 135,
+        "b": 140,
+        "weight": 0.27769911504424777
+      },
+      {
+        "r": 107,
+        "g": 112,
+        "b": 118,
+        "weight": 0.2622418879056047
+      },
+      {
+        "r": 30,
+        "g": 23,
+        "b": 18,
+        "weight": 0.22678466076696166
+      },
+      {
+        "r": 56,
+        "g": 46,
+        "b": 36,
+        "weight": 0.15657817109144542
+      },
+      {
+        "r": 158,
+        "g": 160,
+        "b": 162,
+        "weight": 0.07669616519174041
+      }
+    ],
     "all_tags": [
       "mountain",
       "volcano",
@@ -639,11 +1514,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 19,
-      "g": 25,
-      "b": 14
-    },
+    "color_palette": [
+      {
+        "r": 14,
+        "g": 14,
+        "b": 5,
+        "weight": 0.33233038348082594
+      },
+      {
+        "r": 5,
+        "g": 6,
+        "b": 1,
+        "weight": 0.2500884955752212
+      },
+      {
+        "r": 21,
+        "g": 29,
+        "b": 14,
+        "weight": 0.18418879056047197
+      },
+      {
+        "r": 30,
+        "g": 48,
+        "b": 31,
+        "weight": 0.11870206489675517
+      },
+      {
+        "r": 49,
+        "g": 69,
+        "b": 49,
+        "weight": 0.11469026548672566
+      }
+    ],
     "all_tags": [
       "hills",
       "rain",
@@ -662,7 +1564,7 @@
   "3_tent_1_of_1_kzcmgq": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764568129/3_tent_1_of_1_kzcmgq.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-12-01T05:48:49Z",
     "content": [
       "meadow",
       "valley",
@@ -683,11 +1585,38 @@
       "green dominant",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 40,
-      "g": 78,
-      "b": 86
-    },
+    "color_palette": [
+      {
+        "r": 49,
+        "g": 55,
+        "b": 34,
+        "weight": 0.27172619047619045
+      },
+      {
+        "r": 21,
+        "g": 29,
+        "b": 24,
+        "weight": 0.2658333333333333
+      },
+      {
+        "r": 7,
+        "g": 143,
+        "b": 222,
+        "weight": 0.25202380952380954
+      },
+      {
+        "r": 79,
+        "g": 83,
+        "b": 59,
+        "weight": 0.14476190476190476
+      },
+      {
+        "r": 127,
+        "g": 117,
+        "b": 97,
+        "weight": 0.06565476190476191
+      }
+    ],
     "all_tags": [
       "meadow",
       "valley",
@@ -727,11 +1656,38 @@
       "earth tones",
       "warm colors"
     ],
-    "dominant_color": {
-      "r": 64,
-      "g": 79,
-      "b": 87
-    },
+    "color_palette": [
+      {
+        "r": 39,
+        "g": 40,
+        "b": 39,
+        "weight": 0.34123893805309735
+      },
+      {
+        "r": 19,
+        "g": 17,
+        "b": 14,
+        "weight": 0.24991150442477877
+      },
+      {
+        "r": 156,
+        "g": 198,
+        "b": 223,
+        "weight": 0.1792330383480826
+      },
+      {
+        "r": 97,
+        "g": 162,
+        "b": 195,
+        "weight": 0.1152212389380531
+      },
+      {
+        "r": 60,
+        "g": 64,
+        "b": 66,
+        "weight": 0.1143952802359882
+      }
+    ],
     "all_tags": [
       "hiking",
       "adventure",
@@ -771,11 +1727,38 @@
       "high saturation",
       "duotone"
     ],
-    "dominant_color": {
-      "r": 29,
-      "g": 81,
-      "b": 100
-    },
+    "color_palette": [
+      {
+        "r": 45,
+        "g": 55,
+        "b": 55,
+        "weight": 0.33421828908554574
+      },
+      {
+        "r": 24,
+        "g": 30,
+        "b": 29,
+        "weight": 0.2510324483775811
+      },
+      {
+        "r": 0,
+        "g": 105,
+        "b": 157,
+        "weight": 0.19486725663716814
+      },
+      {
+        "r": 14,
+        "g": 151,
+        "b": 196,
+        "weight": 0.1774631268436578
+      },
+      {
+        "r": 127,
+        "g": 187,
+        "b": 206,
+        "weight": 0.042418879056047194
+      }
+    ],
     "all_tags": [
       "hiking",
       "adventure",
@@ -815,11 +1798,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 116,
-      "g": 112,
-      "b": 78
-    },
+    "color_palette": [
+      {
+        "r": 69,
+        "g": 66,
+        "b": 19,
+        "weight": 0.3549382716049383
+      },
+      {
+        "r": 99,
+        "g": 88,
+        "b": 35,
+        "weight": 0.27314814814814814
+      },
+      {
+        "r": 203,
+        "g": 210,
+        "b": 217,
+        "weight": 0.1708641975308642
+      },
+      {
+        "r": 130,
+        "g": 110,
+        "b": 65,
+        "weight": 0.12037037037037036
+      },
+      {
+        "r": 174,
+        "g": 187,
+        "b": 205,
+        "weight": 0.08067901234567901
+      }
+    ],
     "all_tags": [
       "hiking",
       "meadow",
@@ -859,11 +1869,38 @@
       "white dominant",
       "high saturation"
     ],
-    "dominant_color": {
-      "r": 25,
-      "g": 79,
-      "b": 114
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 112,
+        "b": 196,
+        "weight": 0.3607079646017699
+      },
+      {
+        "r": 30,
+        "g": 62,
+        "b": 77,
+        "weight": 0.3012979351032448
+      },
+      {
+        "r": 17,
+        "g": 27,
+        "b": 19,
+        "weight": 0.19970501474926253
+      },
+      {
+        "r": 78,
+        "g": 96,
+        "b": 109,
+        "weight": 0.1240117994100295
+      },
+      {
+        "r": 183,
+        "g": 187,
+        "b": 190,
+        "weight": 0.014277286135693215
+      }
+    ],
     "all_tags": [
       "lake",
       "mountain",
@@ -903,11 +1940,38 @@
       "muted colors",
       "high saturation"
     ],
-    "dominant_color": {
-      "r": 92,
-      "g": 103,
-      "b": 111
-    },
+    "color_palette": [
+      {
+        "r": 65,
+        "g": 69,
+        "b": 74,
+        "weight": 0.2872619047619048
+      },
+      {
+        "r": 172,
+        "g": 182,
+        "b": 191,
+        "weight": 0.2739285714285714
+      },
+      {
+        "r": 35,
+        "g": 36,
+        "b": 35,
+        "weight": 0.2463095238095238
+      },
+      {
+        "r": 124,
+        "g": 126,
+        "b": 121,
+        "weight": 0.11160714285714286
+      },
+      {
+        "r": 47,
+        "g": 127,
+        "b": 190,
+        "weight": 0.08089285714285714
+      }
+    ],
     "all_tags": [
       "lake",
       "hiking",
@@ -947,11 +2011,38 @@
       "earth tones",
       "high saturation"
     ],
-    "dominant_color": {
-      "r": 69,
-      "g": 91,
-      "b": 109
-    },
+    "color_palette": [
+      {
+        "r": 72,
+        "g": 73,
+        "b": 69,
+        "weight": 0.30837758112094393
+      },
+      {
+        "r": 45,
+        "g": 48,
+        "b": 49,
+        "weight": 0.3054277286135693
+      },
+      {
+        "r": 93,
+        "g": 144,
+        "b": 197,
+        "weight": 0.17138643067846607
+      },
+      {
+        "r": 22,
+        "g": 103,
+        "b": 168,
+        "weight": 0.13781710914454276
+      },
+      {
+        "r": 176,
+        "g": 191,
+        "b": 204,
+        "weight": 0.07699115044247788
+      }
+    ],
     "all_tags": [
       "hiking",
       "mountain",
@@ -991,11 +2082,38 @@
       "earth tones",
       "low saturation"
     ],
-    "dominant_color": {
-      "r": 21,
-      "g": 80,
-      "b": 111
-    },
+    "color_palette": [
+      {
+        "r": 1,
+        "g": 3,
+        "b": 3,
+        "weight": 0.4058333333333333
+      },
+      {
+        "r": 0,
+        "g": 141,
+        "b": 211,
+        "weight": 0.24583333333333332
+      },
+      {
+        "r": 0,
+        "g": 110,
+        "b": 179,
+        "weight": 0.2249404761904762
+      },
+      {
+        "r": 187,
+        "g": 178,
+        "b": 168,
+        "weight": 0.09636904761904762
+      },
+      {
+        "r": 87,
+        "g": 84,
+        "b": 74,
+        "weight": 0.027023809523809523
+      }
+    ],
     "all_tags": [
       "mountain",
       "hiking",
@@ -1035,11 +2153,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 96,
-      "g": 111,
-      "b": 127
-    },
+    "color_palette": [
+      {
+        "r": 37,
+        "g": 32,
+        "b": 33,
+        "weight": 0.39375
+      },
+      {
+        "r": 98,
+        "g": 153,
+        "b": 202,
+        "weight": 0.17791666666666667
+      },
+      {
+        "r": 196,
+        "g": 210,
+        "b": 224,
+        "weight": 0.17232142857142857
+      },
+      {
+        "r": 139,
+        "g": 178,
+        "b": 213,
+        "weight": 0.16642857142857143
+      },
+      {
+        "r": 80,
+        "g": 60,
+        "b": 51,
+        "weight": 0.08958333333333333
+      }
+    ],
     "all_tags": [
       "rock formation",
       "canyon",
@@ -1079,11 +2224,38 @@
       "earth tones",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 114,
-      "g": 119,
-      "b": 125
-    },
+    "color_palette": [
+      {
+        "r": 35,
+        "g": 28,
+        "b": 24,
+        "weight": 0.3481547619047619
+      },
+      {
+        "r": 209,
+        "g": 216,
+        "b": 222,
+        "weight": 0.22952380952380952
+      },
+      {
+        "r": 153,
+        "g": 180,
+        "b": 207,
+        "weight": 0.21833333333333332
+      },
+      {
+        "r": 89,
+        "g": 66,
+        "b": 51,
+        "weight": 0.12672619047619046
+      },
+      {
+        "r": 115,
+        "g": 151,
+        "b": 187,
+        "weight": 0.07726190476190477
+      }
+    ],
     "all_tags": [
       "mountain",
       "hiking",
@@ -1123,11 +2295,38 @@
       "pastel colors",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 135,
-      "g": 124,
-      "b": 117
-    },
+    "color_palette": [
+      {
+        "r": 171,
+        "g": 174,
+        "b": 174,
+        "weight": 0.3717994100294985
+      },
+      {
+        "r": 30,
+        "g": 27,
+        "b": 29,
+        "weight": 0.2697935103244838
+      },
+      {
+        "r": 190,
+        "g": 171,
+        "b": 147,
+        "weight": 0.1623598820058997
+      },
+      {
+        "r": 187,
+        "g": 135,
+        "b": 110,
+        "weight": 0.14206489675516223
+      },
+      {
+        "r": 109,
+        "g": 85,
+        "b": 88,
+        "weight": 0.05398230088495575
+      }
+    ],
     "all_tags": [
       "clouds",
       "sunset",
@@ -1167,11 +2366,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 128,
-      "g": 127,
-      "b": 129
-    },
+    "color_palette": [
+      {
+        "r": 158,
+        "g": 162,
+        "b": 170,
+        "weight": 0.3640117994100295
+      },
+      {
+        "r": 54,
+        "g": 43,
+        "b": 37,
+        "weight": 0.1903834808259587
+      },
+      {
+        "r": 187,
+        "g": 190,
+        "b": 196,
+        "weight": 0.17138643067846607
+      },
+      {
+        "r": 80,
+        "g": 67,
+        "b": 58,
+        "weight": 0.15050147492625368
+      },
+      {
+        "r": 134,
+        "g": 137,
+        "b": 144,
+        "weight": 0.12371681415929203
+      }
+    ],
     "all_tags": [
       "mountain",
       "fog",
@@ -1211,11 +2437,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 28,
-      "g": 31,
-      "b": 19
-    },
+    "color_palette": [
+      {
+        "r": 21,
+        "g": 27,
+        "b": 14,
+        "weight": 0.3035398230088496
+      },
+      {
+        "r": 9,
+        "g": 13,
+        "b": 6,
+        "weight": 0.3035398230088496
+      },
+      {
+        "r": 37,
+        "g": 39,
+        "b": 24,
+        "weight": 0.22123893805309736
+      },
+      {
+        "r": 58,
+        "g": 53,
+        "b": 38,
+        "weight": 0.12973451327433627
+      },
+      {
+        "r": 86,
+        "g": 79,
+        "b": 63,
+        "weight": 0.04194690265486726
+      }
+    ],
     "all_tags": [
       "forest",
       "hiking",
@@ -1255,11 +2508,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 23,
-      "g": 25,
-      "b": 14
-    },
+    "color_palette": [
+      {
+        "r": 4,
+        "g": 6,
+        "b": 2,
+        "weight": 0.49002949852507377
+      },
+      {
+        "r": 22,
+        "g": 25,
+        "b": 12,
+        "weight": 0.26890855457227136
+      },
+      {
+        "r": 47,
+        "g": 47,
+        "b": 26,
+        "weight": 0.14814159292035398
+      },
+      {
+        "r": 82,
+        "g": 76,
+        "b": 49,
+        "weight": 0.067905604719764
+      },
+      {
+        "r": 110,
+        "g": 112,
+        "b": 112,
+        "weight": 0.025014749262536874
+      }
+    ],
     "all_tags": [
       "deer",
       "forest",
@@ -1299,11 +2579,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 22,
-      "g": 23,
-      "b": 14
-    },
+    "color_palette": [
+      {
+        "r": 4,
+        "g": 6,
+        "b": 2,
+        "weight": 0.5685545722713864
+      },
+      {
+        "r": 26,
+        "g": 28,
+        "b": 14,
+        "weight": 0.2584070796460177
+      },
+      {
+        "r": 56,
+        "g": 54,
+        "b": 31,
+        "weight": 0.10625368731563421
+      },
+      {
+        "r": 90,
+        "g": 86,
+        "b": 71,
+        "weight": 0.04584070796460177
+      },
+      {
+        "r": 133,
+        "g": 136,
+        "b": 139,
+        "weight": 0.02094395280235988
+      }
+    ],
     "all_tags": [
       "deer",
       "wildlife",
@@ -1343,11 +2650,38 @@
       "muted colors",
       "desaturated"
     ],
-    "dominant_color": {
-      "r": 104,
-      "g": 105,
-      "b": 106
-    },
+    "color_palette": [
+      {
+        "r": 163,
+        "g": 163,
+        "b": 168,
+        "weight": 0.3152212389380531
+      },
+      {
+        "r": 10,
+        "g": 12,
+        "b": 8,
+        "weight": 0.21693215339233038
+      },
+      {
+        "r": 28,
+        "g": 28,
+        "b": 23,
+        "weight": 0.216165191740413
+      },
+      {
+        "r": 187,
+        "g": 187,
+        "b": 192,
+        "weight": 0.21079646017699116
+      },
+      {
+        "r": 132,
+        "g": 132,
+        "b": 139,
+        "weight": 0.04088495575221239
+      }
+    ],
     "all_tags": [
       "mountain",
       "hiking",
@@ -1387,11 +2721,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 146,
-      "g": 158,
-      "b": 173
-    },
+    "color_palette": [
+      {
+        "r": 211,
+        "g": 218,
+        "b": 229,
+        "weight": 0.340117994100295
+      },
+      {
+        "r": 176,
+        "g": 187,
+        "b": 205,
+        "weight": 0.283716814159292
+      },
+      {
+        "r": 27,
+        "g": 26,
+        "b": 24,
+        "weight": 0.1736283185840708
+      },
+      {
+        "r": 118,
+        "g": 123,
+        "b": 134,
+        "weight": 0.14589970501474928
+      },
+      {
+        "r": 49,
+        "g": 154,
+        "b": 232,
+        "weight": 0.05663716814159292
+      }
+    ],
     "all_tags": [
       "fog",
       "clouds",
@@ -1431,11 +2792,38 @@
       "muted colors",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 135,
-      "g": 135,
-      "b": 131
-    },
+    "color_palette": [
+      {
+        "r": 239,
+        "g": 239,
+        "b": 239,
+        "weight": 0.3863716814159292
+      },
+      {
+        "r": 20,
+        "g": 20,
+        "b": 15,
+        "weight": 0.3415929203539823
+      },
+      {
+        "r": 214,
+        "g": 213,
+        "b": 213,
+        "weight": 0.1111504424778761
+      },
+      {
+        "r": 55,
+        "g": 53,
+        "b": 42,
+        "weight": 0.10595870206489676
+      },
+      {
+        "r": 113,
+        "g": 111,
+        "b": 107,
+        "weight": 0.054926253687315636
+      }
+    ],
     "all_tags": [
       "hiking",
       "adventure",
@@ -1475,11 +2863,38 @@
       "muted colors",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 107,
-      "g": 121,
-      "b": 132
-    },
+    "color_palette": [
+      {
+        "r": 161,
+        "g": 190,
+        "b": 214,
+        "weight": 0.3547619047619048
+      },
+      {
+        "r": 72,
+        "g": 64,
+        "b": 56,
+        "weight": 0.18535714285714286
+      },
+      {
+        "r": 33,
+        "g": 30,
+        "b": 27,
+        "weight": 0.16357142857142856
+      },
+      {
+        "r": 103,
+        "g": 151,
+        "b": 185,
+        "weight": 0.16220238095238096
+      },
+      {
+        "r": 104,
+        "g": 95,
+        "b": 86,
+        "weight": 0.13410714285714287
+      }
+    ],
     "all_tags": [
       "hiking",
       "mountain",
@@ -1519,11 +2934,38 @@
       "white dominant",
       "high saturation"
     ],
-    "dominant_color": {
-      "r": 69,
-      "g": 125,
-      "b": 155
-    },
+    "color_palette": [
+      {
+        "r": 1,
+        "g": 112,
+        "b": 175,
+        "weight": 0.36843657817109143
+      },
+      {
+        "r": 57,
+        "g": 140,
+        "b": 188,
+        "weight": 0.19817109144542772
+      },
+      {
+        "r": 136,
+        "g": 131,
+        "b": 127,
+        "weight": 0.17852507374631268
+      },
+      {
+        "r": 111,
+        "g": 97,
+        "b": 82,
+        "weight": 0.1407669616519174
+      },
+      {
+        "r": 157,
+        "g": 164,
+        "b": 172,
+        "weight": 0.11410029498525073
+      }
+    ],
     "all_tags": [
       "tundra",
       "mountain",
@@ -1563,11 +3005,38 @@
       "desaturated",
       "black and white"
     ],
-    "dominant_color": {
-      "r": 50,
-      "g": 50,
-      "b": 50
-    },
+    "color_palette": [
+      {
+        "r": 39,
+        "g": 39,
+        "b": 39,
+        "weight": 0.4464306784660767
+      },
+      {
+        "r": 49,
+        "g": 49,
+        "b": 49,
+        "weight": 0.3704424778761062
+      },
+      {
+        "r": 64,
+        "g": 64,
+        "b": 64,
+        "weight": 0.10548672566371682
+      },
+      {
+        "r": 92,
+        "g": 92,
+        "b": 92,
+        "weight": 0.0512094395280236
+      },
+      {
+        "r": 126,
+        "g": 126,
+        "b": 126,
+        "weight": 0.026430678466076697
+      }
+    ],
     "all_tags": [
       "texture",
       "spider",
@@ -1607,11 +3076,38 @@
       "grayscale",
       "black and white"
     ],
-    "dominant_color": {
-      "r": 68,
-      "g": 68,
-      "b": 68
-    },
+    "color_palette": [
+      {
+        "r": 11,
+        "g": 11,
+        "b": 11,
+        "weight": 0.2802949852507375
+      },
+      {
+        "r": 80,
+        "g": 80,
+        "b": 80,
+        "weight": 0.2376991150442478
+      },
+      {
+        "r": 47,
+        "g": 47,
+        "b": 47,
+        "weight": 0.2200589970501475
+      },
+      {
+        "r": 119,
+        "g": 119,
+        "b": 119,
+        "weight": 0.15050147492625368
+      },
+      {
+        "r": 160,
+        "g": 160,
+        "b": 160,
+        "weight": 0.11144542772861357
+      }
+    ],
     "all_tags": [
       "sheep",
       "dog",
@@ -1651,11 +3147,38 @@
       "monochromatic",
       "grayscale"
     ],
-    "dominant_color": {
-      "r": 83,
-      "g": 83,
-      "b": 83
-    },
+    "color_palette": [
+      {
+        "r": 58,
+        "g": 58,
+        "b": 58,
+        "weight": 0.2975811209439528
+      },
+      {
+        "r": 34,
+        "g": 34,
+        "b": 34,
+        "weight": 0.244070796460177
+      },
+      {
+        "r": 94,
+        "g": 94,
+        "b": 94,
+        "weight": 0.21545722713864307
+      },
+      {
+        "r": 133,
+        "g": 133,
+        "b": 133,
+        "weight": 0.1600589970501475
+      },
+      {
+        "r": 185,
+        "g": 185,
+        "b": 185,
+        "weight": 0.08283185840707964
+      }
+    ],
     "all_tags": [
       "rain",
       "depth of field",
@@ -1695,11 +3218,38 @@
       "monochromatic",
       "desaturated"
     ],
-    "dominant_color": {
-      "r": 65,
-      "g": 65,
-      "b": 65
-    },
+    "color_palette": [
+      {
+        "r": 48,
+        "g": 48,
+        "b": 48,
+        "weight": 0.28578171091445426
+      },
+      {
+        "r": 70,
+        "g": 70,
+        "b": 70,
+        "weight": 0.2415929203539823
+      },
+      {
+        "r": 28,
+        "g": 28,
+        "b": 28,
+        "weight": 0.19817109144542772
+      },
+      {
+        "r": 95,
+        "g": 95,
+        "b": 95,
+        "weight": 0.1695575221238938
+      },
+      {
+        "r": 124,
+        "g": 124,
+        "b": 124,
+        "weight": 0.1048967551622419
+      }
+    ],
     "all_tags": [
       "depth of field",
       "meadow",
@@ -1739,11 +3289,38 @@
       "earth tones",
       "muted colors"
     ],
-    "dominant_color": {
-      "r": 90,
-      "g": 74,
-      "b": 64
-    },
+    "color_palette": [
+      {
+        "r": 91,
+        "g": 76,
+        "b": 66,
+        "weight": 0.3000589970501475
+      },
+      {
+        "r": 84,
+        "g": 64,
+        "b": 49,
+        "weight": 0.2935693215339233
+      },
+      {
+        "r": 100,
+        "g": 89,
+        "b": 84,
+        "weight": 0.23056047197640117
+      },
+      {
+        "r": 71,
+        "g": 49,
+        "b": 33,
+        "weight": 0.11893805309734513
+      },
+      {
+        "r": 112,
+        "g": 109,
+        "b": 110,
+        "weight": 0.056873156342182894
+      }
+    ],
     "all_tags": [
       "texture",
       "depth of field",
@@ -1783,11 +3360,38 @@
       "earth tones",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 22,
-      "g": 22,
-      "b": 17
-    },
+    "color_palette": [
+      {
+        "r": 19,
+        "g": 19,
+        "b": 11,
+        "weight": 0.455811209439528
+      },
+      {
+        "r": 3,
+        "g": 3,
+        "b": 1,
+        "weight": 0.304070796460177
+      },
+      {
+        "r": 39,
+        "g": 38,
+        "b": 30,
+        "weight": 0.1663716814159292
+      },
+      {
+        "r": 68,
+        "g": 71,
+        "b": 71,
+        "weight": 0.06112094395280236
+      },
+      {
+        "r": 129,
+        "g": 135,
+        "b": 158,
+        "weight": 0.012625368731563422
+      }
+    ],
     "all_tags": [
       "mountain",
       "canyon",
@@ -1827,11 +3431,38 @@
       "white dominant",
       "black dominant"
     ],
-    "dominant_color": {
-      "r": 137,
-      "g": 128,
-      "b": 124
-    },
+    "color_palette": [
+      {
+        "r": 190,
+        "g": 188,
+        "b": 191,
+        "weight": 0.30926253687315636
+      },
+      {
+        "r": 50,
+        "g": 34,
+        "b": 23,
+        "weight": 0.2971091445427729
+      },
+      {
+        "r": 164,
+        "g": 155,
+        "b": 151,
+        "weight": 0.20058997050147492
+      },
+      {
+        "r": 104,
+        "g": 91,
+        "b": 82,
+        "weight": 0.11669616519174042
+      },
+      {
+        "r": 236,
+        "g": 238,
+        "b": 240,
+        "weight": 0.07634218289085545
+      }
+    ],
     "all_tags": [
       "coffee",
       "ice",
@@ -1871,11 +3502,38 @@
       "duotone",
       "desaturated"
     ],
-    "dominant_color": {
-      "r": 85,
-      "g": 85,
-      "b": 85
-    },
+    "color_palette": [
+      {
+        "r": 60,
+        "g": 60,
+        "b": 60,
+        "weight": 0.34578171091445425
+      },
+      {
+        "r": 102,
+        "g": 102,
+        "b": 102,
+        "weight": 0.23616519174041298
+      },
+      {
+        "r": 34,
+        "g": 34,
+        "b": 34,
+        "weight": 0.23545722713864306
+      },
+      {
+        "r": 199,
+        "g": 199,
+        "b": 199,
+        "weight": 0.09179941002949853
+      },
+      {
+        "r": 152,
+        "g": 152,
+        "b": 152,
+        "weight": 0.09079646017699115
+      }
+    ],
     "all_tags": [
       "depth of field",
       "black and white",
@@ -1894,7 +3552,7 @@
   "bigflip_wrppzv": {
     "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1764535618/bigflip_wrppzv.jpg",
     "folder": "portfolio",
-    "created_at": "",
+    "created_at": "2025-11-30T20:46:58Z",
     "content": [
       "mountain",
       "volcano",
@@ -1915,11 +3573,38 @@
       "white dominant",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 66,
-      "g": 84,
-      "b": 105
-    },
+    "color_palette": [
+      {
+        "r": 55,
+        "g": 55,
+        "b": 56,
+        "weight": 0.3095333333333333
+      },
+      {
+        "r": 41,
+        "g": 84,
+        "b": 134,
+        "weight": 0.2517333333333333
+      },
+      {
+        "r": 89,
+        "g": 89,
+        "b": 90,
+        "weight": 0.23733333333333334
+      },
+      {
+        "r": 66,
+        "g": 112,
+        "b": 165,
+        "weight": 0.15966666666666668
+      },
+      {
+        "r": 154,
+        "g": 157,
+        "b": 161,
+        "weight": 0.04173333333333333
+      }
+    ],
     "all_tags": [
       "mountain",
       "volcano",
@@ -1959,11 +3644,38 @@
       "blue dominant",
       "duotone"
     ],
-    "dominant_color": {
-      "r": 6,
-      "g": 124,
-      "b": 179
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 129,
+        "b": 187,
+        "weight": 0.6156444444444444
+      },
+      {
+        "r": 0,
+        "g": 115,
+        "b": 171,
+        "weight": 0.30644444444444446
+      },
+      {
+        "r": 25,
+        "g": 61,
+        "b": 79,
+        "weight": 0.04257777777777778
+      },
+      {
+        "r": 192,
+        "g": 225,
+        "b": 233,
+        "weight": 0.021022222222222223
+      },
+      {
+        "r": 85,
+        "g": 182,
+        "b": 211,
+        "weight": 0.014311111111111111
+      }
+    ],
     "all_tags": [
       "airplane",
       "performance",
@@ -2003,11 +3715,38 @@
       "desaturated",
       "grayscale"
     ],
-    "dominant_color": {
-      "r": 27,
-      "g": 27,
-      "b": 27
-    },
+    "color_palette": [
+      {
+        "r": 19,
+        "g": 19,
+        "b": 19,
+        "weight": 0.3292625368731563
+      },
+      {
+        "r": 8,
+        "g": 8,
+        "b": 8,
+        "weight": 0.22448377581120943
+      },
+      {
+        "r": 31,
+        "g": 31,
+        "b": 31,
+        "weight": 0.21551622418879057
+      },
+      {
+        "r": 46,
+        "g": 46,
+        "b": 46,
+        "weight": 0.12230088495575221
+      },
+      {
+        "r": 66,
+        "g": 66,
+        "b": 66,
+        "weight": 0.10843657817109145
+      }
+    ],
     "all_tags": [
       "fog",
       "mountain",
@@ -2047,11 +3786,38 @@
       "desaturated",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 3,
-      "g": 2,
-      "b": 1
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.4534513274336283
+      },
+      {
+        "r": 2,
+        "g": 2,
+        "b": 1,
+        "weight": 0.3040117994100295
+      },
+      {
+        "r": 6,
+        "g": 4,
+        "b": 3,
+        "weight": 0.19882005899705016
+      },
+      {
+        "r": 15,
+        "g": 11,
+        "b": 7,
+        "weight": 0.037699115044247784
+      },
+      {
+        "r": 33,
+        "g": 27,
+        "b": 20,
+        "weight": 0.006017699115044248
+      }
+    ],
     "all_tags": [
       "forest",
       "silhouette",
@@ -2091,11 +3857,38 @@
       "desaturated",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 4,
-      "g": 3,
-      "b": 1
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.4447787610619469
+      },
+      {
+        "r": 4,
+        "g": 3,
+        "b": 1,
+        "weight": 0.31144542772861356
+      },
+      {
+        "r": 9,
+        "g": 8,
+        "b": 3,
+        "weight": 0.2031268436578171
+      },
+      {
+        "r": 19,
+        "g": 15,
+        "b": 7,
+        "weight": 0.033982300884955755
+      },
+      {
+        "r": 38,
+        "g": 31,
+        "b": 17,
+        "weight": 0.006666666666666667
+      }
+    ],
     "all_tags": [
       "depth of field",
       "minimalist",
@@ -2135,11 +3928,38 @@
       "sepia tone",
       "earth tones"
     ],
-    "dominant_color": {
-      "r": 8,
-      "g": 4,
-      "b": 1
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.5864896755162242
+      },
+      {
+        "r": 11,
+        "g": 6,
+        "b": 2,
+        "weight": 0.2568141592920354
+      },
+      {
+        "r": 23,
+        "g": 14,
+        "b": 5,
+        "weight": 0.11315634218289086
+      },
+      {
+        "r": 43,
+        "g": 26,
+        "b": 9,
+        "weight": 0.03722713864306785
+      },
+      {
+        "r": 83,
+        "g": 56,
+        "b": 23,
+        "weight": 0.006312684365781711
+      }
+    ],
     "all_tags": [
       "texture",
       "silhouette",
@@ -2179,11 +3999,38 @@
       "monochromatic",
       "grayscale"
     ],
-    "dominant_color": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.7510324483775811
+      },
+      {
+        "r": 2,
+        "g": 2,
+        "b": 2,
+        "weight": 0.11769911504424779
+      },
+      {
+        "r": 6,
+        "g": 6,
+        "b": 6,
+        "weight": 0.07386430678466077
+      },
+      {
+        "r": 10,
+        "g": 10,
+        "b": 10,
+        "weight": 0.042595870206489674
+      },
+      {
+        "r": 18,
+        "g": 18,
+        "b": 18,
+        "weight": 0.01480825958702065
+      }
+    ],
     "all_tags": [
       "minimalist",
       "negative space",
@@ -2223,11 +4070,38 @@
       "yellow dominant",
       "green dominant"
     ],
-    "dominant_color": {
-      "r": 1,
-      "g": 2,
-      "b": 0
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9433038348082596
+      },
+      {
+        "r": 11,
+        "g": 15,
+        "b": 0,
+        "weight": 0.03256637168141593
+      },
+      {
+        "r": 32,
+        "g": 37,
+        "b": 2,
+        "weight": 0.015634218289085546
+      },
+      {
+        "r": 67,
+        "g": 69,
+        "b": 12,
+        "weight": 0.006666666666666667
+      },
+      {
+        "r": 139,
+        "g": 131,
+        "b": 40,
+        "weight": 0.0018289085545722713
+      }
+    ],
     "all_tags": [
       "plant",
       "flower",
@@ -2267,11 +4141,38 @@
       "monochromatic",
       "black and white"
     ],
-    "dominant_color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9860766961651918
+      },
+      {
+        "r": 16,
+        "g": 16,
+        "b": 16,
+        "weight": 0.006371681415929204
+      },
+      {
+        "r": 42,
+        "g": 42,
+        "b": 42,
+        "weight": 0.004070796460176991
+      },
+      {
+        "r": 79,
+        "g": 79,
+        "b": 79,
+        "weight": 0.002064896755162242
+      },
+      {
+        "r": 141,
+        "g": 141,
+        "b": 141,
+        "weight": 0.001415929203539823
+      }
+    ],
     "all_tags": [
       "negative space",
       "flower",
@@ -2311,11 +4212,38 @@
       "yellow dominant",
       "neon colors"
     ],
-    "dominant_color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9860176991150442
+      },
+      {
+        "r": 15,
+        "g": 15,
+        "b": 1,
+        "weight": 0.006489675516224189
+      },
+      {
+        "r": 38,
+        "g": 38,
+        "b": 5,
+        "weight": 0.004011799410029498
+      },
+      {
+        "r": 72,
+        "g": 72,
+        "b": 15,
+        "weight": 0.002064896755162242
+      },
+      {
+        "r": 131,
+        "g": 126,
+        "b": 21,
+        "weight": 0.001415929203539823
+      }
+    ],
     "all_tags": [
       "plant",
       "flower",
@@ -2355,11 +4283,38 @@
       "yellow dominant",
       "neon colors"
     ],
-    "dominant_color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9713274336283186
+      },
+      {
+        "r": 6,
+        "g": 6,
+        "b": 0,
+        "weight": 0.020117994100294984
+      },
+      {
+        "r": 24,
+        "g": 24,
+        "b": 1,
+        "weight": 0.00471976401179941
+      },
+      {
+        "r": 44,
+        "g": 45,
+        "b": 1,
+        "weight": 0.002536873156342183
+      },
+      {
+        "r": 83,
+        "g": 82,
+        "b": 1,
+        "weight": 0.0012979351032448377
+      }
+    ],
     "all_tags": [
       "plant",
       "flower",
@@ -2399,11 +4354,38 @@
       "black and white",
       "desaturated"
     ],
-    "dominant_color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9181710914454277
+      },
+      {
+        "r": 5,
+        "g": 5,
+        "b": 5,
+        "weight": 0.0705014749262537
+      },
+      {
+        "r": 22,
+        "g": 22,
+        "b": 22,
+        "weight": 0.006666666666666667
+      },
+      {
+        "r": 46,
+        "g": 46,
+        "b": 46,
+        "weight": 0.0033628318584070795
+      },
+      {
+        "r": 88,
+        "g": 88,
+        "b": 88,
+        "weight": 0.0012979351032448377
+      }
+    ],
     "all_tags": [
       "black and white",
       "plant",
@@ -2443,11 +4425,38 @@
       "desaturated",
       "low saturation"
     ],
-    "dominant_color": {
-      "r": 19,
-      "g": 13,
-      "b": 5
-    },
+    "color_palette": [
+      {
+        "r": 18,
+        "g": 12,
+        "b": 5,
+        "weight": 0.40636904761904763
+      },
+      {
+        "r": 1,
+        "g": 0,
+        "b": 0,
+        "weight": 0.39011904761904764
+      },
+      {
+        "r": 45,
+        "g": 30,
+        "b": 11,
+        "weight": 0.18613095238095237
+      },
+      {
+        "r": 114,
+        "g": 74,
+        "b": 26,
+        "weight": 0.01
+      },
+      {
+        "r": 188,
+        "g": 145,
+        "b": 68,
+        "weight": 0.007380952380952381
+      }
+    ],
     "all_tags": [
       "motion blur",
       "suburb",
@@ -2487,11 +4496,38 @@
       "desaturated",
       "monochromatic"
     ],
-    "dominant_color": {
-      "r": 67,
-      "g": 67,
-      "b": 67
-    },
+    "color_palette": [
+      {
+        "r": 93,
+        "g": 93,
+        "b": 93,
+        "weight": 0.5201785714285714
+      },
+      {
+        "r": 13,
+        "g": 13,
+        "b": 13,
+        "weight": 0.21083333333333334
+      },
+      {
+        "r": 81,
+        "g": 81,
+        "b": 81,
+        "weight": 0.1138095238095238
+      },
+      {
+        "r": 33,
+        "g": 33,
+        "b": 33,
+        "weight": 0.0844047619047619
+      },
+      {
+        "r": 62,
+        "g": 62,
+        "b": 62,
+        "weight": 0.07077380952380953
+      }
+    ],
     "all_tags": [
       "fog",
       "tree",
@@ -2531,11 +4567,38 @@
       "yellow dominant",
       "brown dominant"
     ],
-    "dominant_color": {
-      "r": 101,
-      "g": 90,
-      "b": 83
-    },
+    "color_palette": [
+      {
+        "r": 22,
+        "g": 20,
+        "b": 20,
+        "weight": 0.2600589970501475
+      },
+      {
+        "r": 64,
+        "g": 58,
+        "b": 49,
+        "weight": 0.2248967551622419
+      },
+      {
+        "r": 190,
+        "g": 188,
+        "b": 190,
+        "weight": 0.18519174041297934
+      },
+      {
+        "r": 107,
+        "g": 90,
+        "b": 75,
+        "weight": 0.17262536873156342
+      },
+      {
+        "r": 173,
+        "g": 134,
+        "b": 117,
+        "weight": 0.15722713864306784
+      }
+    ],
     "all_tags": [
       "sports",
       "celebration",
@@ -2575,11 +4638,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 103,
-      "g": 95,
-      "b": 83
-    },
+    "color_palette": [
+      {
+        "r": 82,
+        "g": 87,
+        "b": 65,
+        "weight": 0.2943362831858407
+      },
+      {
+        "r": 129,
+        "g": 109,
+        "b": 96,
+        "weight": 0.25846607669616517
+      },
+      {
+        "r": 31,
+        "g": 28,
+        "b": 25,
+        "weight": 0.21433628318584072
+      },
+      {
+        "r": 162,
+        "g": 145,
+        "b": 135,
+        "weight": 0.20460176991150442
+      },
+      {
+        "r": 202,
+        "g": 203,
+        "b": 208,
+        "weight": 0.028259587020648968
+      }
+    ],
     "all_tags": [
       "sports",
       "running",
@@ -2619,11 +4709,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 102,
-      "g": 101,
-      "b": 82
-    },
+    "color_palette": [
+      {
+        "r": 85,
+        "g": 100,
+        "b": 66,
+        "weight": 0.42386904761904765
+      },
+      {
+        "r": 127,
+        "g": 108,
+        "b": 96,
+        "weight": 0.20529761904761903
+      },
+      {
+        "r": 42,
+        "g": 37,
+        "b": 36,
+        "weight": 0.17767857142857144
+      },
+      {
+        "r": 162,
+        "g": 146,
+        "b": 135,
+        "weight": 0.17047619047619048
+      },
+      {
+        "r": 200,
+        "g": 202,
+        "b": 211,
+        "weight": 0.02267857142857143
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -2663,11 +4780,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 101,
-      "g": 92,
-      "b": 79
-    },
+    "color_palette": [
+      {
+        "r": 106,
+        "g": 99,
+        "b": 76,
+        "weight": 0.2880357142857143
+      },
+      {
+        "r": 68,
+        "g": 62,
+        "b": 52,
+        "weight": 0.2586309523809524
+      },
+      {
+        "r": 30,
+        "g": 26,
+        "b": 22,
+        "weight": 0.19875
+      },
+      {
+        "r": 174,
+        "g": 143,
+        "b": 125,
+        "weight": 0.16470238095238096
+      },
+      {
+        "r": 205,
+        "g": 202,
+        "b": 205,
+        "weight": 0.08988095238095238
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -2707,11 +4851,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 95,
-      "g": 95,
-      "b": 76
-    },
+    "color_palette": [
+      {
+        "r": 86,
+        "g": 99,
+        "b": 68,
+        "weight": 0.26365079365079364
+      },
+      {
+        "r": 66,
+        "g": 70,
+        "b": 46,
+        "weight": 0.2480952380952381
+      },
+      {
+        "r": 166,
+        "g": 158,
+        "b": 152,
+        "weight": 0.18158730158730158
+      },
+      {
+        "r": 40,
+        "g": 41,
+        "b": 33,
+        "weight": 0.15611111111111112
+      },
+      {
+        "r": 133,
+        "g": 106,
+        "b": 92,
+        "weight": 0.15055555555555555
+      }
+    ],
     "all_tags": [
       "running",
       "sports",
@@ -2751,11 +4922,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 117,
-      "g": 111,
-      "b": 98
-    },
+    "color_palette": [
+      {
+        "r": 86,
+        "g": 94,
+        "b": 62,
+        "weight": 0.308452380952381
+      },
+      {
+        "r": 163,
+        "g": 147,
+        "b": 139,
+        "weight": 0.1869047619047619
+      },
+      {
+        "r": 34,
+        "g": 32,
+        "b": 26,
+        "weight": 0.18648809523809523
+      },
+      {
+        "r": 138,
+        "g": 111,
+        "b": 99,
+        "weight": 0.17833333333333334
+      },
+      {
+        "r": 208,
+        "g": 208,
+        "b": 212,
+        "weight": 0.13982142857142857
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -2795,11 +4993,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 97,
-      "g": 96,
-      "b": 78
-    },
+    "color_palette": [
+      {
+        "r": 83,
+        "g": 100,
+        "b": 65,
+        "weight": 0.37557522123893805
+      },
+      {
+        "r": 143,
+        "g": 128,
+        "b": 119,
+        "weight": 0.2097345132743363
+      },
+      {
+        "r": 42,
+        "g": 39,
+        "b": 34,
+        "weight": 0.20153392330383482
+      },
+      {
+        "r": 120,
+        "g": 101,
+        "b": 89,
+        "weight": 0.19002949852507375
+      },
+      {
+        "r": 187,
+        "g": 189,
+        "b": 200,
+        "weight": 0.023126843657817107
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -2839,11 +5064,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 106,
-      "g": 105,
-      "b": 86
-    },
+    "color_palette": [
+      {
+        "r": 88,
+        "g": 107,
+        "b": 68,
+        "weight": 0.3651190476190476
+      },
+      {
+        "r": 150,
+        "g": 136,
+        "b": 126,
+        "weight": 0.2513690476190476
+      },
+      {
+        "r": 128,
+        "g": 105,
+        "b": 92,
+        "weight": 0.1906547619047619
+      },
+      {
+        "r": 47,
+        "g": 43,
+        "b": 39,
+        "weight": 0.1700595238095238
+      },
+      {
+        "r": 196,
+        "g": 199,
+        "b": 212,
+        "weight": 0.02279761904761905
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -2883,11 +5135,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 80,
-      "g": 77,
-      "b": 60
-    },
+    "color_palette": [
+      {
+        "r": 80,
+        "g": 88,
+        "b": 56,
+        "weight": 0.38148809523809524
+      },
+      {
+        "r": 53,
+        "g": 47,
+        "b": 36,
+        "weight": 0.18922619047619046
+      },
+      {
+        "r": 18,
+        "g": 16,
+        "b": 15,
+        "weight": 0.18410714285714286
+      },
+      {
+        "r": 139,
+        "g": 113,
+        "b": 98,
+        "weight": 0.1811309523809524
+      },
+      {
+        "r": 180,
+        "g": 176,
+        "b": 180,
+        "weight": 0.06404761904761905
+      }
+    ],
     "all_tags": [
       "sports",
       "celebration",
@@ -2927,11 +5206,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 88,
-      "g": 90,
-      "b": 78
-    },
+    "color_palette": [
+      {
+        "r": 65,
+        "g": 76,
+        "b": 45,
+        "weight": 0.44843657817109145
+      },
+      {
+        "r": 160,
+        "g": 158,
+        "b": 161,
+        "weight": 0.1943952802359882
+      },
+      {
+        "r": 134,
+        "g": 109,
+        "b": 99,
+        "weight": 0.16283185840707964
+      },
+      {
+        "r": 26,
+        "g": 23,
+        "b": 21,
+        "weight": 0.1424778761061947
+      },
+      {
+        "r": 35,
+        "g": 89,
+        "b": 136,
+        "weight": 0.05185840707964602
+      }
+    ],
     "all_tags": [
       "sports",
       "running",
@@ -2971,11 +5277,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 87,
-      "g": 83,
-      "b": 64
-    },
+    "color_palette": [
+      {
+        "r": 67,
+        "g": 78,
+        "b": 43,
+        "weight": 0.39708333333333334
+      },
+      {
+        "r": 22,
+        "g": 19,
+        "b": 15,
+        "weight": 0.24982142857142858
+      },
+      {
+        "r": 125,
+        "g": 101,
+        "b": 85,
+        "weight": 0.16714285714285715
+      },
+      {
+        "r": 172,
+        "g": 141,
+        "b": 126,
+        "weight": 0.11267857142857143
+      },
+      {
+        "r": 199,
+        "g": 198,
+        "b": 203,
+        "weight": 0.07327380952380952
+      }
+    ],
     "all_tags": [
       "sports",
       "running",
@@ -3015,11 +5348,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 91,
-      "g": 88,
-      "b": 69
-    },
+    "color_palette": [
+      {
+        "r": 76,
+        "g": 83,
+        "b": 51,
+        "weight": 0.4325
+      },
+      {
+        "r": 27,
+        "g": 25,
+        "b": 20,
+        "weight": 0.2398809523809524
+      },
+      {
+        "r": 121,
+        "g": 105,
+        "b": 88,
+        "weight": 0.14386904761904762
+      },
+      {
+        "r": 174,
+        "g": 147,
+        "b": 127,
+        "weight": 0.11642857142857142
+      },
+      {
+        "r": 206,
+        "g": 208,
+        "b": 216,
+        "weight": 0.06732142857142857
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3059,11 +5419,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 75,
-      "g": 73,
-      "b": 73
-    },
+    "color_palette": [
+      {
+        "r": 28,
+        "g": 24,
+        "b": 29,
+        "weight": 0.3969047619047619
+      },
+      {
+        "r": 90,
+        "g": 78,
+        "b": 75,
+        "weight": 0.2742857142857143
+      },
+      {
+        "r": 127,
+        "g": 133,
+        "b": 113,
+        "weight": 0.2046031746031746
+      },
+      {
+        "r": 72,
+        "g": 92,
+        "b": 129,
+        "weight": 0.0830952380952381
+      },
+      {
+        "r": 175,
+        "g": 172,
+        "b": 168,
+        "weight": 0.04111111111111111
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3103,11 +5490,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 76,
-      "g": 74,
-      "b": 62
-    },
+    "color_palette": [
+      {
+        "r": 57,
+        "g": 60,
+        "b": 38,
+        "weight": 0.321984126984127
+      },
+      {
+        "r": 16,
+        "g": 15,
+        "b": 14,
+        "weight": 0.2679365079365079
+      },
+      {
+        "r": 95,
+        "g": 96,
+        "b": 75,
+        "weight": 0.2046031746031746
+      },
+      {
+        "r": 154,
+        "g": 134,
+        "b": 124,
+        "weight": 0.15555555555555556
+      },
+      {
+        "r": 211,
+        "g": 212,
+        "b": 224,
+        "weight": 0.04992063492063492
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3147,11 +5561,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 87,
-      "g": 85,
-      "b": 68
-    },
+    "color_palette": [
+      {
+        "r": 61,
+        "g": 63,
+        "b": 36,
+        "weight": 0.3132738095238095
+      },
+      {
+        "r": 94,
+        "g": 98,
+        "b": 72,
+        "weight": 0.29678571428571426
+      },
+      {
+        "r": 22,
+        "g": 19,
+        "b": 16,
+        "weight": 0.1829761904761905
+      },
+      {
+        "r": 160,
+        "g": 140,
+        "b": 129,
+        "weight": 0.14511904761904762
+      },
+      {
+        "r": 212,
+        "g": 209,
+        "b": 215,
+        "weight": 0.06184523809523809
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3191,11 +5632,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 120,
-      "g": 113,
-      "b": 102
-    },
+    "color_palette": [
+      {
+        "r": 154,
+        "g": 136,
+        "b": 128,
+        "weight": 0.46111111111111114
+      },
+      {
+        "r": 98,
+        "g": 108,
+        "b": 81,
+        "weight": 0.2688888888888889
+      },
+      {
+        "r": 59,
+        "g": 53,
+        "b": 48,
+        "weight": 0.11066666666666666
+      },
+      {
+        "r": 18,
+        "g": 14,
+        "b": 13,
+        "weight": 0.0876
+      },
+      {
+        "r": 201,
+        "g": 194,
+        "b": 200,
+        "weight": 0.07173333333333333
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3235,11 +5703,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 94,
-      "g": 97,
-      "b": 71
-    },
+    "color_palette": [
+      {
+        "r": 92,
+        "g": 108,
+        "b": 69,
+        "weight": 0.3980888888888889
+      },
+      {
+        "r": 75,
+        "g": 77,
+        "b": 47,
+        "weight": 0.2991111111111111
+      },
+      {
+        "r": 169,
+        "g": 154,
+        "b": 149,
+        "weight": 0.12351111111111111
+      },
+      {
+        "r": 31,
+        "g": 31,
+        "b": 28,
+        "weight": 0.0971111111111111
+      },
+      {
+        "r": 139,
+        "g": 106,
+        "b": 96,
+        "weight": 0.08217777777777778
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3279,11 +5774,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 94,
-      "g": 92,
-      "b": 76
-    },
+    "color_palette": [
+      {
+        "r": 71,
+        "g": 83,
+        "b": 50,
+        "weight": 0.39899705014749265
+      },
+      {
+        "r": 116,
+        "g": 91,
+        "b": 83,
+        "weight": 0.21056047197640118
+      },
+      {
+        "r": 142,
+        "g": 133,
+        "b": 127,
+        "weight": 0.16412979351032447
+      },
+      {
+        "r": 38,
+        "g": 35,
+        "b": 27,
+        "weight": 0.15734513274336284
+      },
+      {
+        "r": 180,
+        "g": 183,
+        "b": 188,
+        "weight": 0.06896755162241888
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3323,11 +5845,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 96,
-      "g": 90,
-      "b": 76
-    },
+    "color_palette": [
+      {
+        "r": 98,
+        "g": 99,
+        "b": 69,
+        "weight": 0.3270222222222222
+      },
+      {
+        "r": 151,
+        "g": 133,
+        "b": 124,
+        "weight": 0.23817777777777777
+      },
+      {
+        "r": 23,
+        "g": 21,
+        "b": 20,
+        "weight": 0.22564444444444445
+      },
+      {
+        "r": 70,
+        "g": 63,
+        "b": 49,
+        "weight": 0.15373333333333333
+      },
+      {
+        "r": 215,
+        "g": 212,
+        "b": 218,
+        "weight": 0.05542222222222222
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3367,11 +5916,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 85,
-      "g": 80,
-      "b": 71
-    },
+    "color_palette": [
+      {
+        "r": 25,
+        "g": 22,
+        "b": 20,
+        "weight": 0.39301587301587304
+      },
+      {
+        "r": 73,
+        "g": 75,
+        "b": 54,
+        "weight": 0.27936507936507937
+      },
+      {
+        "r": 132,
+        "g": 104,
+        "b": 86,
+        "weight": 0.1311904761904762
+      },
+      {
+        "r": 210,
+        "g": 212,
+        "b": 222,
+        "weight": 0.11095238095238096
+      },
+      {
+        "r": 169,
+        "g": 149,
+        "b": 139,
+        "weight": 0.08547619047619047
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3411,11 +5987,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 91,
-      "g": 94,
-      "b": 72
-    },
+    "color_palette": [
+      {
+        "r": 89,
+        "g": 103,
+        "b": 65,
+        "weight": 0.5468253968253968
+      },
+      {
+        "r": 60,
+        "g": 49,
+        "b": 43,
+        "weight": 0.1761111111111111
+      },
+      {
+        "r": 20,
+        "g": 17,
+        "b": 14,
+        "weight": 0.12507936507936507
+      },
+      {
+        "r": 219,
+        "g": 213,
+        "b": 214,
+        "weight": 0.07642857142857143
+      },
+      {
+        "r": 163,
+        "g": 149,
+        "b": 139,
+        "weight": 0.07555555555555556
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3455,11 +6058,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 102,
-      "g": 104,
-      "b": 82
-    },
+    "color_palette": [
+      {
+        "r": 105,
+        "g": 120,
+        "b": 80,
+        "weight": 0.5037301587301587
+      },
+      {
+        "r": 65,
+        "g": 53,
+        "b": 47,
+        "weight": 0.19142857142857142
+      },
+      {
+        "r": 20,
+        "g": 16,
+        "b": 13,
+        "weight": 0.13738095238095238
+      },
+      {
+        "r": 178,
+        "g": 161,
+        "b": 150,
+        "weight": 0.08738095238095238
+      },
+      {
+        "r": 223,
+        "g": 217,
+        "b": 219,
+        "weight": 0.08007936507936508
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3499,11 +6129,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 82,
-      "g": 75,
-      "b": 72
-    },
+    "color_palette": [
+      {
+        "r": 70,
+        "g": 61,
+        "b": 51,
+        "weight": 0.3458333333333333
+      },
+      {
+        "r": 96,
+        "g": 86,
+        "b": 81,
+        "weight": 0.22482142857142856
+      },
+      {
+        "r": 20,
+        "g": 18,
+        "b": 16,
+        "weight": 0.19351190476190477
+      },
+      {
+        "r": 127,
+        "g": 122,
+        "b": 126,
+        "weight": 0.17857142857142858
+      },
+      {
+        "r": 175,
+        "g": 172,
+        "b": 179,
+        "weight": 0.057261904761904764
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3543,11 +6200,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 82,
-      "g": 83,
-      "b": 62
-    },
+    "color_palette": [
+      {
+        "r": 99,
+        "g": 113,
+        "b": 78,
+        "weight": 0.49799410029498525
+      },
+      {
+        "r": 26,
+        "g": 22,
+        "b": 24,
+        "weight": 0.25952802359882005
+      },
+      {
+        "r": 65,
+        "g": 58,
+        "b": 53,
+        "weight": 0.12861356932153392
+      },
+      {
+        "r": 160,
+        "g": 100,
+        "b": 62,
+        "weight": 0.06784660766961652
+      },
+      {
+        "r": 146,
+        "g": 133,
+        "b": 130,
+        "weight": 0.04601769911504425
+      }
+    ],
     "all_tags": [
       "sports",
       "running",
@@ -3587,11 +6271,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 23,
-      "g": 22,
-      "b": 18
-    },
+    "color_palette": [
+      {
+        "r": 6,
+        "g": 5,
+        "b": 5,
+        "weight": 0.5198809523809523
+      },
+      {
+        "r": 25,
+        "g": 21,
+        "b": 20,
+        "weight": 0.22220238095238096
+      },
+      {
+        "r": 42,
+        "g": 47,
+        "b": 33,
+        "weight": 0.17511904761904762
+      },
+      {
+        "r": 73,
+        "g": 63,
+        "b": 50,
+        "weight": 0.05988095238095238
+      },
+      {
+        "r": 137,
+        "g": 106,
+        "b": 83,
+        "weight": 0.022916666666666665
+      }
+    ],
     "all_tags": [
       "sports",
       "depth of field",
@@ -3631,11 +6342,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 48,
-      "g": 48,
-      "b": 37
-    },
+    "color_palette": [
+      {
+        "r": 41,
+        "g": 50,
+        "b": 33,
+        "weight": 0.3816519174041298
+      },
+      {
+        "r": 16,
+        "g": 16,
+        "b": 14,
+        "weight": 0.3127433628318584
+      },
+      {
+        "r": 77,
+        "g": 61,
+        "b": 51,
+        "weight": 0.15097345132743362
+      },
+      {
+        "r": 96,
+        "g": 87,
+        "b": 82,
+        "weight": 0.13498525073746312
+      },
+      {
+        "r": 174,
+        "g": 138,
+        "b": 97,
+        "weight": 0.019646017699115045
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3675,11 +6413,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 68,
-      "g": 62,
-      "b": 48
-    },
+    "color_palette": [
+      {
+        "r": 81,
+        "g": 79,
+        "b": 54,
+        "weight": 0.29601190476190475
+      },
+      {
+        "r": 23,
+        "g": 22,
+        "b": 21,
+        "weight": 0.2775
+      },
+      {
+        "r": 58,
+        "g": 52,
+        "b": 36,
+        "weight": 0.2550595238095238
+      },
+      {
+        "r": 125,
+        "g": 102,
+        "b": 90,
+        "weight": 0.13845238095238097
+      },
+      {
+        "r": 177,
+        "g": 152,
+        "b": 136,
+        "weight": 0.03297619047619048
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3719,11 +6484,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 65,
-      "g": 63,
-      "b": 51
-    },
+    "color_palette": [
+      {
+        "r": 62,
+        "g": 78,
+        "b": 47,
+        "weight": 0.3243452380952381
+      },
+      {
+        "r": 111,
+        "g": 93,
+        "b": 88,
+        "weight": 0.2945238095238095
+      },
+      {
+        "r": 33,
+        "g": 27,
+        "b": 25,
+        "weight": 0.18142857142857144
+      },
+      {
+        "r": 9,
+        "g": 8,
+        "b": 8,
+        "weight": 0.17136904761904762
+      },
+      {
+        "r": 179,
+        "g": 148,
+        "b": 130,
+        "weight": 0.028333333333333332
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3763,11 +6555,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 59,
-      "g": 55,
-      "b": 43
-    },
+    "color_palette": [
+      {
+        "r": 54,
+        "g": 66,
+        "b": 43,
+        "weight": 0.38784660766961654
+      },
+      {
+        "r": 95,
+        "g": 68,
+        "b": 60,
+        "weight": 0.2030678466076696
+      },
+      {
+        "r": 18,
+        "g": 17,
+        "b": 17,
+        "weight": 0.18017699115044247
+      },
+      {
+        "r": 39,
+        "g": 35,
+        "b": 30,
+        "weight": 0.15581120943952803
+      },
+      {
+        "r": 127,
+        "g": 101,
+        "b": 88,
+        "weight": 0.07309734513274337
+      }
+    ],
     "all_tags": [
       "motion blur",
       "sports",
@@ -3807,11 +6626,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 69,
-      "g": 72,
-      "b": 58
-    },
+    "color_palette": [
+      {
+        "r": 42,
+        "g": 39,
+        "b": 36,
+        "weight": 0.38011904761904763
+      },
+      {
+        "r": 72,
+        "g": 91,
+        "b": 58,
+        "weight": 0.22130952380952382
+      },
+      {
+        "r": 95,
+        "g": 111,
+        "b": 78,
+        "weight": 0.18785714285714286
+      },
+      {
+        "r": 145,
+        "g": 123,
+        "b": 121,
+        "weight": 0.12285714285714286
+      },
+      {
+        "r": 16,
+        "g": 15,
+        "b": 16,
+        "weight": 0.08785714285714286
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -3851,11 +6697,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 66,
-      "g": 64,
-      "b": 51
-    },
+    "color_palette": [
+      {
+        "r": 71,
+        "g": 83,
+        "b": 56,
+        "weight": 0.3547619047619048
+      },
+      {
+        "r": 42,
+        "g": 38,
+        "b": 35,
+        "weight": 0.3094047619047619
+      },
+      {
+        "r": 14,
+        "g": 14,
+        "b": 14,
+        "weight": 0.14535714285714285
+      },
+      {
+        "r": 111,
+        "g": 95,
+        "b": 84,
+        "weight": 0.1281547619047619
+      },
+      {
+        "r": 176,
+        "g": 143,
+        "b": 114,
+        "weight": 0.06232142857142857
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3895,11 +6768,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 83,
-      "g": 82,
-      "b": 65
-    },
+    "color_palette": [
+      {
+        "r": 65,
+        "g": 78,
+        "b": 47,
+        "weight": 0.39775811209439527
+      },
+      {
+        "r": 36,
+        "g": 34,
+        "b": 30,
+        "weight": 0.25433628318584073
+      },
+      {
+        "r": 112,
+        "g": 87,
+        "b": 73,
+        "weight": 0.14188790560471976
+      },
+      {
+        "r": 158,
+        "g": 160,
+        "b": 162,
+        "weight": 0.12525073746312684
+      },
+      {
+        "r": 147,
+        "g": 125,
+        "b": 103,
+        "weight": 0.08076696165191741
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -3939,11 +6839,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 46,
-      "g": 42,
-      "b": 33
-    },
+    "color_palette": [
+      {
+        "r": 18,
+        "g": 16,
+        "b": 17,
+        "weight": 0.39705014749262535
+      },
+      {
+        "r": 51,
+        "g": 41,
+        "b": 37,
+        "weight": 0.1952802359882006
+      },
+      {
+        "r": 76,
+        "g": 60,
+        "b": 55,
+        "weight": 0.17669616519174042
+      },
+      {
+        "r": 46,
+        "g": 68,
+        "b": 37,
+        "weight": 0.16796460176991151
+      },
+      {
+        "r": 126,
+        "g": 92,
+        "b": 52,
+        "weight": 0.06300884955752212
+      }
+    ],
     "all_tags": [
       "game",
       "sports",
@@ -3983,11 +6910,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 62,
-      "g": 55,
-      "b": 47
-    },
+    "color_palette": [
+      {
+        "r": 25,
+        "g": 24,
+        "b": 26,
+        "weight": 0.5086309523809524
+      },
+      {
+        "r": 61,
+        "g": 65,
+        "b": 48,
+        "weight": 0.20714285714285716
+      },
+      {
+        "r": 107,
+        "g": 84,
+        "b": 74,
+        "weight": 0.16214285714285714
+      },
+      {
+        "r": 151,
+        "g": 120,
+        "b": 110,
+        "weight": 0.07869047619047619
+      },
+      {
+        "r": 173,
+        "g": 134,
+        "b": 58,
+        "weight": 0.04339285714285714
+      }
+    ],
     "all_tags": [
       "game",
       "sports",
@@ -4027,11 +6981,38 @@
       "yellow dominant",
       "brown dominant"
     ],
-    "dominant_color": {
-      "r": 37,
-      "g": 35,
-      "b": 28
-    },
+    "color_palette": [
+      {
+        "r": 23,
+        "g": 22,
+        "b": 20,
+        "weight": 0.4671386430678466
+      },
+      {
+        "r": 51,
+        "g": 58,
+        "b": 40,
+        "weight": 0.21410029498525074
+      },
+      {
+        "r": 7,
+        "g": 7,
+        "b": 7,
+        "weight": 0.16914454277286137
+      },
+      {
+        "r": 86,
+        "g": 67,
+        "b": 58,
+        "weight": 0.12849557522123894
+      },
+      {
+        "r": 160,
+        "g": 123,
+        "b": 64,
+        "weight": 0.02112094395280236
+      }
+    ],
     "all_tags": [
       "game",
       "sports",
@@ -4071,11 +7052,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 42,
-      "g": 41,
-      "b": 32
-    },
+    "color_palette": [
+      {
+        "r": 20,
+        "g": 19,
+        "b": 18,
+        "weight": 0.3133923303834808
+      },
+      {
+        "r": 48,
+        "g": 61,
+        "b": 37,
+        "weight": 0.2871976401179941
+      },
+      {
+        "r": 4,
+        "g": 4,
+        "b": 4,
+        "weight": 0.18123893805309735
+      },
+      {
+        "r": 83,
+        "g": 67,
+        "b": 60,
+        "weight": 0.17651917404129794
+      },
+      {
+        "r": 159,
+        "g": 132,
+        "b": 109,
+        "weight": 0.041651917404129796
+      }
+    ],
     "all_tags": [
       "sports",
       "motion blur",
@@ -4115,11 +7123,38 @@
       "brown dominant",
       "gray dominant"
     ],
-    "dominant_color": {
-      "r": 68,
-      "g": 74,
-      "b": 54
-    },
+    "color_palette": [
+      {
+        "r": 73,
+        "g": 94,
+        "b": 64,
+        "weight": 0.5251917404129793
+      },
+      {
+        "r": 51,
+        "g": 44,
+        "b": 38,
+        "weight": 0.21150442477876105
+      },
+      {
+        "r": 17,
+        "g": 15,
+        "b": 15,
+        "weight": 0.16855457227138643
+      },
+      {
+        "r": 142,
+        "g": 113,
+        "b": 83,
+        "weight": 0.050265486725663715
+      },
+      {
+        "r": 188,
+        "g": 160,
+        "b": 131,
+        "weight": 0.044483775811209436
+      }
+    ],
     "all_tags": [
       "sports",
       "game",
@@ -4159,11 +7194,38 @@
       "brown dominant",
       "yellow dominant"
     ],
-    "dominant_color": {
-      "r": 56,
-      "g": 55,
-      "b": 43
-    },
+    "color_palette": [
+      {
+        "r": 22,
+        "g": 19,
+        "b": 20,
+        "weight": 0.4510324483775811
+      },
+      {
+        "r": 74,
+        "g": 95,
+        "b": 53,
+        "weight": 0.2949852507374631
+      },
+      {
+        "r": 80,
+        "g": 64,
+        "b": 66,
+        "weight": 0.19404129793510325
+      },
+      {
+        "r": 132,
+        "g": 94,
+        "b": 77,
+        "weight": 0.046253687315634215
+      },
+      {
+        "r": 183,
+        "g": 146,
+        "b": 121,
+        "weight": 0.01368731563421829
+      }
+    ],
     "all_tags": [
       "sports",
       "game",

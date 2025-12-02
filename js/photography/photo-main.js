@@ -6,10 +6,12 @@ import { clusterAndPositionPhotos } from './photo-clustering.js';
 import { createAllPhotoMeshes } from './photo-meshes.js';
 import { initPhotoInteractions, initLightboxHandlers } from './photo-interactions.js';
 import { PhotoLoader } from './photo-loader.js';
+import { calculateBoundaryFromPhotos, updateBoundary } from './photo-boundary.js';
 
 let controls;
 let photoLoader;
 let allPhotoMeshes = [];
+let boundaryLine = null;
 const clock = new THREE.Clock();
 
 async function init() {
@@ -30,29 +32,11 @@ async function init() {
         photoMeshes.push(...allPhotoMeshes);
 
         // Calculate boundaries based on actual photo positions and dimensions
-        let minX = Infinity, maxX = -Infinity;
-        let minY = Infinity, maxY = -Infinity;
+        const bounds = calculateBoundaryFromPhotos(allPhotoMeshes, 2, 2);
+        state.bounds = bounds;
 
-        allPhotoMeshes.forEach(mesh => {
-            const pos = mesh.position;
-            const width = mesh.userData.width;
-            const height = mesh.userData.height;
-
-            minX = Math.min(minX, pos.x - width / 2);
-            maxX = Math.max(maxX, pos.x + width / 2);
-            minY = Math.min(minY, pos.y - height / 2);
-            maxY = Math.max(maxY, pos.y + height / 2);
-        });
-
-        // Add small buffer
-        const bufferX = 2;
-        const bufferY = 2;
-        state.bounds = {
-            minX: minX - bufferX,
-            maxX: maxX + bufferX,
-            minY: minY - bufferY,
-            maxY: maxY + bufferY
-        };
+        // Create visual boundary
+        boundaryLine = updateBoundary(boundaryLine, bounds.minX, bounds.maxX, bounds.minY, bounds.maxY);
 
         const canvas = renderer.domElement;
         controls = new PhotoControls(canvas, camera, state);

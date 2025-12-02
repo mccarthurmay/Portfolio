@@ -103,8 +103,8 @@ body > * {
 .instagram-icon {
     width: 20px;
     height: 20px;
-    vertical-align: middle;
-    opacity: 0.8;
+    vertical-align: text-top;
+    opacity: 1;
     transition: opacity 0.2s ease;
 }
 
@@ -229,32 +229,37 @@ body > * {
     border-radius: 8px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
     z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#lightbox-image.loaded {
+    opacity: 1;
 }
 
 #lightbox-close {
     position: absolute;
     top: 30px;
     right: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    color: white;
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.8rem;
+    font-weight: 300;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1002;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
     line-height: 1;
 }
 
 #lightbox-close:hover {
-    background: var(--canvas-accent);
-    border-color: white;
-    transform: rotate(90deg);
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
 }
 
 /* Responsive */
@@ -363,12 +368,11 @@ body > * {
     overflow: hidden;
     border-radius: 2px;
     cursor: pointer;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity: 0;
+    transition: opacity 1.2s ease,
                 box-shadow 0.4s ease,
-                border-color 0.4s ease;
+                border-color 0.4s ease,
+                transform 0.4s ease;
     border: 1px solid rgba(45, 40, 30, 0.08);
     box-shadow:
         0 1px 3px rgba(45, 40, 30, 0.06),
@@ -376,12 +380,11 @@ body > * {
     background: #fefdfb;
 }
 
-.portfolio-photo.visible {
+.portfolio-photo.loaded {
     opacity: 1;
-    transform: translateY(0);
 }
 
-.portfolio-photo.visible:hover {
+.portfolio-photo.loaded:hover {
     transform: translateY(-6px);
     box-shadow:
         0 4px 12px rgba(45, 40, 30, 0.1),

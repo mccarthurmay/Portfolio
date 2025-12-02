@@ -51,7 +51,7 @@ export class PhotoLoader {
         const photoData = mesh.userData.photoData;
 
         // Don't reload if already loaded
-        if (mesh.userData.currentQuality === 'large' && mesh.material.map) {
+        if (mesh.userData.currentQuality === 'medium' && mesh.material.map) {
             return;
         }
 
@@ -63,7 +63,7 @@ export class PhotoLoader {
         this.loadingQueue.add(photoId);
 
         const textureLoader = new THREE.TextureLoader();
-        const url = getPhotoURL(photoData.cloudinaryUrl, 'large');  // Always use full quality
+        const url = getPhotoURL(photoData.cloudinaryUrl, 'medium');  // Use medium quality for canvas
 
         textureLoader.load(
             url,
@@ -80,13 +80,13 @@ export class PhotoLoader {
                 mesh.material.map = texture;
                 mesh.material.color.setHex(0xffffff);  // Reset color to white
                 mesh.material.needsUpdate = true;
-                mesh.userData.currentQuality = 'large';
+                mesh.userData.currentQuality = 'medium';
 
                 // Start fade-in animation
                 mesh.material.opacity = 0;
                 this.fadeAnimations.set(mesh, {
                     startTime: Date.now(),
-                    duration: 300 // 300ms fade
+                    duration: 850 // 850ms fade (0.85 seconds)
                 });
 
                 this.loadedTextures.set(photoId, texture);

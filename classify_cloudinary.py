@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
 Cloudinary Photo Classifier using CLIP
-Automatically tags all photos in your Cloudinary account with content, style, lighting, and color labels.
+Automatically tags photos in your Cloudinary account with content, style, lighting, and color labels.
+
+Usage:
+    python classify_cloudinary.py              # Process both portfolio and rugby
+    python classify_cloudinary.py portfolio    # Process only portfolio folder
+    python classify_cloudinary.py rugby        # Process only rugby folder
 """
 
 import torch
@@ -215,12 +220,13 @@ def fetch_all_images():
 
     print(f"\nTotal images found: {len(all_images)}")
 
-    # Return public_id, secure_url, and folder
+    # Return public_id, secure_url, folder, and created_at (upload date)
     return [
         {
             "public_id": r["public_id"],
             "url": r["secure_url"],
-            "folder": r.get("folder", "unknown")
+            "folder": r.get("folder", "unknown"),
+            "created_at": r.get("created_at", "")  # Cloudinary upload date
         }
         for r in all_images
     ]
@@ -320,8 +326,8 @@ def download_image(url):
         print(f"    Error downloading image: {e}")
         return None
 
-def get_dominant_color(image):
-    """Extract dominant color from image using k-means clustering"""
+def get_color_palette(image, num_colors=5):
+    """Extract color palette from image using k-means clustering"""
     try:
         # Resize for faster processing
         img = image.copy()
@@ -329,19 +335,40 @@ def get_dominant_color(image):
 
         # Convert to numpy array and reshape
         import numpy as np
+        from sklearn.cluster import KMeans
+
         pixels = np.array(img).reshape(-1, 3)
 
-        # Simple method: get average color
-        avg_color = pixels.mean(axis=0)
+        # Use k-means to find dominant colors
+        kmeans = KMeans(n_clusters=num_colors, random_state=42, n_init=10)
+        kmeans.fit(pixels)
 
-        return {
-            'r': int(avg_color[0]),
-            'g': int(avg_color[1]),
-            'b': int(avg_color[2])
-        }
+        # Get cluster centers (the dominant colors)
+        colors = kmeans.cluster_centers_
+
+        # Count pixels in each cluster to get color weights
+        labels = kmeans.labels_
+        counts = np.bincount(labels)
+
+        # Sort by frequency (most common first)
+        indices = np.argsort(-counts)
+
+        # Return colors sorted by frequency
+        palette = [
+            {
+                'r': int(colors[i][0]),
+                'g': int(colors[i][1]),
+                'b': int(colors[i][2]),
+                'weight': float(counts[i] / len(labels))
+            }
+            for i in indices
+        ]
+
+        return palette
     except Exception as e:
-        print(f"    Error extracting dominant color: {e}")
-        return {'r': 128, 'g': 128, 'b': 128}  # Default gray
+        print(f"    Error extracting color palette: {e}")
+        # Return default gray palette
+        return [{'r': 128, 'g': 128, 'b': 128, 'weight': 1.0}]
 
 def get_photo_date(image):
     """Extract the date the photo was taken from EXIF metadata"""
@@ -433,8 +460,8 @@ def process_all_images():
             lighting_tags = get_clip_tags(image, LIGHTING_LABELS, LIGHTING_TAGS_PER_IMAGE)
             color_tags = get_clip_tags(image, COLOR_LABELS, COLOR_TAGS_PER_IMAGE)
 
-            # Extract dominant color
-            dominant_color = get_dominant_color(image)
+            # Extract color palette (5 dominant colors)
+            color_palette = get_color_palette(image, num_colors=5)
 
             # Combine all tags
             all_tags = content_tags + style_tags + lighting_tags + color_tags
@@ -448,7 +475,7 @@ def process_all_images():
                 "style": style_tags,
                 "lighting": lighting_tags,
                 "colors": color_tags,
-                "dominant_color": dominant_color,
+                "color_palette": color_palette,
                 "all_tags": all_tags
             }
 
@@ -466,8 +493,8 @@ def process_all_images():
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
 
-    print(f"✓ Results saved to {output_file}")
-    print(f"✓ Total tagged photos: {len(results)}")
+    print(f"Results saved to {output_file}")
+    print(f"Total tagged photos: {len(results)}")
 
     # Print sample
     if results:
@@ -480,6 +507,61 @@ def process_all_images():
         print(f"  Lighting: {', '.join(sample['lighting'])}")
         print(f"  Colors: {', '.join(sample['colors'])}")
 
+def process_images_only(images):
+    """Process images and return results without saving"""
+    print(f"\nProcessing {len(images)} images with CLIP tagging...")
+    print("=" * 60)
+
+    results = {}
+
+    for idx, img_data in enumerate(tqdm(images, desc="Processing images")):
+        public_id = img_data["public_id"]
+        url = img_data["url"]
+        folder = img_data.get("folder", "unknown")
+
+        if (idx + 1) % 10 == 0:
+            print(f"\nProcessed {idx + 1}/{len(images)} images...")
+
+        try:
+            image = download_image(url)
+            if image is None:
+                print(f"  Skipping {public_id} (download failed)")
+                continue
+
+            photo_date = get_photo_date(image)
+            if photo_date is None:
+                photo_date = img_data.get("created_at", "")
+
+            content_tags = get_clip_tags(image, CONTENT_LABELS, TAGS_PER_IMAGE)
+            style_tags = get_clip_tags(image, STYLE_LABELS, STYLE_TAGS_PER_IMAGE)
+            lighting_tags = get_clip_tags(image, LIGHTING_LABELS, LIGHTING_TAGS_PER_IMAGE)
+            color_tags = get_clip_tags(image, COLOR_LABELS, COLOR_TAGS_PER_IMAGE)
+
+            color_palette = get_color_palette(image, num_colors=5)
+
+            all_tags = content_tags + style_tags + lighting_tags + color_tags
+
+            results[public_id] = {
+                "url": url,
+                "folder": folder,
+                "created_at": photo_date,
+                "content": content_tags,
+                "style": style_tags,
+                "lighting": lighting_tags,
+                "colors": color_tags,
+                "color_palette": color_palette,
+                "all_tags": all_tags
+            }
+
+        except Exception as e:
+            print(f"  Error processing {public_id}: {e}")
+            continue
+
+    print("\n" + "=" * 60)
+    print(f"Successfully processed {len(results)}/{len(images)} images")
+
+    return results
+
 # ============================================================================
 # ENTRY POINT
 # ============================================================================
@@ -490,7 +572,83 @@ if __name__ == "__main__":
     print("=" * 60)
     print()
 
-    process_all_images()
+    # Check for command-line argument
+    if len(sys.argv) > 1:
+        folder_arg = sys.argv[1].lower()
+        if folder_arg in ['portfolio', 'rugby']:
+            print(f"Processing only '{folder_arg}' folder")
+            # Modify fetch_all_images to only fetch specified folder
+            import classify_cloudinary
+            original_fetch = fetch_all_images
+
+            def fetch_single_folder():
+                return fetch_images_from_folder(folder_arg)
+
+            def fetch_images_from_folder(folder_name):
+                print(f"\nFetching from '{folder_name}' asset folder...")
+                all_images = []
+                next_cursor = None
+
+                while True:
+                    try:
+                        result = cloudinary.api.resources_by_asset_folder(
+                            folder_name,
+                            max_results=500,
+                            next_cursor=next_cursor
+                        )
+
+                        folder_images = result.get("resources", [])
+                        for img in folder_images:
+                            img["folder"] = folder_name
+
+                        all_images.extend(folder_images)
+                        next_cursor = result.get("next_cursor")
+
+                        print(f"  Fetched {len(folder_images)} images from '{folder_name}'")
+                        print(f"  Total so far: {len(all_images)} images")
+
+                        if not next_cursor:
+                            break
+                    except Exception as e:
+                        print(f"Error fetching images from {folder_name}: {e}")
+                        break
+
+                print(f"\nTotal images found: {len(all_images)}")
+                return [
+                    {
+                        "public_id": r["public_id"],
+                        "url": r["secure_url"],
+                        "folder": r.get("folder", "unknown"),
+                        "created_at": r.get("created_at", "")  # Cloudinary upload date
+                    }
+                    for r in all_images
+                ]
+
+            # Load existing tags and merge
+            existing_tags = {}
+            if os.path.exists('tags.json'):
+                with open('tags.json', 'r') as f:
+                    existing_tags = json.load(f)
+                print(f"Loaded {len(existing_tags)} existing tags from tags.json")
+
+            # Fetch and process only specified folder
+            images = fetch_images_from_folder(folder_arg)
+            if images:
+                results = process_images_only(images)
+                # Merge with existing
+                final_results = {**existing_tags, **results}
+                # Save
+                with open('tags.json', 'w') as f:
+                    json.dump(final_results, f, indent=2)
+                print(f"\nResults saved to tags.json")
+                print(f"Total photos in database: {len(final_results)}")
+        else:
+            print(f"Unknown folder: {folder_arg}")
+            print("Usage: python classify_cloudinary.py [portfolio|rugby]")
+            sys.exit(1)
+    else:
+        # Default: process both folders
+        process_all_images()
 
     print("\n" + "=" * 60)
     print("DONE! You can now use tags.json in your Photography World.")
