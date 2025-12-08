@@ -7228,5 +7228,1557 @@
       "brown dominant",
       "yellow dominant"
     ]
+  },
+  "chloe_134_of_135_qd7kke": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159986/chloe_134_of_135_qd7kke.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:34:26",
+    "content": [
+      "motion blur",
+      "bokeh",
+      "snow",
+      "forest",
+      "depth of field"
+    ],
+    "style": [
+      "night photography",
+      "long exposure",
+      "soft focus"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "low light"
+    ],
+    "colors": [
+      "green dominant",
+      "white dominant"
+    ],
+    "color_palette": [
+      {
+        "r": 6,
+        "g": 4,
+        "b": 1,
+        "weight": 0.8136904761904762
+      },
+      {
+        "r": 37,
+        "g": 43,
+        "b": 17,
+        "weight": 0.08035714285714286
+      },
+      {
+        "r": 79,
+        "g": 89,
+        "b": 41,
+        "weight": 0.04744047619047619
+      },
+      {
+        "r": 136,
+        "g": 149,
+        "b": 71,
+        "weight": 0.03773809523809524
+      },
+      {
+        "r": 201,
+        "g": 210,
+        "b": 124,
+        "weight": 0.020773809523809524
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "bokeh",
+      "snow",
+      "forest",
+      "depth of field",
+      "night photography",
+      "long exposure",
+      "soft focus",
+      "atmospheric lighting",
+      "low light",
+      "green dominant",
+      "white dominant"
+    ]
+  },
+  "chloe2_1_of_1_q18qvw": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159982/chloe2_1_of_1_q18qvw.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:58:16",
+    "content": [
+      "wolf",
+      "winter",
+      "wildlife",
+      "forest",
+      "game"
+    ],
+    "style": [
+      "photo manipulation",
+      "digital painting",
+      "desaturated"
+    ],
+    "lighting": [
+      "flash photography",
+      "moody lighting"
+    ],
+    "colors": [
+      "grayscale",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 1,
+        "g": 1,
+        "b": 0,
+        "weight": 0.6139233038348083
+      },
+      {
+        "r": 23,
+        "g": 23,
+        "b": 18,
+        "weight": 0.1215339233038348
+      },
+      {
+        "r": 45,
+        "g": 45,
+        "b": 41,
+        "weight": 0.11628318584070796
+      },
+      {
+        "r": 71,
+        "g": 70,
+        "b": 66,
+        "weight": 0.10247787610619469
+      },
+      {
+        "r": 104,
+        "g": 103,
+        "b": 100,
+        "weight": 0.04578171091445428
+      }
+    ],
+    "all_tags": [
+      "wolf",
+      "winter",
+      "wildlife",
+      "forest",
+      "game",
+      "photo manipulation",
+      "digital painting",
+      "desaturated",
+      "flash photography",
+      "moody lighting",
+      "grayscale",
+      "desaturated"
+    ]
+  },
+  "chloe_129_of_135_x5tjsp": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159968/chloe_129_of_135_x5tjsp.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:31:53",
+    "content": [
+      "motion blur",
+      "lightning",
+      "snow",
+      "rain",
+      "running"
+    ],
+    "style": [
+      "night photography",
+      "expressionist style",
+      "long exposure"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "firelight"
+    ],
+    "colors": [
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 9,
+        "g": 5,
+        "b": 1,
+        "weight": 0.6332743362831859
+      },
+      {
+        "r": 53,
+        "g": 43,
+        "b": 18,
+        "weight": 0.19941002949852507
+      },
+      {
+        "r": 93,
+        "g": 89,
+        "b": 54,
+        "weight": 0.06147492625368731
+      },
+      {
+        "r": 248,
+        "g": 246,
+        "b": 229,
+        "weight": 0.06117994100294985
+      },
+      {
+        "r": 173,
+        "g": 170,
+        "b": 120,
+        "weight": 0.044660766961651915
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "lightning",
+      "snow",
+      "rain",
+      "running",
+      "night photography",
+      "expressionist style",
+      "long exposure",
+      "atmospheric lighting",
+      "firelight",
+      "desaturated"
+    ]
+  },
+  "chloe_125_of_135_dcerkd": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159962/chloe_125_of_135_dcerkd.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:31:35",
+    "content": [
+      "motion blur",
+      "snow",
+      "skiing",
+      "ice",
+      "mist"
+    ],
+    "style": [
+      "night photography",
+      "long exposure",
+      "expressionist style"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "firelight"
+    ],
+    "colors": [
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 10,
+        "g": 10,
+        "b": 6,
+        "weight": 0.39421828908554574
+      },
+      {
+        "r": 34,
+        "g": 34,
+        "b": 22,
+        "weight": 0.3040117994100295
+      },
+      {
+        "r": 76,
+        "g": 96,
+        "b": 74,
+        "weight": 0.12631268436578172
+      },
+      {
+        "r": 141,
+        "g": 165,
+        "b": 124,
+        "weight": 0.09451327433628319
+      },
+      {
+        "r": 241,
+        "g": 244,
+        "b": 224,
+        "weight": 0.08094395280235989
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "snow",
+      "skiing",
+      "ice",
+      "mist",
+      "night photography",
+      "long exposure",
+      "expressionist style",
+      "atmospheric lighting",
+      "firelight",
+      "desaturated"
+    ]
+  },
+  "chloe_120_of_135_lcsqn7": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159956/chloe_120_of_135_lcsqn7.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:31:06",
+    "content": [
+      "rain",
+      "motion blur",
+      "person",
+      "running",
+      "adventure"
+    ],
+    "style": [
+      "expressionist style",
+      "long exposure",
+      "night photography"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "moody lighting"
+    ],
+    "colors": [
+      "desaturated",
+      "low saturation"
+    ],
+    "color_palette": [
+      {
+        "r": 7,
+        "g": 9,
+        "b": 6,
+        "weight": 0.5293215339233038
+      },
+      {
+        "r": 19,
+        "g": 29,
+        "b": 20,
+        "weight": 0.28938053097345134
+      },
+      {
+        "r": 45,
+        "g": 67,
+        "b": 48,
+        "weight": 0.09663716814159291
+      },
+      {
+        "r": 86,
+        "g": 114,
+        "b": 85,
+        "weight": 0.06808259587020649
+      },
+      {
+        "r": 209,
+        "g": 193,
+        "b": 132,
+        "weight": 0.016578171091445427
+      }
+    ],
+    "all_tags": [
+      "rain",
+      "motion blur",
+      "person",
+      "running",
+      "adventure",
+      "expressionist style",
+      "long exposure",
+      "night photography",
+      "atmospheric lighting",
+      "moody lighting",
+      "desaturated",
+      "low saturation"
+    ]
+  },
+  "chloe_113_of_135_dmjvte": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159946/chloe_113_of_135_dmjvte.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:28:45",
+    "content": [
+      "person",
+      "elderly person",
+      "winter",
+      "forest",
+      "adventure"
+    ],
+    "style": [
+      "night photography",
+      "low contrast",
+      "documentary"
+    ],
+    "lighting": [
+      "low light",
+      "dark"
+    ],
+    "colors": [
+      "monochromatic",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 1,
+        "b": 0,
+        "weight": 0.8343362831858407
+      },
+      {
+        "r": 9,
+        "g": 14,
+        "b": 5,
+        "weight": 0.11533923303834809
+      },
+      {
+        "r": 23,
+        "g": 32,
+        "b": 15,
+        "weight": 0.04578171091445428
+      },
+      {
+        "r": 91,
+        "g": 90,
+        "b": 47,
+        "weight": 0.003008849557522124
+      },
+      {
+        "r": 173,
+        "g": 147,
+        "b": 76,
+        "weight": 0.0015339233038348082
+      }
+    ],
+    "all_tags": [
+      "person",
+      "elderly person",
+      "winter",
+      "forest",
+      "adventure",
+      "night photography",
+      "low contrast",
+      "documentary",
+      "low light",
+      "dark",
+      "monochromatic",
+      "desaturated"
+    ]
+  },
+  "chloe_103_of_135_ogcfge": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159938/chloe_103_of_135_ogcfge.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:28:33",
+    "content": [
+      "fog",
+      "mist",
+      "motion blur",
+      "motorcycle",
+      "abstract"
+    ],
+    "style": [
+      "long exposure",
+      "soft focus",
+      "desaturated"
+    ],
+    "lighting": [
+      "diffused light",
+      "chiaroscuro"
+    ],
+    "colors": [
+      "monochromatic",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 3,
+        "g": 3,
+        "b": 3,
+        "weight": 0.5858407079646017
+      },
+      {
+        "r": 37,
+        "g": 37,
+        "b": 37,
+        "weight": 0.16100294985250738
+      },
+      {
+        "r": 82,
+        "g": 82,
+        "b": 82,
+        "weight": 0.10643067846607669
+      },
+      {
+        "r": 196,
+        "g": 196,
+        "b": 196,
+        "weight": 0.07474926253687315
+      },
+      {
+        "r": 136,
+        "g": 136,
+        "b": 136,
+        "weight": 0.071976401179941
+      }
+    ],
+    "all_tags": [
+      "fog",
+      "mist",
+      "motion blur",
+      "motorcycle",
+      "abstract",
+      "long exposure",
+      "soft focus",
+      "desaturated",
+      "diffused light",
+      "chiaroscuro",
+      "monochromatic",
+      "desaturated"
+    ]
+  },
+  "chloe_81_of_135_ktoxiz": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159928/chloe_81_of_135_ktoxiz.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T12:04:05",
+    "content": [
+      "motion blur",
+      "person",
+      "rain",
+      "snow",
+      "running"
+    ],
+    "style": [
+      "expressionist style",
+      "soft focus",
+      "night photography"
+    ],
+    "lighting": [
+      "flash photography",
+      "dark"
+    ],
+    "colors": [
+      "desaturated",
+      "monochromatic"
+    ],
+    "color_palette": [
+      {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "weight": 0.7398230088495575
+      },
+      {
+        "r": 12,
+        "g": 12,
+        "b": 10,
+        "weight": 0.1384660766961652
+      },
+      {
+        "r": 27,
+        "g": 26,
+        "b": 22,
+        "weight": 0.08837758112094395
+      },
+      {
+        "r": 70,
+        "g": 58,
+        "b": 45,
+        "weight": 0.01775811209439528
+      },
+      {
+        "r": 144,
+        "g": 101,
+        "b": 77,
+        "weight": 0.015575221238938054
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "person",
+      "rain",
+      "snow",
+      "running",
+      "expressionist style",
+      "soft focus",
+      "night photography",
+      "flash photography",
+      "dark",
+      "desaturated",
+      "monochromatic"
+    ]
+  },
+  "chloe_38_of_135_x3sebh": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159909/chloe_38_of_135_x3sebh.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:45:08",
+    "content": [
+      "camping",
+      "hills",
+      "bokeh",
+      "snow scene",
+      "running"
+    ],
+    "style": [
+      "night photography",
+      "long exposure",
+      "photo manipulation"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "even lighting"
+    ],
+    "colors": [
+      "neon colors",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 50,
+        "g": 36,
+        "b": 22,
+        "weight": 0.3470238095238095
+      },
+      {
+        "r": 35,
+        "g": 23,
+        "b": 10,
+        "weight": 0.34351190476190474
+      },
+      {
+        "r": 63,
+        "g": 48,
+        "b": 33,
+        "weight": 0.29220238095238094
+      },
+      {
+        "r": 130,
+        "g": 129,
+        "b": 109,
+        "weight": 0.009464285714285715
+      },
+      {
+        "r": 206,
+        "g": 207,
+        "b": 195,
+        "weight": 0.007797619047619048
+      }
+    ],
+    "all_tags": [
+      "camping",
+      "hills",
+      "bokeh",
+      "snow scene",
+      "running",
+      "night photography",
+      "long exposure",
+      "photo manipulation",
+      "atmospheric lighting",
+      "even lighting",
+      "neon colors",
+      "desaturated"
+    ]
+  },
+  "chloe_33_of_135_d5zq9t": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159907/chloe_33_of_135_d5zq9t.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:39:50",
+    "content": [
+      "silhouette",
+      "negative space",
+      "spider",
+      "monochrome",
+      "abstract"
+    ],
+    "style": [
+      "abstract",
+      "dramatic",
+      "black and white"
+    ],
+    "lighting": [
+      "silhouette lighting",
+      "chiaroscuro"
+    ],
+    "colors": [
+      "monochromatic",
+      "black and white"
+    ],
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9874404761904761
+      },
+      {
+        "r": 46,
+        "g": 46,
+        "b": 46,
+        "weight": 0.004107142857142857
+      },
+      {
+        "r": 109,
+        "g": 109,
+        "b": 109,
+        "weight": 0.0030357142857142857
+      },
+      {
+        "r": 158,
+        "g": 158,
+        "b": 158,
+        "weight": 0.0027380952380952383
+      },
+      {
+        "r": 207,
+        "g": 207,
+        "b": 207,
+        "weight": 0.0026785714285714286
+      }
+    ],
+    "all_tags": [
+      "silhouette",
+      "negative space",
+      "spider",
+      "monochrome",
+      "abstract",
+      "abstract",
+      "dramatic",
+      "black and white",
+      "silhouette lighting",
+      "chiaroscuro",
+      "monochromatic",
+      "black and white"
+    ]
+  },
+  "chloe_32_of_135_ptnvyo": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159905/chloe_32_of_135_ptnvyo.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:39:01",
+    "content": [
+      "black and white",
+      "monochrome",
+      "running",
+      "person",
+      "silhouette"
+    ],
+    "style": [
+      "night photography",
+      "long exposure",
+      "photo manipulation"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "firelight"
+    ],
+    "colors": [
+      "black and white",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 29,
+        "g": 29,
+        "b": 29,
+        "weight": 0.4700595238095238
+      },
+      {
+        "r": 18,
+        "g": 18,
+        "b": 18,
+        "weight": 0.3711904761904762
+      },
+      {
+        "r": 10,
+        "g": 10,
+        "b": 10,
+        "weight": 0.15
+      },
+      {
+        "r": 85,
+        "g": 85,
+        "b": 85,
+        "weight": 0.0052976190476190475
+      },
+      {
+        "r": 183,
+        "g": 183,
+        "b": 183,
+        "weight": 0.0034523809523809524
+      }
+    ],
+    "all_tags": [
+      "black and white",
+      "monochrome",
+      "running",
+      "person",
+      "silhouette",
+      "night photography",
+      "long exposure",
+      "photo manipulation",
+      "atmospheric lighting",
+      "firelight",
+      "black and white",
+      "desaturated"
+    ]
+  },
+  "chloe_29_of_135_qyooig": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159901/chloe_29_of_135_qyooig.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:38:08",
+    "content": [
+      "motion blur",
+      "abstract",
+      "black and white",
+      "monochrome",
+      "negative space"
+    ],
+    "style": [
+      "abstract",
+      "black and white",
+      "night photography"
+    ],
+    "lighting": [
+      "rim light",
+      "diffused light"
+    ],
+    "colors": [
+      "black and white",
+      "monochromatic"
+    ],
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.9830952380952381
+      },
+      {
+        "r": 250,
+        "g": 250,
+        "b": 250,
+        "weight": 0.0066071428571428574
+      },
+      {
+        "r": 34,
+        "g": 34,
+        "b": 34,
+        "weight": 0.006547619047619048
+      },
+      {
+        "r": 103,
+        "g": 103,
+        "b": 103,
+        "weight": 0.002202380952380952
+      },
+      {
+        "r": 177,
+        "g": 177,
+        "b": 177,
+        "weight": 0.0015476190476190477
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "abstract",
+      "black and white",
+      "monochrome",
+      "negative space",
+      "abstract",
+      "black and white",
+      "night photography",
+      "rim light",
+      "diffused light",
+      "black and white",
+      "monochromatic"
+    ]
+  },
+  "chloe_25_of_135_xwwjvj": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159895/chloe_25_of_135_xwwjvj.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:33:03",
+    "content": [
+      "abstract",
+      "negative space",
+      "fog",
+      "monochrome",
+      "silhouette"
+    ],
+    "style": [
+      "abstract",
+      "long exposure",
+      "night photography"
+    ],
+    "lighting": [
+      "diffused light",
+      "dappled light"
+    ],
+    "colors": [
+      "monochromatic",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 47,
+        "g": 47,
+        "b": 47,
+        "weight": 0.3554572271386431
+      },
+      {
+        "r": 23,
+        "g": 23,
+        "b": 23,
+        "weight": 0.2768731563421829
+      },
+      {
+        "r": 75,
+        "g": 75,
+        "b": 75,
+        "weight": 0.22371681415929204
+      },
+      {
+        "r": 119,
+        "g": 119,
+        "b": 119,
+        "weight": 0.09486725663716813
+      },
+      {
+        "r": 173,
+        "g": 173,
+        "b": 173,
+        "weight": 0.04908554572271386
+      }
+    ],
+    "all_tags": [
+      "abstract",
+      "negative space",
+      "fog",
+      "monochrome",
+      "silhouette",
+      "abstract",
+      "long exposure",
+      "night photography",
+      "diffused light",
+      "dappled light",
+      "monochromatic",
+      "desaturated"
+    ]
+  },
+  "chloe_18_of_135_nys8kj": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159860/chloe_18_of_135_nys8kj.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:32:56",
+    "content": [
+      "silhouette",
+      "minimalist",
+      "abstract",
+      "cave",
+      "shadow"
+    ],
+    "style": [
+      "minimalist",
+      "abstract",
+      "night photography"
+    ],
+    "lighting": [
+      "dark",
+      "rim light"
+    ],
+    "colors": [
+      "monochromatic",
+      "black dominant"
+    ],
+    "color_palette": [
+      {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "weight": 0.7532743362831859
+      },
+      {
+        "r": 7,
+        "g": 9,
+        "b": 10,
+        "weight": 0.1575811209439528
+      },
+      {
+        "r": 20,
+        "g": 27,
+        "b": 29,
+        "weight": 0.04772861356932153
+      },
+      {
+        "r": 39,
+        "g": 51,
+        "b": 54,
+        "weight": 0.03056047197640118
+      },
+      {
+        "r": 73,
+        "g": 93,
+        "b": 97,
+        "weight": 0.010855457227138644
+      }
+    ],
+    "all_tags": [
+      "silhouette",
+      "minimalist",
+      "abstract",
+      "cave",
+      "shadow",
+      "minimalist",
+      "abstract",
+      "night photography",
+      "dark",
+      "rim light",
+      "monochromatic",
+      "black dominant"
+    ]
+  },
+  "chloe_17_of_135_he2tke": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159858/chloe_17_of_135_he2tke.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:32:46",
+    "content": [
+      "abstract",
+      "cave",
+      "spider",
+      "motion blur",
+      "motorcycle"
+    ],
+    "style": [
+      "night photography",
+      "abstract",
+      "astrophotography"
+    ],
+    "lighting": [
+      "dark",
+      "chiaroscuro"
+    ],
+    "colors": [
+      "desaturated",
+      "monochromatic"
+    ],
+    "color_palette": [
+      {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "weight": 0.7231858407079647
+      },
+      {
+        "r": 7,
+        "g": 10,
+        "b": 12,
+        "weight": 0.16884955752212388
+      },
+      {
+        "r": 14,
+        "g": 23,
+        "b": 24,
+        "weight": 0.0664306784660767
+      },
+      {
+        "r": 30,
+        "g": 43,
+        "b": 46,
+        "weight": 0.02938053097345133
+      },
+      {
+        "r": 54,
+        "g": 71,
+        "b": 74,
+        "weight": 0.01215339233038348
+      }
+    ],
+    "all_tags": [
+      "abstract",
+      "cave",
+      "spider",
+      "motion blur",
+      "motorcycle",
+      "night photography",
+      "abstract",
+      "astrophotography",
+      "dark",
+      "chiaroscuro",
+      "desaturated",
+      "monochromatic"
+    ]
+  },
+  "chloe_16_of_135_s4ioqq": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159853/chloe_16_of_135_s4ioqq.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:32:41",
+    "content": [
+      "snow",
+      "snow scene",
+      "winter",
+      "deer",
+      "monochrome"
+    ],
+    "style": [
+      "night photography",
+      "long exposure",
+      "black and white"
+    ],
+    "lighting": [
+      "dark",
+      "diffused light"
+    ],
+    "colors": [
+      "monochromatic",
+      "black and white"
+    ],
+    "color_palette": [
+      {
+        "r": 10,
+        "g": 10,
+        "b": 10,
+        "weight": 0.35067846607669617
+      },
+      {
+        "r": 31,
+        "g": 31,
+        "b": 31,
+        "weight": 0.3247787610619469
+      },
+      {
+        "r": 57,
+        "g": 57,
+        "b": 57,
+        "weight": 0.20106194690265486
+      },
+      {
+        "r": 94,
+        "g": 94,
+        "b": 94,
+        "weight": 0.08
+      },
+      {
+        "r": 147,
+        "g": 147,
+        "b": 147,
+        "weight": 0.04348082595870206
+      }
+    ],
+    "all_tags": [
+      "snow",
+      "snow scene",
+      "winter",
+      "deer",
+      "monochrome",
+      "night photography",
+      "long exposure",
+      "black and white",
+      "dark",
+      "diffused light",
+      "monochromatic",
+      "black and white"
+    ]
+  },
+  "chloe_13_of_135_qqxwht": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159844/chloe_13_of_135_qqxwht.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:31:32",
+    "content": [
+      "motion blur",
+      "snow",
+      "abstract",
+      "bokeh",
+      "monochrome"
+    ],
+    "style": [
+      "soft focus",
+      "abstract",
+      "desaturated"
+    ],
+    "lighting": [
+      "dark",
+      "diffused light"
+    ],
+    "colors": [
+      "grayscale",
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 37,
+        "g": 37,
+        "b": 37,
+        "weight": 0.41002949852507375
+      },
+      {
+        "r": 67,
+        "g": 67,
+        "b": 67,
+        "weight": 0.21581120943952803
+      },
+      {
+        "r": 15,
+        "g": 15,
+        "b": 15,
+        "weight": 0.1808849557522124
+      },
+      {
+        "r": 109,
+        "g": 109,
+        "b": 109,
+        "weight": 0.1375811209439528
+      },
+      {
+        "r": 166,
+        "g": 166,
+        "b": 166,
+        "weight": 0.05569321533923304
+      }
+    ],
+    "all_tags": [
+      "motion blur",
+      "snow",
+      "abstract",
+      "bokeh",
+      "monochrome",
+      "soft focus",
+      "abstract",
+      "desaturated",
+      "dark",
+      "diffused light",
+      "grayscale",
+      "desaturated"
+    ]
+  },
+  "chloe_10_of_135_n7fbxf": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765159835/chloe_10_of_135_n7fbxf.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-01T11:31:04",
+    "content": [
+      "rain",
+      "snow",
+      "bokeh",
+      "lightning",
+      "black and white"
+    ],
+    "style": [
+      "night photography",
+      "astrophotography",
+      "long exposure"
+    ],
+    "lighting": [
+      "dark",
+      "low light"
+    ],
+    "colors": [
+      "desaturated",
+      "black and white"
+    ],
+    "color_palette": [
+      {
+        "r": 14,
+        "g": 14,
+        "b": 14,
+        "weight": 0.35233038348082596
+      },
+      {
+        "r": 44,
+        "g": 44,
+        "b": 44,
+        "weight": 0.18814159292035398
+      },
+      {
+        "r": 29,
+        "g": 29,
+        "b": 29,
+        "weight": 0.17817109144542773
+      },
+      {
+        "r": 58,
+        "g": 58,
+        "b": 58,
+        "weight": 0.16890855457227139
+      },
+      {
+        "r": 75,
+        "g": 75,
+        "b": 75,
+        "weight": 0.11244837758112095
+      }
+    ],
+    "all_tags": [
+      "rain",
+      "snow",
+      "bokeh",
+      "lightning",
+      "black and white",
+      "night photography",
+      "astrophotography",
+      "long exposure",
+      "dark",
+      "low light",
+      "desaturated",
+      "black and white"
+    ]
+  },
+  "chloe_46_of_135_hmhgia": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765160486/chloe_46_of_135_hmhgia.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-08T02:21:26Z",
+    "content": [
+      "cliff",
+      "person",
+      "elderly person",
+      "meadow",
+      "child"
+    ],
+    "style": [
+      "night photography",
+      "analog",
+      "low contrast"
+    ],
+    "lighting": [
+      "firelight",
+      "low light"
+    ],
+    "colors": [
+      "duotone",
+      "sepia tone"
+    ],
+    "color_palette": [
+      {
+        "r": 39,
+        "g": 24,
+        "b": 4,
+        "weight": 0.5727433628318584
+      },
+      {
+        "r": 87,
+        "g": 81,
+        "b": 18,
+        "weight": 0.12519174041297934
+      },
+      {
+        "r": 241,
+        "g": 239,
+        "b": 190,
+        "weight": 0.11533923303834809
+      },
+      {
+        "r": 140,
+        "g": 142,
+        "b": 53,
+        "weight": 0.10100294985250738
+      },
+      {
+        "r": 205,
+        "g": 201,
+        "b": 110,
+        "weight": 0.08572271386430678
+      }
+    ],
+    "all_tags": [
+      "cliff",
+      "person",
+      "elderly person",
+      "meadow",
+      "child",
+      "night photography",
+      "analog",
+      "low contrast",
+      "firelight",
+      "low light",
+      "duotone",
+      "sepia tone"
+    ]
+  },
+  "PC010128-8_bujn3f": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765160485/PC010128-8_bujn3f.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-08T02:21:25Z",
+    "content": [
+      "savanna",
+      "ice",
+      "running",
+      "wolf",
+      "tundra"
+    ],
+    "style": [
+      "night photography",
+      "lens flare",
+      "photo manipulation"
+    ],
+    "lighting": [
+      "firelight",
+      "rim light"
+    ],
+    "colors": [
+      "white dominant"
+    ],
+    "color_palette": [
+      {
+        "r": 38,
+        "g": 25,
+        "b": 4,
+        "weight": 0.572448377581121
+      },
+      {
+        "r": 91,
+        "g": 88,
+        "b": 22,
+        "weight": 0.12896755162241888
+      },
+      {
+        "r": 249,
+        "g": 247,
+        "b": 222,
+        "weight": 0.10265486725663717
+      },
+      {
+        "r": 151,
+        "g": 152,
+        "b": 64,
+        "weight": 0.1015339233038348
+      },
+      {
+        "r": 220,
+        "g": 214,
+        "b": 133,
+        "weight": 0.0943952802359882
+      }
+    ],
+    "all_tags": [
+      "savanna",
+      "ice",
+      "running",
+      "wolf",
+      "tundra",
+      "night photography",
+      "lens flare",
+      "photo manipulation",
+      "firelight",
+      "rim light",
+      "white dominant"
+    ]
+  },
+  "chloe_122_of_135_ep8fvx": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765160359/chloe_122_of_135_ep8fvx.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-08T02:19:19Z",
+    "content": [
+      "couple",
+      "snow scene",
+      "snow",
+      "adventure",
+      "winter"
+    ],
+    "style": [
+      "expressionist style",
+      "soft focus",
+      "night photography"
+    ],
+    "lighting": [
+      "atmospheric lighting",
+      "dramatic lighting"
+    ],
+    "colors": [
+      "monochromatic"
+    ],
+    "color_palette": [
+      {
+        "r": 13,
+        "g": 10,
+        "b": 5,
+        "weight": 0.51976401179941
+      },
+      {
+        "r": 28,
+        "g": 30,
+        "b": 19,
+        "weight": 0.24849557522123894
+      },
+      {
+        "r": 49,
+        "g": 60,
+        "b": 41,
+        "weight": 0.12348082595870206
+      },
+      {
+        "r": 77,
+        "g": 93,
+        "b": 68,
+        "weight": 0.09309734513274336
+      },
+      {
+        "r": 193,
+        "g": 196,
+        "b": 145,
+        "weight": 0.015162241887905605
+      }
+    ],
+    "all_tags": [
+      "couple",
+      "snow scene",
+      "snow",
+      "adventure",
+      "winter",
+      "expressionist style",
+      "soft focus",
+      "night photography",
+      "atmospheric lighting",
+      "dramatic lighting",
+      "monochromatic"
+    ]
+  },
+  "chloe_24_of_135_gul8pg": {
+    "url": "https://res.cloudinary.com/dnimuxnhe/image/upload/v1765160358/chloe_24_of_135_gul8pg.jpg",
+    "folder": "portfolio",
+    "created_at": "2025-12-08T02:19:18Z",
+    "content": [
+      "abstract",
+      "motion blur",
+      "negative space",
+      "silhouette",
+      "mist"
+    ],
+    "style": [
+      "abstract",
+      "film grain",
+      "long exposure"
+    ],
+    "lighting": [
+      "diffused light",
+      "atmospheric lighting"
+    ],
+    "colors": [
+      "desaturated"
+    ],
+    "color_palette": [
+      {
+        "r": 52,
+        "g": 45,
+        "b": 43,
+        "weight": 0.3734513274336283
+      },
+      {
+        "r": 26,
+        "g": 21,
+        "b": 19,
+        "weight": 0.26312684365781713
+      },
+      {
+        "r": 76,
+        "g": 74,
+        "b": 75,
+        "weight": 0.22377581120943954
+      },
+      {
+        "r": 111,
+        "g": 121,
+        "b": 126,
+        "weight": 0.09545722713864306
+      },
+      {
+        "r": 176,
+        "g": 173,
+        "b": 175,
+        "weight": 0.04418879056047197
+      }
+    ],
+    "all_tags": [
+      "abstract",
+      "motion blur",
+      "negative space",
+      "silhouette",
+      "mist",
+      "abstract",
+      "film grain",
+      "long exposure",
+      "diffused light",
+      "atmospheric lighting",
+      "desaturated"
+    ]
   }
 }
