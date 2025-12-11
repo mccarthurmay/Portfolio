@@ -75,7 +75,8 @@ async function init() {
                 },
                 renderingOptimizer,
                 stationaryShipMesh, // Pass the static wreckage mesh
-                animationScene // Pass the animation scene to remove after intro
+                animationScene, // Pass the animation scene to remove after intro
+                performanceManager // Pass performance manager for quality control
             );
             window.introAnimationManager = introAnimationManager;
             console.log('✓ IntroAnimationManager created successfully');

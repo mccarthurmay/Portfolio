@@ -6,7 +6,7 @@ import { getSunDirection, sun, sunGlow, sunGlow2, moon, moonGlow, ambientLight, 
 import { signLabels } from './world.js';
 
 export class IntroAnimationManager {
-    constructor(camera, scene, spaceshipMesh, explosionMesh, introCameraMesh, mixer, actions, renderingOptimizer, stationaryShipMesh, animScene) {
+    constructor(camera, scene, spaceshipMesh, explosionMesh, introCameraMesh, mixer, actions, renderingOptimizer, stationaryShipMesh, animScene, performanceManager) {
         this.gameplayCamera = camera;
         this.scene = scene;
         this.spaceshipMesh = spaceshipMesh; // Animated spaceship
@@ -15,6 +15,7 @@ export class IntroAnimationManager {
         this.introCameraMesh = introCameraMesh;
         this.mixer = mixer;
         this.renderingOptimizer = renderingOptimizer;
+        this.performanceManager = performanceManager;
         this.animScene = animScene; // The animation scene to remove after intro
 
         // Actions: { spaceship, camera, explosion }
@@ -36,6 +37,17 @@ export class IntroAnimationManager {
         }
 
         this.isPlaying = true;
+
+        // Save current quality settings and force low quality for intro
+        if (this.performanceManager) {
+            this.savedIsAuto = this.performanceManager.isAuto;
+            this.savedTier = this.performanceManager.currentTier;
+
+            // Force low quality (tier 3) for intro animation
+            this.performanceManager.isAuto = false;
+            this.performanceManager.applyTier(3); // Low quality
+            console.log('Quality set to Low for intro animation');
+        }
 
         // Frame ranges
         this.ranges = {
@@ -150,8 +162,12 @@ export class IntroAnimationManager {
             console.log(`Hid ${signLabels.length} sign labels for intro`);
         }
 
-        // Hide character, show spaceship (keep spaceship in planetGroup so animation works)
+        // Hide character and stationary ship, show animated spaceship
         if (characterGroup) characterGroup.visible = false;
+        if (this.stationaryShipMesh) {
+            this.stationaryShipMesh.visible = false;
+            console.log('Stationary ship hidden during intro animation');
+        }
         if (this.spaceshipMesh) {
             this.spaceshipMesh.visible = true;
             // Ensure spaceship is always on camera layer to prevent culling
@@ -395,6 +411,16 @@ export class IntroAnimationManager {
         if (this.optimizerWasEnabled && this.renderingOptimizer) {
             this.renderingOptimizer.enabled = true;
             console.log('Rendering optimizer re-enabled');
+        }
+
+        // Restore quality settings to auto mode (defaulting to Ultra)
+        if (this.performanceManager) {
+            this.performanceManager.isAuto = true;
+            this.performanceManager.applyTier(0); // Reset to Ultra
+            console.log('Quality restored to Auto mode (defaulting to Ultra)');
+
+            // Save preferences
+            localStorage.setItem('autoQuality', 'true');
         }
 
         this.gameplayCamera.position.set(0, SPAWN_HEIGHT + CAMERA_HEIGHT, -CAMERA_DISTANCE_IDLE);

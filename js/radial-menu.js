@@ -3,8 +3,9 @@
 // ===================================
 
 import * as THREE from 'three';
-import { camera } from './scene.js';
+import { camera, characterGroup } from './scene.js';
 import { signLabels } from './world.js';
+import { detachedCamera } from './controls.js';
 
 // Radial menu state
 let currentNearbySign = null;
@@ -30,9 +31,13 @@ const signMenuConfig = {
 export function updateProximityCheck() {
     if (radialMenuOpen) return; // Don't check if menu is open
 
-    const proximityRadius = 3.0;
+    // Use larger radius for bird's eye view to make interaction easier
+    const proximityRadius = detachedCamera ? 5.0 : 0.3;
     let nearestSign = null;
     let minDistance = proximityRadius;
+
+    // Use penguin position if in normal mode, camera position if in bird's eye view
+    const referencePosition = detachedCamera ? camera.position : characterGroup.position;
 
     signLabels.forEach(signInfo => {
         const signName = signInfo.mesh.name.toLowerCase();
@@ -44,8 +49,8 @@ export function updateProximityCheck() {
         const signWorldPos = new THREE.Vector3();
         signInfo.mesh.getWorldPosition(signWorldPos);
 
-        // Calculate distance from camera to sign
-        const distance = camera.position.distanceTo(signWorldPos);
+        // Calculate distance from reference position (penguin or camera) to sign
+        const distance = referencePosition.distanceTo(signWorldPos);
 
         if (distance < minDistance) {
             minDistance = distance;
@@ -53,32 +58,10 @@ export function updateProximityCheck() {
         }
     });
 
-    // Update nearby sign state
+    // Update nearby sign state (distance-based only, no view direction check)
     if (nearestSign) {
-        // Check if player is looking at the sign (only if within radius for optimization)
-        const signWorldPos = new THREE.Vector3();
-        nearestSign.mesh.getWorldPosition(signWorldPos);
-
-        // Get direction from camera to sign
-        const directionToSign = new THREE.Vector3()
-            .subVectors(signWorldPos, camera.position)
-            .normalize();
-
-        // Get camera's forward direction
-        const cameraDirection = new THREE.Vector3();
-        camera.getWorldDirection(cameraDirection);
-
-        // Calculate dot product (1 = directly looking at, -1 = looking away)
-        const dotProduct = cameraDirection.dot(directionToSign);
-
-        // Only show prompt if looking at sign (dot product > 0.5 means within ~60° cone)
-        if (dotProduct > 0.5) {
-            currentNearbySign = nearestSign;
-            showInteractionPrompt();
-        } else {
-            currentNearbySign = null;
-            hideInteractionPrompt();
-        }
+        currentNearbySign = nearestSign;
+        showInteractionPrompt();
     } else {
         currentNearbySign = null;
         hideInteractionPrompt();

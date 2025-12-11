@@ -52,10 +52,10 @@ function initNavigation() {
 
             lastScrollTop = scrollTop;
 
-            // Show nav again after user stops scrolling for 2 seconds
+            // Show nav again after user stops scrolling for 5 seconds
             scrollTimeout = setTimeout(() => {
                 mainNav.classList.remove('hidden');
-            }, 2000);
+            }, 5000);
         });
     }
 }

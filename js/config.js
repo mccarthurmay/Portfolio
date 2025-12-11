@@ -103,7 +103,7 @@ export const BIRD_EYE_MIN_ZOOM = 8;
 export const BIRD_EYE_MAX_ZOOM = 50;
 
 // Sign proximity
-export const SIGN_PROXIMITY_NORMAL = 3.0;
+export const SIGN_PROXIMITY_NORMAL = 1.0;
 export const SIGN_PROXIMITY_BIRDS_EYE = 10.0;
 
 // Intro animation

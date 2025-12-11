@@ -282,6 +282,14 @@ function rotateToSpawn() {
         spawnRotation.setFromAxisAngle(rotationAxis, rotationAngle);
         planetGroup.quaternion.copy(spawnRotation);
 
+        // Also rotate the animation scene with the same rotation
+        // This ensures the spaceship lands at the spawn location
+        if (animationScene) {
+            animationScene.quaternion.copy(spawnRotation);
+            animationScene.updateMatrixWorld(true);
+            console.log('Animation scene rotated to match planet spawn orientation');
+        }
+
         // Update matrices
         planetGroup.updateMatrixWorld(true);
 
@@ -308,13 +316,16 @@ function rotateToSpawn() {
 export function updateSignLabels(detachedCamera) {
     const proximityRadius = detachedCamera ? SIGN_PROXIMITY_BIRDS_EYE : SIGN_PROXIMITY_NORMAL;
 
+    // Use penguin position if in normal mode, camera position if in bird's eye view
+    const referencePosition = detachedCamera ? camera.position : characterGroup.position;
+
     signLabels.forEach(signInfo => {
         // Get current world position of the sign (accounts for planet rotation)
         const signWorldPos = new THREE.Vector3();
         signInfo.mesh.getWorldPosition(signWorldPos);
 
-        // Calculate distance from camera to sign in world space
-        const distance = camera.position.distanceTo(signWorldPos);
+        // Calculate distance from reference position (penguin or camera) to sign in world space
+        const distance = referencePosition.distanceTo(signWorldPos);
 
         // Show label if within radius, hide otherwise
         if (distance < proximityRadius) {
